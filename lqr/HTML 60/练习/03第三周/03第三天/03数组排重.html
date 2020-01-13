@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numbers = new Array();
+        for (var i = 0; i < 20; i++) {
+            var number = Math.floor(Math.random() * 10);
+            numbers.push();//等价与numbers[i] = number
+            // numbers[i] = number
+            console.log(numbers[i]);
+        }
+        var temp = [];
+        var index = [];
+        var count = numbers.length;
+        for (var i = 0; i < count; i++) {
+            for (var j = i + 1; j < count; j++) {
+                if (numbers[i] == numbers[i + 1]) {
+                    i++;
+                    j = i;
+                }
+            }
+            temp.push(numbers[i]);
+        }
+        console.log(temp);
+    </script>
+</body>
+
+</html>

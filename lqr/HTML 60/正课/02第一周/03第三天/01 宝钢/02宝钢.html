@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>宝钢</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #navbar {
+            background-image: url(images/nav-bg.png);
+            border-top: 3px solid blue;
+            margin-bottom: 0;
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        #Search {
+            border-radius: 30px;
+        }
+
+        #pic {
+            padding: 0;
+        }
+
+        #news {
+            padding: 0;
+        }
+
+        #col1rowOne {
+            background-image: url(images/s-bg1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        #col2rowOne {
+            background-image: url(images/s-bg2.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+        #col3rowOne {
+            background-image: url(images/s-bg1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="images/logo.png" alt="logo"></div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand active">首页</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li></li><a href="#" class="navbar-brand">媒体中心</a></li>
+                    <li></li><a href="#" class="navbar-brand">关于我们</a></li>
+                    <li></li><a href="#" class="navbar-brand">业务板块</a></li>
+                    <li></li><a href="#" class="navbar-brand">产品服务</a></li>
+                </ul>
+                <form action="#" class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search here..." id="Search">
+                        <!-- <button type="submit" class="btn btn-default"> -->
+                        <span class="badge badge-primary">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </span>
+                        <!-- </button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- 背景图片 -->
+    <div class="container-fluid" id="pic">
+        <img src="images/banner.png" alt="banner" class="img-responsive">
+    </div>
+    <!-- 嵌套 -->
+    <div class="container-fluid" id="news">
+        <div class="row">
+            <!-- 第一列 -->
+            <div class="col-lg-4">
+                <div class="container">
+                    <!-- 第一列第一行 -->
+                    <div class="row" id="col3rowOne">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <div class="navbar-header" id="navbar-header1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#" class="navbar-brand">公司动态</a></li>
+                                    </ul>
+                                </div>
+                                <div id="navbar-header2">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="">
+                                            <a href="#" class="navbar-brand">+MORE</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- 第一列第二行 -->
+                    <!-- <div class="row" id="col1rowTwo"> -->
+
+                    <!-- </div> -->
+                    <!-- 第一列第三行 -->
+                    <!-- <div class="row" id="col1rowThree"> -->
+
+                    <!-- </div> -->
+                    <!-- <hr style="border: 2px solid black;"> -->
+                    <!-- 第一列第四行 -->
+                    <!-- <div class="row" id="col1rowFour"> -->
+
+                    <!-- </div> -->
+
+                </div>
+            </div>
+
+            <!-- 第二列 -->
+            <div class="col-lg-4">
+                <div class="container">
+                    <!-- 第二列第一行 -->
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="container-fluid">
+                            <div class="navbar-header" id="navbar-header3">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#" class="navbar-brand">研究与观点</a></li>
+                                </ul>
+                            </div>
+                            <div id="navbar-header3">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="">
+                                        <a href="#" class="navbar-brand">+MORE</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- 第二列第二行 -->
+                <!-- <div class="row" id="col2rowTwo"> -->
+
+                <!-- </div> -->
+                <!-- 第二列第三行 -->
+                <!-- <div class="row" id="col2rowThree"> -->
+
+                <!-- </div> -->
+                <!-- <hr style="border: 2px solid black;"> -->
+                <!-- 第二列第四行 -->
+                <!-- <div class="row" id="col2rowFour"> -->
+
+                <!-- </div> -->
+
+            </div>
+        </div>
+        <!-- 第三列 -->
+        <div class="col-lg-4">
+            <div class="container">
+                <!-- 第三列第一行 -->
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header" id="navbar-header5">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" class="navbar-brand">产品与服务</a></li>
+                            </ul>
+                        </div>
+                        <div id="navbar-header6">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="#" class="navbar-brand">+MORE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+            <!-- 第三列第二行 -->
+            <!-- <div class="row" id="col3rowTwo"> -->
+
+            <!-- </div> -->
+            <!-- 第三列第三行 -->
+            <!-- <div class="row" id="col3rowThree"> -->
+
+            <!-- </div> -->
+            <!-- <hr style="border: 2px solid black;"> -->
+            <!-- 第三列第四行 -->
+            <!-- <div class="row" id="col3rowFour"> -->
+
+            <!-- </div> -->
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

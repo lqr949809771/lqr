@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域</title>
+</head>
+
+<body>
+    <script>
+        /*
+        在js的环境中，作用域
+        */ 
+        var num = 10;
+        function snow() {
+            console.log(num);
+            str = "abc"  
+            console.log(num2);
+            
+        } 
+        snow();
+        console.log(str);
+        // 代码的顺序是从上往下的 一定要保证访问的变
+        var num2 = 20;//undefined
+    </script>
+</body>
+
+</html>

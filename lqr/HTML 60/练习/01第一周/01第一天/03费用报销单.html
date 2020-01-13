@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>费用报销单</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            width: 900px;
+            height: 650px;
+            margin: 150px auto;
+            box-shadow: 0 0 10px gray;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+        hr{
+            margin-top: 0;
+            width: 50%;
+        }
+        span{
+            line-height: 30px;
+            font-size: 18px;
+        }
+        /* .tab{
+            margin: 80px auto;
+        } */
+
+        #tab1 {
+            border-collapse: collapse;
+        }
+        #tab2{
+            border-collapse: collapse;
+        }
+
+        td {
+            border: solid 2px black;
+            height: 50px;
+        }
+
+        #td1 {
+            width: 200px;
+        }
+
+        #td2 {
+            width: 112px;
+        }
+
+        #td3 {
+            width: 112px;
+        }
+
+        #td4 {
+            width: 150px;
+        }
+
+        #td5 {
+            width: 150px;
+        }
+        .space{
+            letter-spacing: 10px;
+        }
+        #spa1{
+            /* text-align: right; */
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        
+        <table id="tab1" class="tab">
+                <caption class="tab">
+                        <h1>费&nbsp;&#x3000;用&nbsp;&#x3000;报&nbsp;&#x3000;销&nbsp;&#x3000;单</h1>
+                        <hr>
+                        <span>报销日期&nbsp;&#x3000;年&nbsp;&#x3000;月&nbsp;&#x3000;日</span>
+                        <span id="spa1">附件&nbsp;&#x3000;张</span>
+                    </caption>
+            <tr>
+                <td id="td1" class="space">费用项目</td>
+                <td id="td2" class="space">类别</td>
+                <td id="td3" class="space">金额</td>
+                <td id="td4">负责人(签章)</td>
+                <td id="td5"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="space">审查意见</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>报销人(签章)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align: left; padding-left: 15px;">￥</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="5" style="border-bottom: none; text-align: left; padding-left: 20px;">核实金额(大写)&nbsp;&#x3000;&nbsp;&#x3000;<span style="letter-spacing: 30px;">佰拾万千佰拾元交分</span></td>
+            </tr>
+            <table id="tab2"> 
+                <tr>
+                    <td style="width: 120px;" class="space">借款额</td>
+                    <td style="width: 120px;"></td>
+                    <td style="width: 120px;" >应退金额</td>
+                    <td style="width: 120px;"></td>
+                    <td style="width: 120px;" >应补金额</td>
+                    <td style="width: 120px;"></td>
+                </tr>
+            </table>
+        </table>
+    </main>
+
+</body>
+
+</html>

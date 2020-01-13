@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .cell {
+            border: solid 1px black;
+        } */
+
+        .abc {
+            border: solid 1px red;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+
+    </table>
+</body>
+<script>
+    var table = document.createElement("table");
+    document.body.appendChild(table);
+    for (var i = 1; i <= 6; i++) {
+        var tr = table.insertRow();
+        for (var j = 1; j <= 8; j++) {
+            var td = tr.insertCell();
+            td.textContent = '第' + i + '行' + '第' + j + '列'
+            td.classList.add("cell");
+        }
+    }
+
+    table.className = 'abc';
+    console.log(table.className);
+
+
+    /*   var table = document.createElement("table");
+      document.body.appendChild(table);
+      table.style.border = '1px solid black';
+      for (var i = 1; i <= 6; i++) {
+          var tr = document.createElement("tr");
+          table.appendChild(tr);
+          for (var j = 1; j <= 8; j++) {
+              var td = document.createElement("td");
+              table.appendChild(td);
+              td.textContent = '第' + i + '行' + '第' + j + '列'
+          }
+          document.write("<br>");
+      } */
+</script>
+
+</html>

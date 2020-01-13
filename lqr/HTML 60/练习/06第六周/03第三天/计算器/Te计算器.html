@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算器</title>
+    <style>
+        #submit {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            cursor: pointer;
+            font-size: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    var numberStr = '';
+    var charset = ['+', '-', '*', '/', 'C'];
+    for (var i = 0; i < 10; i++) {
+        numberStr += '<button>' + i + '</button>';
+        if (i == 9) {
+            numberStr += '<hr>'
+        }
+    }
+    $("body").append(numberStr);
+    numberStr = '';
+    for (var i = 0; i < charset.length; i++) {
+        numberStr += '<button>' + charset[i] + '</button>';
+    }
+    $("body").append(numberStr);
+    $('<p id="result">0<p>').appendTo($("body"));
+
+    // 为所有按钮绑定事件
+    var str1 = "",//第一部分(num1)
+        str2 = "",//第二部分(num2)
+        character = "";//记录运算符
+    $('button').on('click', function (e) {
+        // $('#result').text($(this).text());
+        var reg = new RegExp('^[0-9]*$');
+        if (reg.exec($(this).text())) {
+            console.log('数字有效');
+            if (character != '') {
+                str2 += $(this).text();
+                $('#result').text(str2);
+            }
+            else {
+                str1 += $(this).text();
+                $('#result').text(str1);
+            }
+        }
+        else {
+            console.log('数字无效');
+            if (character == '') {
+                character = $(this).text();
+                $('#result').text(character);
+            }
+            else {
+                // 连续运算 表示两个数出现
+                finalResult();
+                str1 = $('#result').text();
+                str2 = '';
+                character = $(this).text();
+            }
+        }
+        if ($(this).text() == 'C') {
+            str1 = "";
+            str2 = "";
+            character = "";
+            $('#result').text('');
+        }
+    });
+
+    // 创建=
+    $('<div id="submit">=</div>').appendTo(document.body);
+    // $('#submit').css({
+    //     width:'500px',
+    //     height:'50px',
+    //     border:"solid 2px red",
+    //     margin
+    // })
+    // 绑定事件
+    $('#submit').on('click', finalResult);
+    var resultStr = '';
+    function finalResult() {
+        switch (character) {
+            case '+':
+                resultStr = str1 * 1 + str2 * 1;
+                break;
+            case '-':
+                resultStr = str1 * 1 - str2 * 1;
+                break;
+            case '*':
+                resultStr = str1 * 1 * str2 * 1;
+                break;
+            case '/':
+                resultStr = str1 * 1 / str2 * 1;
+                break;
+            case 'C':
+                resultStr = '';
+                str1 = '';
+                str2 = '';
+                break;
+            default:
+                break;
+        }
+        $('#result').text(resultStr)
+        str1 = $('#result').text();
+        str2 = '';
+    }
+</script>
+
+</html>

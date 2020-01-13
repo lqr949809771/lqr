@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .infoBox {
+            margin: 5px;
+        }
+        #education,#major{
+            width: 150px;
+        }
+        #majorLabel{
+            vertical-align: top;
+        }
+        #feel{
+            width: 100%;
+            resize: none;
+            font-size: 3vw;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>智游信息采集表</h1>
+    <form action="#">
+        <!-- fieldset 表单区域  -->
+        <fieldset>
+            <!-- 区域标题  -->
+            <legend>基本信息</legend>
+            <div class="infoBox">
+                <label for="name">姓名:</label>
+                <!-- checked 必填 -->
+                <input type="text" placeholder="请输入姓名" id="name" name="username" checked>
+            </div>
+            <!-- 性别 -->
+            <div class="infoBox">
+                <span>性别:</span>
+                <!-- <label for="name">姓名:</label> -->
+                <input type="radio" placeholder="请输入性别" id="male" name="sex" value="male">
+                <label for="male">男</label>
+                <input type="radio" placeholder="请输入性别" id="female" name="sex" value="female">
+                <label for="female">女</label>
+            </div>
+            <!--  -->
+            <div class="infoBox">
+                <label for="userId">身份证号:</label>
+                <input type="text" placeholder="请输入身份证号" id="userId" name="userId">
+                <br>
+                <span>爱好</span>
+                <input type="checkbox" name="gender" id="table">
+                <label for="table">乒乓球</label>
+                <input type="checkbox" name="gender" id="table">
+                <label for="basketball">篮球</label><input type="checkbox" name="gender" id="table">
+                <label for="chess">象棋</label><input type="checkbox" name="gender" id="table">
+                <label for="game">打游戏</label>
+                <br>
+                <input type="submit" value="提交">
+            </div>
+        </fieldset>
+        <!-- 学历和专业 -->
+        <fieldset>
+            <div class="infoBox">
+                <label for="education">学历</label>
+                <select name="" id="">
+                    <!-- optgroup 项目分组 -->
+                    <optgroup label="本科以下">
+                        <option value="1">初中</option>
+                        <option value="2">高中</option>
+                        <option value="3">大学</option>
+                    </optgroup>
+                    <optgroup label="本科以上">
+                        <option value="1">本科</option>
+                        <option value="2">硕士</option>
+                        <option value="3">博士</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- 专业 -->
+            <div class="infoBox">
+                <label for="major" id="majorLabel">专业课程:</label>
+                <!-- multiple 多样的 -->
+                <select name="major" id="major" multiple>
+                    <option value="1">html</option>
+                    <option value="2">java</option>
+                    <option value="3">css</option>
+                    <option value="4">python</option>
+                    <option value="5">bigData</option>
+                </select>
+            </div>
+        </fieldset>
+        <!--  -->
+        <fieldset>
+            <legend>学习感言</legend>
+            <textarea name="" id="feel" cols="10" rows="5" placeholder="不能少于15个字"></textarea>
+            <br>
+            <!-- submit 提交 属性会自动链接form表单的action地址 -->
+            <input type="submit" value="提交" id="submit">
+            <!-- 会把当前表单重置 -->
+            <input type="reset" value="重置" id="reset">
+        </fieldset>
+    </form>
+</body>
+
+</html>

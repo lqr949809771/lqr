@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 渐变 Gradients</title>
+    <style>
+        #grad1 {
+            height: 100px;
+            background-color: red;
+            background-image: linear-gradient(red, blue);
+        }
+
+        #grad2 {
+            height: 100px;
+            background-color: tomato;
+            background-image: linear-gradient(to right, orange, blue);
+        }
+
+        #grad3 {
+            height: 100px;
+            background-color: tomato;
+            background-image: linear-gradient(to bottom right, red, orange);
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1 style="color: red;">CSS3渐变(Gradients)</h1>
+        <p style="color: green; font-size: 25px;"><strong>线性渐变(Linear Gradients):</strong>向下/向上/向左/向右/对角方向</p>
+        <p style="color: blue; font-size: 25px;"><b>径向渐变(Radial Gradients):</b>由它们的中心定义</p>
+    </div>
+    <h2 style="color: brown; text-align: center;">CSS3线性渐变</h2>
+    <h3 style="text-align: center;">线性渐变 - 从上到下</h3>
+    <p style="text-align: center; color: red;font-size: 20px;">从顶部开始的线性渐变。起点是红色，慢慢过渡到蓝色：</p>
+    <div id="grad1"></div>
+    <h3 style="text-align: center; color: royalblue;">线性渐变 - 从左到右</h3>
+    <p style="text-align: center; color: tomato; font-size: 20px;">从左边开始的线性渐变。起点是红色，慢慢过渡到蓝色：</p>
+    <div id="grad2"></div>
+    <h3 style="text-align: center;color: turquoise;">线性渐变 - 对角</h3>
+    <!-- <p></p> -->
+    <div id="grad3"></div>
+</body>
+
+</html>

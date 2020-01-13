@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03阿利的茄汁面</title>
+    <style>
+        #container {
+            display: flex;
+            border: 1px solid orange;
+            padding: 10px;
+        }
+
+        #container-left {
+            width: 20%;
+        }
+
+        #container-left-img {
+            width: 100%;
+        }
+
+        #container-right {
+            width: 80%;
+            padding-left: 10px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pinPai-left {
+            color: black;
+            font-size: 15px;
+            background-color: gold;
+            padding: 1px 2px;
+            border-radius: 3px;
+        }
+
+        #shop-name {
+            display: inline-block;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        .pinPai-tight {
+            display: inline-block;
+            border: 1px solid lightgray;
+            color: lightgray;
+        }
+
+        .start-left {
+            color: gold;
+            font-size: 15px;
+        }
+
+        #yeJi {
+            color: lightgray;
+            font-size: 15px;
+        }
+
+        .start-right {
+            color: gray;
+            background-color: lightblue;
+            padding: 1px 2px;
+            border-radius: 3px;
+        }
+
+        .price-left {
+            color: gray;
+            font-size: 15px;
+        }
+
+        .price-right {
+            color: gray;
+            font-size: 15px;
+        }
+
+        #people-img {
+            width: 10px;
+            height: 10px;
+            vertical-align: middle;
+        }
+
+        #people-shop {
+            color: gray;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+        #dotted-hr {
+            border: none;
+            border-top: 1px dotted black;
+        }
+
+        .first-left::before {
+            content: "首";
+            color: white;
+            background-color: green;
+            padding: 1px 2px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        .first-right {
+            color: gray;
+            font-size: 15px;
+        }
+
+        .arrow-down {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 4px solid rgba(0, 0, 0, 0);
+            border-top: 4px solid #999999;
+            position: relative;
+            margin: 3px;
+        }
+
+        .minus {
+            color: gray;
+            font-size: 15px;
+        }
+
+        .minus::before {
+            content: "减";
+            color: white;
+            background-color: orange;
+            padding: 1px 2px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        #menu {
+            margin-top: 4px;
+            display: flex;
+        }
+        #menu h6{
+          margin: 0;
+          /* overflow: hidden; */
+          font-size: 15px;
+      }
+      #menu img{
+          /* vw是视口的宽度view with */
+          width: 22vw;
+          height: 22vw;
+      }
+      .menu-item
+      {
+          width: 30%;
+          margin: 0 1vw;
+      }
+      .span-before{
+          color: red;
+      }
+      .span-before::before{
+          color: red;
+      }
+    </style>
+</head>
+
+<body>
+    <main id="container">
+
+        <!-- 左边 -->
+        <div id="container-left">
+
+            <img src="img/logo.png" alt="" id="container-left-img">
+
+        </div>
+
+        <!-- 右边 -->
+        <div id="container-right">
+
+            <div id="pinPai" class="flex">
+
+                <div id="pinPai-left">
+                    <span class="pinPai-left">品牌 </span>
+                    <h3 id="shop-name">阿利茄汁面(商英街店)</h3>
+                </div>
+
+                <div id="pinPai-right">
+                    <span class="pinPai-tight">保</span>
+                </div>
+
+            </div>
+
+            <div id="start" class="flex">
+
+                <div id="start-left">
+                    <span class="start-left">★★★★★ </span>
+                    <span id="yeJi">5月售526单</span>
+                </div>
+
+                <div id="start-right">
+                    <span class="start-right">蜂鸟专送</span>
+                </div>
+
+            </div>
+
+            <div id="price" class="flex">
+
+                <div id="price-left">
+                    <span class="price-left">￥20起送 |</span>
+                    <span class="price-left">配送费￥3.18</span>
+                </div>
+
+                <div id="price-right">
+                    <span class="price-right">2.21千米 |</span>
+                    <span class="price-right">27分钟</span>
+                </div>
+
+            </div>
+
+            <div id="people">
+                <img src="img/red.png" alt="" id="people-img">
+                <span id="people-shop">口碑人气好店</span>
+            </div>
+
+            <hr id="dotted-hr">
+
+            <div id="first" class="flex">
+                <div id="first-left">
+                    <span class="first-left">新用户下单立减17元</span>
+                </div>
+                <div id="first-right">
+                    <span class="first-right">8个活动</span>
+                    <span class="arrow-down"></span>
+                </div>
+            </div>
+
+            <div id="minus">
+                <div class="minus">满25减5，满35减7，满55减10，满80减</div>
+            </div>
+
+            <div id="menu">
+
+                <div class="menu-item">
+                    <img src="img/ali.jpeg" alt="">
+                    <h6>阿利茄汁面</h6>
+                    <span class="span-before">22元</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="img/ali.jpeg" alt="">
+                    <h6>阿利茄汁面</h6>
+                    <span class="span-before">22元</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="img/ali.jpeg" alt="">
+                    <h6>阿利茄汁面</h6>
+                    <span class="span-before">22元</span>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

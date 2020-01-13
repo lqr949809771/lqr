@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = prompt("请输入三个 0~9 得数") * 1;
+        var b = prompt("请输入三个 0~9 得数") * 1;
+        var c = prompt("请输入三个 0~9 得数") * 1;
+        if (a > b) {
+            t = a;
+            a = b;
+            b = t;
+        }
+        if (a > c) {
+            t = a;
+            a = c;
+            c = t;
+        }
+        if (b > c) {
+            t = b;
+            b = c;
+            c = t;
+        }
+        document.write("从小到大" + a + "," + b + "," + c);
+    </script>
+</body>
+
+</html>

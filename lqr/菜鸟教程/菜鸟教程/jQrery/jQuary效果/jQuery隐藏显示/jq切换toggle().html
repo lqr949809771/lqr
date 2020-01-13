@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>toggle 切换 开关</title>
+    <style>
+        .paragraph {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="color: orange; font-size: large;">
+        通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法。
+        显示被隐藏的元素，并隐藏已显示的元素：
+    </p>
+    <p style="color: greenyellow;"><strong>语法:</strong>$(selector).toggle(speed,callback);</p>
+    <button id="btn">隐藏/显示</button>
+    <p class="paragraph">这是一个文本段落。</p>
+    <p class="paragraph">这是另外一个文本段落。</p>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                // e.preventDefault();
+                $(".paragraph").toggle(2000, "linear", function () {
+                    alert("toggle() 方法可以切换隐藏和显示");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

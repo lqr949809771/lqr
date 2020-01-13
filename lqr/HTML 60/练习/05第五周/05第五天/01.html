@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    box.addEventListener('click', function (e) {
+        document.body.addEventListener('keydown', function (e) {
+            if (e.key == 's') {
+                box.dispatchEvent(myEvent);
+            }
+        });
+    });
+
+    box.addEventListener('myEvent', function (e) {
+        console.log('自定义事件内容:' + e.detail)
+    });
+    var data = {};
+    data.detail = 'hello';
+    data.bubbles = true;
+    data.cancelable = true;
+    var myEvent = new CustomEvent('myEvent', data);
+</script>
+
+</html>

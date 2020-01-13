@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品筛选</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper section {
+            border-bottom: dashed 1px #888888;
+            overflow: hidden;
+            line-height: 50px;
+        }
+
+        section strong {
+            float: left
+                /* width: 9%; */
+        }
+
+        section ul {
+            width: 87%;
+            float: left;
+        }
+
+        section ul li {
+            display: inline-block;
+            padding: 0 10px;
+            color: blue;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .clear {
+            color: orangered;
+            margin-left: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        section ul li.selected {
+            color: red;
+        }
+
+        .choosed span {
+            display: none;
+            line-height: 35px;
+            padding: 0 15px;
+            border: solid 1px olivedrab;
+            font-size: 14px;
+            background-color: aquamarine;
+        }
+
+        .choosed b {
+            font-style: normal;
+            background: darkorange;
+            line-height: 25px;
+            display: inline-block;
+            padding: 0 10px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section>
+            <strong>品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;牌:</strong>
+            <ul>
+                <li class="link">苹果</li>
+                <li class="link">小米</li>
+                <li class="link">华为</li>
+                <li class="link">联想</li>
+                <li class="link">中兴</li>
+                <li class="link">海信</li>
+                <li class="link">苹果</li>
+                <li class="link">小米</li>
+                <li class="link">华为</li>
+                <li class="link">联想</li>
+                <li class="link">中兴</li>
+                <li class="link">海信</li>
+                <li class="link">苹果</li>
+                <li class="link">小米</li>
+                <li class="link">华为</li>
+                <li class="link">联想</li>
+                <li class="link">中兴</li>
+                <li class="link">海信</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>价格范围</strong>
+            <ul>
+                <li>1-499</li>
+                <li>499-799</li>
+                <li>799-1799</li>
+                <li>1799-10000</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>操作系统</strong>
+            <ul>
+                <li>IOS</li>
+                <li>安卓</li>
+                <li>塞班</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>优惠活动</strong>
+            <ul>
+                <li>存话费送手机</li>
+                <li>买手机送话费</li>
+                <li>老用户优惠购机(支持合约到期提前续约)</li>
+                <li>只买手机</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>品&nbsp;&nbsp;&nbsp;&nbsp;牌:</strong>
+            <ul>
+                <li class="link">双卡双待</li>
+                <li class="link">千元智能机</li>
+                <li class="link">大屏(4.0寸以上)</li>
+            </ul>
+        </section>
+        <section>
+            <strong>您已选择:</strong>
+            <div class="choosed">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <a href="#" class="clear">一键清除</a>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+    var sections = document.querySelectorAll('section');
+    // span
+    var spans = document.querySelectorAll('.choosed span');
+    // a
+    var aTag = document.querySelector('.choosed a');
+    for (var i = 0; i < sections.length - 1; i++) {
+        // 获取某个分类中的所有子标签
+        // children 获取标签中所有直系子元素的内容
+        var lis = sections[i].children[1].children;
+        // console.log(lis);
+        // li绑定事件
+        for (var j = 0; j < lis.length; j++) {
+            // 添加索引属性 index是当前li标签的索引值
+            lis[j].index = j;
+            // 当前li对应的section的索引值
+            lis[j].secIndex = i;
+            lis[j].onclick = function () {
+                // 获取当前点击的li所处的li组
+                // parentNode 获取当前li对应的父元素
+                var lisNow = this.parentNode.children;
+                for (var m = 0; m < lisNow.length; m++) {
+                    // 全部清空
+                    lisNow[m].className = '';
+                    this.className = 'selected';
+                    // 加到下面选项
+                    // 根据取得索引拿到span
+                    spans[this.secIndex].innerHTML = this.innerHTML + '<b>X</b>';
+                    spans[this.secIndex].style.display = 'inline-block'
+                    // 
+                    for (var n = 0; n < spans.length; n++) {
+                        var bTag = spans[n].children[0];
+                        if (bTag) {
+                            bTag.spanindex = n;
+                            bTag.onclick = function (e) {
+                                // 当前的span隐藏
+                                this.parentNode.style.display = 'none';
+                                this.parentNode.innerHTML = '';
+                                // 获得当前选项对应的
+                                var secLis = sections[this.spanindex].children[1].children;
+                                for (var k = 0; k < secLis.length; k++) {
+                                    secLis[k].className = '';
+                                }
+                                show();
+                            }
+                        }
+                    }
+
+                }
+                // 
+                function show() {
+                    var bLength = document.querySelectorAll('.choosed b');
+                    if (bLength.length >= 2) {
+                        aTag.style.display = 'inline-block'
+                    }
+                    else {
+                        aTag.style.display = 'none';
+                    }
+                }
+                show();
+            }
+        }
+    }
+    // 一键清除
+    aTag.onclick = function (e) {
+        e.preventDefault();
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].style.display = 'none';
+            spans[i].innerHTML = '';
+            var bs = sections[i].children[1].children;
+            for (var j = 0; j < bs.length; j++) {
+                bs[j].className = '';
+            }
+        }
+        this.style.display = 'none';
+    }
+</script>
+
+</html>

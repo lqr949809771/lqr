@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <!-- accept 属性
+        audio/*  	接受所有的声音文件。
+        video/*     接受所有的视频文件。
+        image/*     接受所有的图像文件。
+    -->
+    规定在文件上传中服务器只接受图像文件：
+    <form action="#">
+        <input type="file" name="pic" accept="image/*">
+        <input type="submit">
+        <br>
+        <input type="file" name="pic" accept="audio/*">
+        <input type="submit">
+        <br> <input type="file" name="pic" accept="video/*">
+        <input type="submit">
+    </form>
+    <!-- align 属性 默认左对齐图像 -->
+    带有图像提交按钮的 HTML 表单，提交按钮对齐到右边：
+    <form action="demo_form.php">
+            First name: <input type="text" name="fname"><br>
+            <input type="image" src="https://www.runoob.com/try/demo_source/submit.gif" alt="Submit" align="right" width="48" height="48">
+          </form>
+</body>
+
+</html>

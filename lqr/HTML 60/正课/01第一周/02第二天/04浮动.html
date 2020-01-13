@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #web-list {
+            list-style: none;
+            padding: 0;
+            background-color: cyan;
+            /* height: 50px; */
+        }
+        #web-list li{
+            float: left;
+            background-color: greenyellow;
+            margin: 0 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #web-list li:hover{
+            background-color: orange;
+        }
+        /* 在使用浮动布局时一定要注意清除浮动 */
+        #dl{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        /* 最基础的方法，在最后一个浮动的元素的后面追加一个空元素，样式为clear: both; */
+        /* .clear{
+            clear: both;
+        } */
+        /* 在不添加新元素的情况下浮动的元素会有一个父物体 */
+        .clear-fix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="web-list" class="clear-fix">
+        <li>html</li>
+        <li>css</li>
+        <li>js</li>
+        <li>jquery</li>
+    </ul>
+    <div class="clear"></div>
+    <!-- <div id="dl">
+        d f s a f a s d
+    </div>
+</body> -->
+
+</html>

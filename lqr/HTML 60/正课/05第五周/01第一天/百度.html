@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #containerBox {
+            width: 100%;
+            height: 200px;
+            /* border: solid 1px red; */
+            display: flex;
+            justify-content: center;
+        }
+
+        #inputBox {
+            width: 1000px;
+            height: 200px;
+            margin: 80px auto;
+            text-align: center;
+        }
+
+        .input {
+            margin-left: -4px;
+            height: 50px;
+        }
+
+        #inputBox input:nth-child(1) {
+            margin: 0;
+            padding: 0;
+            width: 500px;
+        }
+
+        #inputBox input:nth-child(2) {
+            width: 100px;
+            padding: 0;
+            background-color: aqua;
+            border: none;
+        }
+
+        .shadow {
+            /* position: fixed; */
+            box-shadow: 0 0 5px 5px #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>标题1</h1>
+    <h1>标题2</h1>
+    <div id="containerBox">
+        <form action="#" id="inputBox">
+            <input type="text" id="search" name="search" class="input">
+            <input type="submit" value="百度一下" class="input">
+        </form>
+    </div>
+    <p>第1行</p>
+    <p>第2行</p>
+    <p>第3行</p>
+    <p>第4行</p>
+    <p>第5行</p>
+    <p>第6行</p>
+    <p>第7行</p>
+    <p>第8行</p>
+    <p>第9行</p>
+    <p>第10行</p>
+    <p>第11行</p>
+    <p>第12行</p>
+    <p>第13行</p>
+    <p>第14行</p>
+    <p>第15行</p>
+    <p>第16行</p>
+    <p>第17行</p>
+    <p>第18行</p>
+    <p>第19行</p>
+    <p>第20行</p>
+</body>
+<script>
+    var containerBox = document.getElementById("containerBox");
+    document.body.onscroll = function (e) {
+        if (containerBox.style.marginTop == 0) {
+            console.log(111);
+            containerBox.classList.add('shadow');
+        }
+        else {
+            containerBox.classList.remove('shadow');
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>16 线性渐变指定角度</title>
+    <style>
+
+        #grad1{
+            height: 100px;
+            background-color: red;
+            background-image: linear-gradient(0deg,red,blue);
+        }
+
+        #grad2{
+            height: 100px;
+            background-color: red;
+            background-image: linear-gradient(90deg,red,blue);
+        }
+
+        #grad3{
+            height: 100px;
+            background-color: red;
+            background-image: linear-gradient(180deg,red,blue);
+        }
+
+        #grad4{
+            height: 100px;
+            background-color: red;
+            background-image: linear-gradient(-90deg,red,blue);
+        }
+
+    </style>
+</head>
+<body>
+    <h3>线性渐变 - 使用不同的角度。</h3>
+
+    <div id="grad1" style="text-align: center;">0deg 从下到上渐变</div><br>
+
+    <div id="grad2" style="text-align: center;">90deg 从左到右渐变</div><br>
+
+    <div id="grad3" style="text-align: center;">180deg 从上到下渐变</div><br>
+
+    <div id="grad3" style="text-align: center;">-90deg 从右到左渐变</div><br>
+
+    <p><strong>注意：</strong>IE 9 及之前版本浏览器不支持渐变。</p>
+
+</body>
+</html>

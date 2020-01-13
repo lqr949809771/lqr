@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12 绘制线条</title>
+</head>
+<body>
+    <!-- 绘制线条方法 stroke()-->
+    <p>moveTo(x,y)定义线条开始坐标</p>
+    <p>lineTo(x,y)定义线条结束坐标</p>
+    <canvas id="myCanvas" width="200" height="100" style="border: solid 1px
+    red;"></canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        ctx = c.getContext("2d");
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,100);
+        ctx.stroke();
+    </script>
+</body>
+</html>

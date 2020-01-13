@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时钟</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #container {
+            width: 80%;
+            height: 80%;
+            background-color: #fefefe;
+            box-shadow: 0 0 10px gray;
+            margin: 100px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        #clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+        }
+
+        #second-hand {
+            width: 400px;
+            height: 2px;
+            border-radius: 1px;
+            background-color: #098408;
+            
+        }
+
+        #minute-hand {
+            width: 320px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: #0101ff;
+        }
+
+        #clock-hand {
+            width: 240px;
+            height: 5px;
+            border-radius: 3px;
+            background-color: #fe0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img src="img/clock.jpg" alt="" id="clock">
+        <div id="second-hand"></div>
+        <div id="minute-hand"></div>
+        <div id="clock-hand"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本过滤选择器</title>
+</head>
+
+<body>
+    <ul class="ulList1">
+        <li>第1个li</li>
+        <li>第2个li</li>
+        <li>第3个li</li>
+        <li>第4个li</li>
+        <li>第5个li</li>
+        <li>第6个li</li>
+        <li>第7个li</li>
+        <li>第8个li</li>
+    </ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        // odd 奇数 选择所有序号为奇数的元素
+        $("li:odd").css('background','red');
+        $("li:even").css('background','green');
+        $("ul li:eq(3)").css('font-size',"30px");
+        $("li:lt(6)").css('font-size',"30px");
+        $(".ulList1 li:gt(6)").css("font-size", "40px");
+        $(".ulList1 li:first").css("color", "white");
+        $("li:last").css("color", "blue");
+    });
+</script>
+
+</html>

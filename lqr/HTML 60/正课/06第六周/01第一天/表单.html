@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="textField">
+    <span id="tip" style="display: none;color: red;">长度不要超过10</span>
+    <p>请选则你的特长</p>
+    <label for="">懒</label>
+    <input type="checkbox" name="" id="lan">
+    <label for="">菜</label>
+    <input type="checkbox" name="" id="cai">
+    <hr>
+    <label for="sel">请选择你的专业</label>
+    <select id="sel">
+        <option>计算机</option>
+        <option>医学</option>
+        <option>物理学</option>
+        <option value="13">机械制造</option>
+        <option value="14">生物制造</option>
+    </select>
+</body>
+<script>
+    var textField = document.getElementById('textField');
+    var span = document.getElementById('tip');
+    textField.oninput = function (e) {
+
+        var len = textField.value.length;
+        if (len >= 10) {
+            span.style.display = 'inline';
+        }
+        else {
+            span.style.display = 'none';
+        }
+    }
+    // 关于复选框的事件
+    var html = document.getElementById('cai');
+    // 捕获复选框的状态
+    cai.onchange = function (e) {
+        console.log(this.checked ? '选中' : '取消');
+    }
+    // 关于select的事件
+    var sel = document.getElementById('sel');
+    sel.onchange = function(e) {
+        // value 代表optio你的值 
+        console.log(this.value);
+        // option的索引
+        console.log(this.selectedIndex);
+        
+    }
+</script>
+
+</html>

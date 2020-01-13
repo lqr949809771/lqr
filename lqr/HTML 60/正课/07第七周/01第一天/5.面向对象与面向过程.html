@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象与面向过程</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // // 面向过程
+    // var table = document.createElement('table');
+    // document.body.appendChild(table);
+    // table.style.border = 'solid 2px black';
+    // for (var i = 0; i < 7; i++) {
+    //     var tr = document.createElement('tr');
+    //     table.appendChild(tr);
+    //     for (var j = 0; j < 10; j++) {
+    //         var tds = document.createElement('td');
+    //         tds.innerText = (i + 1) + '行' + (j + 1) + '列';
+    //         tds.style.border = 'solid 1px black';
+    //         tr.appendChild(tds);
+    //     }
+    // }
+    // 面向对象：准备对象
+    function myTable(rows,cols) {
+        this.table = document.createElement('table');
+        for (var i = 0; i < rows; i++) {
+            var tr = this.table.insertRow();
+            for (var j = 0; j < cols; j++) {
+            var td = tr.insertCell();
+            td.innerText = (i + 1) + '行' + (j + 1) + '列';
+            td.style.border = 'solid 1px black';
+        }
+        }
+        // 封装方法
+        this.showInElement = function(ele) {
+            ele.appendChild(this.table);
+        }
+        this.remove = function() {
+            this.table.parentElememt().removeChild();
+        }
+    }
+    // myTable 是当前对象
+    var table = new myTable(7,10)
+    table.showInElement(document.body);
+    var table2 = new myTable(17,10)
+    table2.showInElement(document.body);
+    table2.remove();
+</script>
+
+</html>

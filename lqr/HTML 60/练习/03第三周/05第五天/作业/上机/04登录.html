@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+</head>
+
+<body>
+    <script>
+        var userarray = [];
+        var pwdarray = [];
+        register();
+        function register() {
+            var user = prompt("请设置账号");
+            var pwd = prompt("请设置密码");
+            var confirmPwd = prompt("请确认密码");
+            var str = "";
+            if (user != pwd && pwd == confirmPwd && user != str && pwd != str && confirmPwd != str) {
+                alert("注册成功");
+                userarray.push(user);
+                pwdarray.push(pwd);
+                login()
+            }
+            else if (user == pwd) {
+                alert("账号密码不能相同,请重新注册！");
+                register();
+            }
+            else if (user != pwd && pwd != confirmPwd) {
+                alert("确认密码输入错误,请重新注册！");
+                register();
+            }
+            else {
+                alert("账号或密码为空,请重新注册！");
+                register();
+            }
+        }
+        function login() {
+            var user = prompt("请输入账号");
+            var pwd = prompt("请输入密码");
+            var str = "";
+            if (pwdarray[userarray.indexOf(user)] == pwd) {
+                alert("登录成功");
+                index();
+            }
+            else {
+                alert("登录失败，账号或密码错误,请重新登录！");
+                login();
+            }
+        }
+        function index() {
+            for (var i = 0; i < 5; i++) {
+                alert("正在读取您的好友列表,请稍等...");
+            }
+            alert("好友加载完成");
+            var flag = prompt("是否要注销用户(y/n)");
+            if (flag == "y" && flag != "") {
+                alert("账号即将被注销");
+                logout();
+            }
+            else if ((flag == "" || parseInt(flag) >= 0 && parseInt(flag) <= 9) || isNaN(flag) && flag != n) {
+                var flag = prompt("是否要注销用户(y/n)");
+            }
+            else {
+                index();
+            }
+        }
+
+        function logout() {
+            userarray = [];
+            pwdarray = [];
+            alert("账号已被注销");
+            register();
+        }
+    </script>
+</body>
+
+</html>

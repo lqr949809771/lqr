@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本运算类型</title>
+</head>
+
+<body>
+    <script>
+        var name = "lqr"
+        var weight = 65;
+        var age = 22;
+        // true 代表男生
+        var sex = true;
+        console.log("刚才一个叫：" + name + "的老师，吐槽了联通网");
+        console.log("一个叫 " + name + " 体重 " + weight + " 年龄 " + age + " 性别为 " + sex + "");
+        var num = 1 + 2 + 3;
+        console.log(num);
+        // 如果变量是数字类型类型，那么四则运算都支持
+        var num1 = num + num;
+        console.log(num1);
+        var s1 = "a";
+        var s2 = "b";
+        var s3 = s1 + s2;
+        var s4 = s1 - s2;
+        var s5 = s1 * s2;
+        var s6 = s1 / s2;
+        console.log(s3);
+        // 输出NaN 不是一个数字
+        console.log(s4);
+        console.log(s5);
+        console.log(s6);
+        // 数字和字符串相加时，把数字转换成字符串在拼接
+        var num1 = "3" + 5;
+        console.log(num1);// num1 = "35"; 字符串
+
+        var num2 = "5" - 3;
+        console.log(num2); // num = 2; 数字
+
+        var num3 = "a" - 3;//前提是字符串的内容可以转换成数字
+        console.log(num3); //NaN
+
+        var num4 = 3 * 5;
+        var num5 = (num4 + 3) * 5;
+        console.log(num4,num5);
+
+        var num6 = "3" * "5";
+        console.log(num5,num6);
+
+        // ++自增
+        var i = 3;
+    </script>
+</body>
+
+</html>

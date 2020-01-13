@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery stop() 停止动画</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            border: orangered 10px dashed;
+            /* position: relative; */
+            position: absolute;
+        }
+        .btn{
+            color: orange;
+            background-color: #888888;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        jQuery stop() 方法用于停止动画或效果，在它们完成之前。
+        stop() 方法适用于所有 jQuery 效果函数，包括滑动、淡入淡出和自定义动画。 -->
+    <!-- 
+            可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。因此，默认地，stop() 会清除在被选元素上指定的当前动画。
+         -->
+    <p style="text-align: center;"><strong style="color: orange;">语法:</strong>$(selector).stop(stopAll,goToEnd);</p>
+    <button class="btn" id="start">开始</button>
+    <button class="btn" id="stop">停止</button>
+    <button class="btn" id="stop1">停止所有</button>
+    <button class="btn" id="stop2">停止动画，但完成动作</button>
+    <p>点击 "开始" 按钮开始动画。</p>
+    <p>点击 "停止" 按钮停止当前激活的动画，但之后我们能再动画队列中再次激活。</p>
+    <p>点击 "停止所有" 按钮停止当前动画，并清除动画队列，所以元素的所有动画都会停止。</p>
+    <p>点击 "停止动画，但完成动作" 快速完成动作，并停止它。</p>
+    <div>Hello World!</div>
+    <script src="jQuery.js"></script>
+    <script>
+        var div = $("div");
+        $(function () {
+            $(".btn").click(function () { 
+                // e.preventDefault();
+                $("#start").click(function () { 
+                    // e.preventDefault();
+                    div.animate({left:"1000px"},5000);
+                    div.animate({fontSize:"3em"},5000);
+                });
+                $("#stop").click(function () { 
+                    // e.preventDefault();
+                    div.stop();
+                });
+                $("#stop1").click(function () { 
+                    // e.preventDefault();
+                    div.stop(true);
+                    
+                });
+                $("#stop2").click(function () { 
+                    // e.preventDefault();
+                   div.stop(true,true);
+                    
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

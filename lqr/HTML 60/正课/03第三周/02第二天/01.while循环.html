@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // while循环：满足条件一直循环
+        var flag = !false;
+        // flag变量当做判断条件的时候检测的始终不为true
+        // 判断依据：判断循环条件为假直接跳出循环
+        // while (flag) {
+        //     alert("?????");
+        //     // break;
+        // }
+
+        /*
+          var a = prompt("请输入圈数") * 1;
+        var sum = 0;
+        while (sum <= a - 1) {
+            sum++;
+            alert("当前圈数：" + sum + "圈");
+        }
+        */
+        /*
+          var b = 5;
+        do {
+            alert(b);
+            b++;
+        } while(b > 10);
+        */
+
+        var num = prompt("请输入要猜的数字") * 1;
+        var arcNumber = Math.random() * 9;
+        arcNumber = Math.floor(arcNumber);
+        var times = 0;
+        while (times < 5) {
+            times++;
+            // if ((times == 1 || times == 2) && num == arcNumber) {
+            //     alert("你是大神");
+            //     continue;
+            // }
+            // else if (times >= 3 && num == arcNumber) {
+            //     alert("恭喜你答对了");
+            // }
+            
+            if ((times == 1 || times == 2) && num == arcNumber) {
+                alert("你是大神");
+
+            }
+            else if ((times >= 3 && times <= 5) && num == arcNumber) {
+                alert("恭喜你答对了");
+            }
+
+            else if (num != arcNumber) {
+                alert("不好意思，你答错了" + "请问你是否继续");
+                
+            }
+            else{
+                alert("你的机会用完了");
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

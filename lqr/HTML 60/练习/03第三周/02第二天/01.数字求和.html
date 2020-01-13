@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字求和</title>
+</head>
+
+<body>
+    <script>
+        do {
+            alert("请依次输入基数和次数");
+            var input = prompt("请输入基数");
+            var times = prompt("请输入次数") * 1;
+            var y;
+            var sum = 0;
+            var result = "";
+            for (var i = 1; i <= times; i++) {
+                result += input
+                document.write(result + "<br>");
+                sum += result * 1;
+            }
+            alert(sum);
+            var flag = prompt("猜错了,是否要继续(y/n)");
+            if (flag == "n") {
+                break;
+            }
+            else {
+                flag == "y";
+            }
+        } while (flag == "y");
+    </script>
+</body>
+
+</html>

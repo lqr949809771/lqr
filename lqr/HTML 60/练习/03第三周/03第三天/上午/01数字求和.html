@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字求和</title>
+</head>
+
+<body>
+    <script>
+        var result = "";
+        do {
+            alert("请输入基数和次数");
+            var base = parseInt(prompt("请输入基数"));
+            var times = parseInt(prompt("请输入次数"));
+            var allsum = 0;
+            var sum;
+            for (i = 0; i < times; i++) {
+                var num = base;
+                var sum = 0;
+                for (var j = 0; j <= i; j++) {
+                    sum += num;
+                    num *= 10;
+                }
+                document.write(sum + "<br>");
+                allsum += sum;
+            }
+            document.write("基数和为：" + allsum + "<br>");
+            alert("是否继续游戏");
+            result =  prompt("请输入(y/n)");
+        } while (result == "y")
+    </script>
+</body>
+
+</html>

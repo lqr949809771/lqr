@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: aqua;
+        }
+        main {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>这是普通的p标签</p>
+        <ul>
+            <li>这是普通的li标签</li>
+        </ul>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $("div").append('<span>这是普通的sapn标签</span>');
+    $("div").append('<i>这是普通的i标签</i>');
+    // 在当前标签的开始位置添加子元素
+    $("div").prepend('<aside>这是普通的aside标签</aside>');
+    $("div").prepend('<section>这是普通的section标签</section>');
+    $("ul").prependTo('div');
+
+    $("div").before('<span>这是before的sapn标签</span>');
+    $("div").before('<i>这是before的i标签</i>');
+
+    $("div").after('<span>这是after的sapn标签</span>');
+    $("div").after('<i>这是after的i标签</i>');
+
+    $("ul").insertBefore('div');
+    $("span").wrap('<main></main>');
+</script>
+</html>

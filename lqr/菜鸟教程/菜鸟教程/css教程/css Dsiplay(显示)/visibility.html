@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visibility (可见性)</title>
+    <style>
+        h1.hidden {
+            /* visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间。也就是说，该元素虽然被隐藏了，但仍然会影响布局。 */
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>这是一个可见标题</h1>
+    <h1 class="hidden">这是一个隐藏标题</h1>
+    <p>注意, 实例中的隐藏标题仍然占用空间。</p>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function trafficRestriction(strCar) {
+            var strCar = prompt("请输入车牌号");
+            var now = new Date();
+            var week = now.getDay();
+            for (var i = strCar.length - 1; i >= 0; i--) {
+                if (strCar[i] >= 0 && strCar[i] <= 9) {
+                    // var num = strCar[i];
+                    // break;
+                    return num;
+                }
+            }
+            var number = parseInt(num);
+            console.log(num);
+
+            switch (week) {
+                case 1:
+                    week = "今天是周一"
+                    switch (number) {
+                        case 1:
+                        case 6:
+                            return "今天限行"
+                        default:
+                            return "通行"
+                    }
+                    break;
+                case 2:
+                    week = "今天是周二"
+                    switch (number) {
+                        case 2:
+                        case 7:
+                            return "今天限行"
+                        default:
+                            return "通行"
+                    }
+                    break;
+                case 3:
+                    week = "今天是周三"
+                    switch (number) {
+                        case 3:
+                        case 8:
+                            return "今天限行"
+                        default:
+                            return "通行"
+                    }
+                    break;
+                case 4:
+                    week = "今天是周四";
+                    switch (number) {
+                        case 4:
+                        case 9:
+                            return "今天限行"
+                            break;
+                        default:
+                            return "通行"
+                    }
+                    break;
+                case 5:
+                    week = "今天是周五"
+                    switch (number) {
+                        case 5:
+                        case 0:
+                            return "今天限行"
+                        default:
+                            return "通行"
+                    }
+                    break;
+                default:
+                    break;
+            }
+            console.log(week);
+
+        }
+        alert(trafficRestriction());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>44 过渡 transform: rotate();</title>
+
+    <style>
+
+        
+
+     div{
+
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+        transition: width 2s, height 2s, transform 2s;
+        margin: 80px auto;
+        /* transition: all 2s; */
+     }
+
+     div:hover{
+
+         width: 150px;
+         height: 150px;
+         transform: rotate(360deg);
+     }
+    
+    </style>
+</head>
+<body>
+    <div>鼠标移动到 div 元素上，查看过度效果。</div>
+</body>
+</html>

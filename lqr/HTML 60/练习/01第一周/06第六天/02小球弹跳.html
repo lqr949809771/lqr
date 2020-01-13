@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小球弹跳</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #container {
+            width: 800px;
+            height: 600px;
+            background-color: yellowgreen;
+            /* border: solid orange 2px; */
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #ball {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 30px);
+            animation: bounce 2.5s linear both;
+        }
+
+        @keyframes bounce {
+            0% {
+                top: 0;
+                /* animation-timing-function: linear; */
+            }
+
+            17% {
+                top: 540px;
+                /* animation-timing-function: linear; */
+            }
+
+            34% {
+                top: 200px;
+                /* animation-timing-function: linear; */
+            }
+
+            51% {
+                top: 540px;
+                /* animation-timing-function: linear; */
+            }
+            68% {
+                top: 300px;
+                /* animation-timing-function: linear; */
+            }
+            85% {
+                top: 500px;
+                /* animation-timing-function: linear; */
+            }
+            100%{
+                top: 540px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img src="images/earth.png" alt="" id="ball">
+    </div>
+    <script>
+        // var num=100;
+        // alert(num/6);
+        // console.log(num/6);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .line {
+            color: red;
+            font-size: 30px;
+        }
+        .item {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <p class="line">第1行</p>
+    <p class="line">第2行</p>
+    <p class="line">第3行</p>
+    <input type="text" id="field">
+</body>
+<script src="jquery.js"></script>
+<script>
+    // == innerHtml
+    $('#box').html('<b>hello Jquery</b>');
+    console.log($('#box').html());
+    $('.line').addClass('item');
+    $('.line').removeClass('item');
+    $('.line').toggleClass('item');
+    console.log($('.line').css('color'));
+    $('#box').css({
+        border:'solid 1px orange',
+        'background-color':'yellow',
+        padding:'10px'
+    });
+    // 
+    $('#filed').attr('placeholder','请输入名称');
+    console.log($('#filed').attr('placeholder'));
+    // 
+    $('#filed').removeAttr('placeholder');
+
+    // 
+    $('#field').prop('lqr',true);
+    console.log( $('#field').prop('lqr'));
+    // 
+    $('#field').val('初始内容');
+    $('#box').click(function (e) { 
+        e.preventDefault();
+        console.log('好使就完事了');
+    });
+</script>
+</html>

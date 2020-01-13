@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单位换算</title>
+</head>
+
+<body>
+    <input type="text" class="field" id="firstInput"> 米<br>
+    <input type="text" class="field" id="secondInput"> 厘米<br>
+    <input type="text" class="field" id="thirdInput"> 毫米
+</body>
+<script src="jquery.js"></script>
+<script>
+    /* $('#firstInput').on('input', function () {
+        var m = $("#firstInput").val() * 1;
+        $("#secondInput").val(m * 100);
+        $("#thirdInput").val(m * 1000);
+    });
+    $('#secondInput').on('input', function () {
+        var cm = $("#secondInput").val() * 1;
+        $("#firstInput").val(cm / 100);
+        $("#thirdInput").val(cm * 10);
+    });
+    $('#thirdInput').on('input', function () {
+        var mm = $("#thirdInput").val() * 1;
+        $("#firstInput").val(mm / 1000);
+        $("#secondInput").val(mm / 10);
+    }); */
+    // 单位之间的换算
+    var radio = [
+        [1, 100, 1000],
+        [0.01, 1, 10],
+        [0.001, 0.1, 1],
+    ];
+    $('.field').on('input', function () {
+        var index = $('.field').index(this);
+        var arr = radio[index];
+        var obj = this;
+        arr.forEach(function(el,i) {
+            // 去浮点
+            var v = el*1000*$(obj).val()/1000;
+            $('.field').eq(i).val(v);
+        })
+    });
+</script>
+
+</html>

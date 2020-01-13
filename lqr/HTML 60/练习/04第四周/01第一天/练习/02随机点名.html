@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj1 = {
+            name: '周星驰',
+            age: 57
+        }
+        var obj2 = {
+            name: '周润发',
+            age: 64,
+        }
+        var obj3 = {
+            name: '张学友',
+            age: 64,
+        }
+        var obj4 = {
+            name: '刘德华',
+            age: 64,
+        }
+        var obj5 = {
+            name: '黎明',
+            age: 64,
+        }
+        var personAll = [obj1, obj2, obj3, obj4, obj5];
+        var flag = true;
+        if (flag) {
+            confirm("是否要开始点名");
+            for (var i = 0; i < personAll.length; i++) {
+                var numbers = parseInt(Math.random() * 5);
+                alert(personAll[numbers].name);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

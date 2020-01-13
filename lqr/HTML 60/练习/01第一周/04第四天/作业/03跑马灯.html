@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #square {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #container {
+            background-color: yellow;
+            height: 50px;
+        }
+
+        #light {
+            /* opacity: 0; */
+            line-height: 50px;
+            font-size: 50px;
+            color: green;
+            margin-top: 0;
+            animation: ani1 3s linear infinite;
+        }
+
+        @keyframes ani1 {
+            from {
+                /* opacity: 1; */
+                transform: translate(100%,0);
+            }
+            to {
+                /* opacity: 1; */
+                transform: translate(0,0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="square">
+
+    </div>
+    <div id="container">
+        <p id="light">这是跑马灯</p>
+    </div>
+</body>
+
+</html>

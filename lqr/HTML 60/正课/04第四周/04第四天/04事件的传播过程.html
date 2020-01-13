@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件的传播过程</title>
+    <style>
+        .big {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #small {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        #new {
+            width: 300px;
+            height: 300px;
+            border: solid 20px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div id="small"></div>
+    </div>
+    <div id="new"></div>
+</body>
+<script>
+    var big = document.querySelector('.big');
+    var small = document.querySelector('#small');
+   /*  big.onclick = function (e) {
+        console.log('big点击了');
+    }
+    small.onclick = function (e) {
+        console.log('small点击了');
+        //propagayion 传播          
+        e.stopPropagation();
+    } */
+
+    function f1(e) {
+        console.log('这是一个监听函数 :' + e);
+
+    }
+    var newBtn = document.getElementById('new');
+    newBtn.addEventListener('click', f1);
+    newBtn.addEventListener('click', function () {
+        console.log('这是捕获阶段就触发的事件');
+        
+    },true);
+    newBtn.removeEventListener('click',f1);
+
+    big.addEventListener('click',function (e) {
+        console.log('big是在冒泡阶段监听的函数');
+        e.stopPropagation();
+    },false);
+
+    small.addEventListener('click',function (e) {
+        console.log('small是在捕获阶段监听的函数');
+    },true);
+    document.body.addEventListener('click',function (e) {
+        console.log('body也会冒泡');
+    });
+</script>
+
+</html>

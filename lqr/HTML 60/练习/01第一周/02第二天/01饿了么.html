@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>饿了么</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        main {
+            height: 700px;
+            border: 1px solid orange;
+            position: relative;
+
+        }
+
+        .box {
+            height: 650px;
+            float: left;
+            /* border: 1px solid black; */
+        }
+
+        #box1 {
+            width: 25%;
+            /* background-color: #fff; */
+            background-image: url(img/logo.png);
+            background-size: 100% 60%;
+            background-repeat: no-repeat;
+            margin-left: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-right: 5px;
+            box-sizing: border-box;
+        }
+
+        #box2 {
+            width: 72%;
+            background-color: lightgray;
+            /* margin: 15px; */
+            margin-left: 5px;
+            margin-top: 15px;
+            margin-right: 5px;
+            margin-bottom: 15px;
+            position: absolute;
+            right: 5px;
+            box-sizing: border-box;
+
+        }
+
+        .images {
+            float: left;
+        }
+
+        .clear-fix::after {
+            content: " ";
+            display: block;
+            clear: left;
+        }
+
+        #sec1 span:nth-child(1) {
+            color: orange;
+            background-color: greenyellow;
+            font-size: 18px;
+            padding-left: 2px;
+            border-radius: 3px;
+        }
+
+        #sec1 span:nth-child(2) {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 5px;
+
+        }
+
+        .rightOne {
+            float: right;
+            color: gray;
+            border: solid 1px lightgray;
+
+        }
+
+        #sec2 {
+            margin-top: 10px;
+        }
+
+        #sec2 span:nth-child(1) {
+            color: orange;
+        }
+
+        #sec2 span:nth-child(2) {
+            font-size: 15px;
+            color: gray;
+        }
+
+        .rightTwo {
+            float: right;
+            color: white;
+            font-size: 15px;
+            background-color: blue;
+            padding: 0 2px;
+            border-radius: 3px;
+        }
+
+        #sec3 span:nth-child(1) {
+            font-size: 15px;
+            color: gray;
+        }
+
+        #sec3 span:nth-child(2) {
+            color: lightgray;
+        }
+
+        #sec3 span:nth-child(3) {
+            font-size: 15px;
+            color: gray;
+        }
+
+        .rightThree {
+            float: right;
+            font-size: 15px;
+            color: lightgray;
+        }
+
+        #sec4 img:first-child {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        #sec4 span:nth-of-type(1) {
+            vertical-align: middle;
+            color: red;
+            font-size: 15px;
+        }
+        #dottedLine{
+            border-top: 0;
+            border-style: dotted;
+            border-color: lightgray;
+        }
+        .paragraph{
+            font-size: 15px;
+            color: gray;
+        }
+        #para1::before{
+            content: "首";
+            color: white;
+            background-color: green;
+            font-size: 15px;
+            display: inline-block;
+            padding: 0 2px 3px;
+            border-radius: 3px;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+        #para2{
+            margin-top: 10px;
+            color: gray;
+            float: right;
+        }
+        #para3::before{
+            content: "减" ;
+            color: white;
+            background-color: red;
+            font-size: 15px;
+            display: inline-block;
+            padding: 0 2px 3px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+        #img1 img:nth-child(1){
+            width: 400px;
+            height: 400px;
+        } 
+        #img1 p:nth-child(2){
+            color: gray;
+            font-size: 15px;
+            margin-top: 0;
+            margin-bottom: 0;
+
+        }
+        #img1 p:nth-child(3){
+            color: red;
+            margin-top: 0;
+
+        }
+        #img2 img:nth-child(1){
+            width: 400px;
+            height: 400px;
+            margin-left: 30px;
+        } 
+        #img2 p:nth-child(2){
+            color: gray;
+            font-size: 15px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 30px;
+
+
+        }
+        #img2 p:nth-child(3){
+            color: red;
+            margin-top: 0;
+            margin-left: 30px;
+
+
+        }
+        #img3 img:nth-child(1){
+            width: 400px;
+            height: 400px;
+            margin-left: 30px;
+
+        } 
+        #img3 p:nth-child(2){
+            color: gray;
+            font-size: 15px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 30px;
+
+
+        }
+        #img3 p:nth-child(3){
+            color: red;
+            margin-top: 0;
+            margin-left: 30px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <main class="clear-fix">
+        <div id="box1" class="box">
+        </div>
+
+        <div id="box2" class="box">
+            <div id="box3">
+                <section id="sec1">
+                    <span>品牌 </span>
+                    <!-- <h2 id="title"></h2>阿利茄汁面(商英街店)</h2> -->
+                    <span>阿利茄汁面(商英街店)</span>
+                    <span class="rightOne">保</span>
+                </section>
+                <section id="sec2">
+                    <span>★★★★★</span>
+                    <span>5月售526单</span>
+                    <span class="rightTwo">蜂鸟专送</span>
+                </section>
+                <section id="sec3">
+                    <span>￥20起送</span>
+                    <span>|</span>
+                    <span>配送费￥3.18</span>
+                    <span class="rightThree">2.21千米</span>
+                    <span class="rightThree">|</span><span class="rightThree">27分钟</span>
+                </section>
+                <section id="sec4">
+                    <img src="img/red.png" alt="">
+                    <span>口碑人气好店</span>
+                </section>
+            </div>
+            <hr id="dottedLine">
+            <span class="paragraph" id="para1">新用户下单立减17元</span>
+            <span id="para2">8个活动*</span>
+            <p class="paragraph"  id="para3">满25减5，满35减7，满55减10，满80减25，满25减5，满35减7，满55减10，满80减25</p>
+            <div id="images">
+                <div id="img1" class="images">
+                    <img src="img/ali.jpeg" alt="">
+                    <p>茄汁酸菜面</p>
+                    <p>￥22</p>
+                </div>
+                <div id="img2" class="images">
+                    <img src="img/ali.jpeg" alt="">
+                    <p>茄汁酸菜面茄汁酸菜面茄汁酸菜面</p>
+                    <p>￥22</p>
+
+                </div>
+                <div id="img3" class="images">
+                    <img src="img/ali.jpeg" alt="">
+                    <p>茄汁酸菜面</p>
+                    <p>￥22</p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

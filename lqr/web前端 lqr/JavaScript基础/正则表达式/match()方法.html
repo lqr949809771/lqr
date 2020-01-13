@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>match()方法</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    var str = "1a2a3a4a5e6f7A8B9C";
+    console.log(str.split(/[a-z]/));
+    console.log('split()方法:' + str.split(/[a-z]/));
+    console.log(str.split(/[a-z]/).length);
+
+    // match方法
+    console.log(str.match(/[a-z]/)); //以数组的形式返回
+    console.log('match()方法:' + str.match(/[a-z]/));
+    // 设置为“全局匹配”模式，匹配字符串中 所有的小写字母
+    console.log(str.match(/[a-z]/g));
+    console.log('match()方法:' + str.match(/[a-z]/g));
+    // 设置多个匹配模式，匹配字符串中 所有的字母（忽略大小写）
+    console.log(str.match(/[a-z]/gi));
+    console.log('match()方法:' + str.match(/[a-z]/gi));
+
+    var str1 = 'abcAbcaabbcc';
+    patten = /^abc/; 
+    console.log(patten.test(str1));
+</script>
+
+</html>

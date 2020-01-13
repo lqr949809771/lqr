@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动和反弹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #ball {
+            width: 80px;
+            height: 80px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            /* transform: translateX(); */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ball"></div>
+</body>
+<script>
+    // 1.每一次增加一个加速度
+    // 2.判断是否到边 到边取反
+    var blueBall = document.getElementById('ball');
+    var xSpeed = 20, ySpeed = 5;
+    var x = 0, y = 0;
+    function moveAnimation() {
+        x += xSpeed;
+        y += ySpeed;
+        blueBall.style.left = x + 'px';
+        blueBall.style.top = y + 'px';
+        if (x >= window.innerWidth - blueBall.offsetWidth) {
+            xSpeed = -20;
+        }
+        if (x <= 0) {
+            xSpeed = 20;
+        }
+        if (y >= window.innerHeight - blueBall.offsetHeight) {
+            ySpeed = -5;
+        }
+        if (y <= 0) {
+            ySpeed = 5;
+        }
+    }
+    setInterval(function () {
+        moveAnimation();
+    }, 20);
+</script>
+
+</html>

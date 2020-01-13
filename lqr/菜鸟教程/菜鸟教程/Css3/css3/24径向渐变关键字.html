@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>24 径向渐变 关键字</title>
+
+    <style>
+
+        #grad1{
+
+            width: 200px;
+            height: 150px;
+            background-color: red;
+            background-image: radial-gradient(closest-side at 60% 55%,red,yellow,purple);
+
+        }
+
+        #grad2{
+
+            
+            width: 200px;
+            height: 150px;
+            background-color: red;
+            background-image: radial-gradient(farthest-side at 60% 55%,red,yellow,purple);
+        }
+
+        #grad3{
+
+            width: 200px;
+            height: 150px;
+            background-color: red;
+            background-image: radial-gradient(closest-corner at 60% 55%,red,yellow,purple);
+        }
+
+        #grad4{
+            width: 200px;
+            height: 150px;
+            background-color: red;
+            background-image: radial-gradient(farthest-corner at 60% 55%,red,yellow,purple);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h3>径向渐变 - 不同大小关键字的使用</h3>
+
+    <p><strong>closest-side</strong></p>
+    <div id="grad1"></div>
+
+    <p><strong>farthest-side</strong></p>
+    <div id="grad2"></div>
+
+    <p><strong>closest-corner</strong></p>
+    <div id="grad3"></div>
+
+    <p><strong>farthest-corner</strong></p>
+    <div id="grad4"></div>
+
+    <p><strong>注意：</strong> IE 9 及以前的版本不支持渐变。</p>
+    
+</body>
+</html>

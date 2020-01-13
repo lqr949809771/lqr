@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+         // 数组:多个相同数据类型存储的集合
+        // new关键字：用于开辟一块内村 因为数组是引用类型
+        // 不是基本数据类型
+        // Array();代表的是数组的构造函数
+        // numbers就叫做对象(类型是数组)
+        var numbers = new Array();
+        // []代表数组的索引 从0 开始，默认情况下索引不能为空
+        // 索引具有唯一性 通过索引能够获得数组
+        numbers[0] = 1;
+        numbers[1] = 2;
+        numbers[2] = 3;
+        console.log(numbers[0]);
+        */
+
+        var numbers2 = new Array();
+        // 存值 赋值
+        for (var i = 0; i < 10; i++) {
+            numbers2[i] = i + 1
+            console.log(i);
+        }
+        // 取值
+        for (var i = 0; i < numbers2.length; i++) {
+            var number = numbers2[i]
+            console.log(number);
+        }
+        // 第二种
+        // var str = ["张三", "李四", "王麻子"]
+        // for (var i = 0; i < str.length; i++) {
+
+        //     var number = str[i]
+        //     console.log(str[i]);
+        // }
+        // 第三种 可以
+        var arr = new Array(8);
+        console.log(arr.length);
+    </script>
+</body>
+
+</html>

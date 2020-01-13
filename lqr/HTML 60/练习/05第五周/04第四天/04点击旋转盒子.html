@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击旋转盒子</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #rotateBox {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rotateBox" onclick=""></div>
+</body>
+<script>
+    var rotateBox = document.getElementById('rotateBox');
+    var angle = 0;
+    var aniCode = null;
+    // setInterval(spinBox, 100);
+    function spinBox() {
+        angle += 30;
+        rotateBox.style.transform = 'rotate(' + angle + 'deg)';
+        // aniCode = requestAnimationFrame(spinBox);
+    }
+    aniCode = requestAnimationFrame(spinBox);
+    // setTimeout(function () {
+    //     cancelAnimationFrame(aniCode);
+    // },2000);
+</script>
+
+</html>

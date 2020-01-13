@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            background-color: black;
+        }
+        #move-box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation: animation-move 4.5s linear infinite;
+        }
+        #text{
+            background-color: yellow;  
+            overflow: hidden;
+        }
+        span{
+            /* 换行 */
+            /* 属性
+                默认：normal：使用浏览器默认的换行规则。
+                break-all：允许在词内内换行
+                keep-all：只能在半角空格或连字符处换行
+             */
+            word-break: keep-all;
+            /* 设置元素中空白的处理方式 */
+            /* 
+                默认：normal：空白会被浏览器忽略
+                pre： 	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+                nowrap：文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+                pre-wrap： 	保留空白符序列，但是正常地进行换行。
+                pre-line：合并空白符序列，但是保留换行符。
+             */
+            white-space: nowrap;
+            position: relative;
+            font-size: 35px;
+            color: aqua;
+            animation: animation-light 4s linear infinite;
+        }
+        @keyframes animation-move {
+            from{
+                left: 0;
+            }
+            to{
+                left: calc(100% - 100px);
+            }
+        }
+        @keyframes animation-light {
+            from{
+                left: 100%;
+            }
+            to{
+                left: -7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="move-box">
+
+    </div>
+    <div id="text">
+        <span>这是一个跑马灯</span>
+    </div>
+</body>
+</html>

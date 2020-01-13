@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fadeIn() 淡入</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: none;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: none;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 语法 $(selector).fadeIn(speed,callback); -->
+    <!-- 可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。可选的 callback 参数是 fading 完成后所执行的函数名称。下面的例子演示了带有不同参数的 fadeIn() 方法： -->
+    <p style="color: red; font-size: large;">jQuery fadeIn() 用于淡入已隐藏的元素。(即使元素出现)</p>
+    <button>点我淡入（元素显示）</button>
+    <br><br>
+    <div id="div1"></div><br>
+    <div id="div2"></div><br>
+    <div id="div3"></div>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () { 
+                // e.preventDefault();
+                $("#div1").fadeIn(1000);
+                $("#div2").fadeIn(2000);
+                $("#div3").fadeIn(3000);                
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>突出显示</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .wrap {
+            margin: 100px auto 0;
+            width: 630px;
+            height: 394px;
+            padding: 10px 0 0 10px;
+            background: #000;
+            overflow: hidden;
+            border: 1px solid #fff;
+        }
+
+        .wrap li {
+            float: left;
+            margin: 0 10px 10px 0;
+
+        }
+
+        .wrap img {
+            width: 200px;
+            height: 185px;
+            display: block;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="#"><img src="images/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/6.jpg" alt=""/></a></li>
+        </ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $('.wrap').find('li').mouseenter(function() {
+        $(this).css('opacity',1).siblings('li').css('opacity',0.4);
+    });
+    $('.wrap').find('li').mouseleave(function() {
+        console.log('???');
+        $(this).children().children('li').css('opacity',1);
+        console.log($(this).children().children('li'));
+        // $('.wrap li').css('opacity',1);
+    });
+
+//     $(".wrap").find("li").mouseenter(function () {
+//                 //链式编程
+//                 $(this).css("opacity", 1).siblings("li").css("opacity", 0.4);
+//             });
+
+//             //离开wrap的时候所有的li的全部opacity值为1；
+//             $(".wrap").mouseleave(function () {
+//                 $(this).children().children("li").css("opacity", 1);
+// //                $(".wrap li").css("opacity",1);
+//             });
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>钢琴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+        }
+
+        #container {
+            width: 1025px;
+            height: 500px;
+            /* border: solid 1px orangered; */
+            border: 60px solid lightblue;
+            border-radius: 40px;
+            display: flex;
+            background-image: url(keys.png);
+            background-size: 100% 100%;
+        }
+
+        .piano {
+            width: 11%;
+            height: 100%;
+            /* border: solid 1px orange; */
+        }
+
+        .active {
+            background-color: rgba(228, 11, 11, .5);
+            height: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <audio src=""></audio>
+    <main id="container">
+        <div class="piano"></div>
+        <div class="piano"></div>
+        <div class="piano"></div>
+        <div class="piano"></div>
+        <div class="piano"></div>
+        <div class="piano"></div>
+        <div class="piano"></div>
+        <div class="piano"></div>
+        <div class="piano"></div>
+    </main>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $('.piano').click(function () {
+        var showIndex = $(this).index() + 1;
+        // $(".piano").eq($(this).index()).addClass('active')
+        // .siblings().removeClass('active');
+        $('audio')[0].src = 'notes/' + showIndex + '.oga';
+        $('audio')[0].play();
+    });
+</script>
+
+</html>

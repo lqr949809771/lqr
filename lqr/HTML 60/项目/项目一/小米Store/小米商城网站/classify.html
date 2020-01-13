@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品分类</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <style>
+        #containerbox {
+            /* width: 540px; */
+            height: 1000px;
+            /* margin: 20 auto; */
+            /* border: #000000 solid 1px; */
+            background-color: #f5f5f5;
+        }
+
+        #rowOne {
+            /* border-bottom: 1px solid #000; */
+            /* width: 540px; */
+            height: 64px;
+
+        }
+
+        #rowOne-col1 img {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            top: 20px;
+
+        }
+
+        #rowOne-col2 span {
+            position: relative;
+            top: 20px;
+            font-size: 24px;
+        }
+
+        .glyphicon-search {
+            font-size: 24px;
+            position: relative;
+            top: 20px;
+            color: gray;
+        }
+
+        #rowOne {
+            border-bottom: 1px solid rgb(238, 229, 229)
+        }
+
+        #rowTwo {
+            border-top: 16px solid #f5f5f5;
+            background-color: #fff;
+            padding-bottom: 30px;
+        }
+
+        #rowTwo,
+        #rowThree,
+        #rowFour,
+        #rowFive,
+        #rowSix {
+            background-color: #fff;
+            border-left: 16px solid #f5f5f5;
+            border-right: 16px solid #f5f5f5;
+            /* border: #f5f5f5 16px solid; */
+        }
+
+        #rowSeven {
+            margin-top: 16px;
+            background-color: #fff;
+        }
+
+        .col-xs-3 {
+            padding: 0;
+        }
+
+        .pictures {
+            /* border: solid 1px red; */
+            /* padding: 0; */
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="containerbox">
+        <!-- 第一行 -->
+        <div class="row" id="rowOne">
+            <div class="col-xs-4" id="rowOne-col1">
+                <a href="#">
+                    <img src="image/icon-back.png" alt="back" id="pic">
+                </a>
+            </div>
+            <div class="col-xs-4" id="rowOne-col2">
+                <div id="c1" class="text-center">
+                    <span class="lead">个人中心</span>
+                </div>
+            </div>
+            <div class="col-xs-4" id="rowOne-col3">
+                <span class="glyphicon glyphicon-search pull-right lead "></span>
+            </div>
+        </div>
+        <!-- 第二行 -->
+        <div class="row" id="rowTwo">
+            <div class="col-xs-12">
+                <h3 class="text-center">手机/平板/电话卡</h3>
+            </div>
+        </div>
+        <!-- 第三行 -->
+        <div class="row" id="rowThree">
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-1.png" alt="">
+                    <div class="caption">
+                        <p>小米5</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-2.png" alt="">
+                    <div class="caption">
+                        <p>小米4s</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-4.png" alt="">
+                    <div class="caption">
+                        <p>小米Note</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-4.png" alt="">
+                    <div class="caption">
+                        <p>小米Note顶配</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 第四行 -->
+        <div class="row" id="rowFour">
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-5.png" alt="">
+                    <div class="caption">
+                        <p>小米4c</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-6.png" alt="">
+                    <div class="caption">
+                        <p>小米4</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-7.png" alt="">
+                    <div class="caption">
+                        <p>红米3</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-2.png" alt="">
+                    <div class="caption">
+                        <p>红米Note3</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 第五行 -->
+        <div class="row" id="rowFive">
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-9.png" alt="">
+                    <div class="caption">
+                        <p>红米Note</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-10.png" alt="">
+                    <div class="caption">
+                        <p>红米2A</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-11.png" alt="">
+                    <div class="caption">
+                        <p>红米2</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-12.png" alt="">
+                    <div class="caption">
+                        <p>红米平板2</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 第六行 -->
+        <div class="row" id="rowSix">
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-13.png" alt="">
+                    <div class="caption">
+                        <p>电信手机</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-14.png" alt="">
+                    <div class="caption">
+                        <p>官翻机</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="pictures thumbnail text-center">
+                    <img src="image/fl1-15.png" alt="">
+                    <div class="caption">
+                        <p>小米移动</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 第七行 -->
+        <div class="row" id="rowSeven">
+            <div class="col-xs-12">
+                <h3 class="text-center">电视/盒子</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="bs/js/jquery.min.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+<html>

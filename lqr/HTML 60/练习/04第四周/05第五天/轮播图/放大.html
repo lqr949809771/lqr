@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            margin-top: 100px;
+            display: flex;
+            width: 800px;
+            box-sizing: border-box;
+            list-style: none;
+            margin: 0 auto;
+        }
+
+        li {
+            width: calc(800px/4);
+        }
+
+        li img {
+            width: 100%;
+        }
+
+        #box {
+            position: absolute;
+            /* background-color: red; */
+            width: 400px;
+            height: 400px;
+            display: none;
+        }
+
+        #box img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <img src="images/photo1.jpg" alt="1">
+        </li>
+        <li>
+            <img src="images/photo2.jpg" alt="2">
+        </li>
+        <li>
+            <img src="images/photo3.jpg" alt="3">
+        </li>
+        <li>
+            <img src="images/photo4.jpg" alt="4">
+        </li>
+    </ul>
+    <div id="box"><img class="bigimg"></div>
+</body>
+<script>
+    var li = document.querySelectorAll("li");
+    var box = document.getElementById("box")
+    var bigimg = document.getElementsByClassName("bigimg")
+
+    for (var i in li) {
+        li[i].onmouseenter = function (e) {
+            // box.style.display = "inline-block"
+            box.style.display = "block"
+            var x = e.clientX
+            var y = e.clientY
+            // console.log(bigimg);
+            box.style.left = x + 100 + "px"
+            box.style.top = y + 100 + "px"
+            console.log(e.target.childNodes[1].alt);
+            var index = e.target.childNodes[1].alt
+            bigimg[0].src = "images/photo" + index + ".jpg"
+        }
+        li[i].onmouseleave = function (e) {
+            box.style.display = "none"
+            bigimg[0].src = "images/photo" + i + ".jpg"
+            console.log(i);
+            
+        }
+    }
+
+</script>
+
+<html>

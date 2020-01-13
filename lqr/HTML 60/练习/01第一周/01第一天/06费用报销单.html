@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>费用报销单</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        main {
+            width: 1000px;
+            height: 600px;
+            box-shadow: 0 0 10px gray;
+            margin: 150px auto;
+            text-align: center;
+        }
+
+        h1 {
+            letter-spacing: 15px;
+            margin-bottom: 0;
+        }
+
+        hr {
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 50%;
+        }
+
+        span:nth-of-type(2) {
+            float: right;
+        }
+
+        /* caption span:nth-child(4){
+            float: right;
+        } */
+
+        table#tab1 {
+            margin: 0 auto;
+            border-collapse: collapse;
+
+        }
+
+        .tab {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 2px solid #000;
+            height: 50px;
+            border-collapse: collapse;
+            padding: 0;
+
+        }
+
+        #tab1 tr:nth-child(7) td:nth-child(4) {
+            text-align: left;
+        }
+
+        #tab1 tr:nth-child(8) td:nth-child(1) {
+            text-align: left;
+        }
+
+        /* #tab2 {
+            border-collapse: collapse;
+        } */
+
+        #tab2 td {
+            width: 120px;
+            border: none;
+            border-right: 2px solid black;
+        }
+        #tab2 td:nth-child(6){
+            border-right: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <table id="tab1" class="tab">
+            <caption>
+                <h1>费用报销单</h1>
+                <hr>
+                <span>报销日期xx年xx月xx日</span>
+                <span>附件xx张</span>
+            </caption>
+            <tr>
+                <td style="width: 200px;">111</td>
+                <td style="width: 102px;">222</td>
+                <td style="width: 102px;">333</td>
+                <td rowspan="2" style="width: 150px;">aaa</td>
+                <td style="width: 150px;" rowspan="2"> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td rowspan="2">bbb</td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td rowspan="2">ccc</td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>&#x3000;￥</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="5">&#x3000;核实金额</td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <table id="tab2" class="tab">
+                        <tbody>
+                            <tr>
+                                <td>999</td>
+                                <td></td>
+                                <td>888</td>
+                                <td></td>
+                                <td>777</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

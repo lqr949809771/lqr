@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var yearstr = prompt("请输入年份");
+        var allsum = "";
+        for (i = 0; i < yearstr.length; i++) {
+            // console.log(yearstr[i]);
+            switch (yearstr[i]) {
+                case "0": 
+                allsum += "零"
+                    break;
+                case "1": 
+                allsum += "壹"
+                    break;
+                case "2": 
+                allsum += "贰"
+                    break;
+                case "3": 
+                allsum += "叄"
+                    break;
+                case "4": 
+                allsum += "肆"
+                    break;
+                case "5": 
+                allsum += "伍"
+                    break;
+                case "6": 
+                allsum += "陆"
+                    break;
+                case "7": 
+                allsum += "柒"
+                    break;
+                case "8": 
+                allsum += "捌"
+                    break;
+                case "9": 
+                allsum += "玖"
+                    break;
+                default:
+                    break;
+            }
+        }
+        alert(allsum);
+    </script>
+</body>
+
+</html>

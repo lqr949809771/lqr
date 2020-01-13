@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Callback </title>
+</head>
+
+<body>
+    <!-- 
+        许多 jQuery 函数涉及动画。这些函数也许会将 speed 或 duration 作为可选参数。
+        例子：$("p").hide("slow")speed 或 duration 参数可以设置许多不同的值，比如 "slow", "fast", "normal" 或毫秒。
+     -->
+    <p style="color: purple;">Callback 函数在当前动画 100% 完成之后执行。</p>
+    <!-- 实例以下实例在隐藏效果完全实现后回调函数: -->
+    <p><strong style="color: red;">实例:</strong>以下实例在隐藏效果完全实现后回调函数</p>
+    <button>隐藏</button>
+    <p id="paragraph1">我们段落内容，点击“隐藏”按钮我就会消失</p>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                // e.preventDefault();
+                $("#paragraph1").hide(2000, function () {
+                    alert("段落现在被隐藏了!");
+                });
+                // 以下实例没有回调函数，警告框会在隐藏效果完成前弹出：
+                // $("p").hide(1000);
+                // alert("现在段落被隐藏了");
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分支语句判断</title>
+</head>
+
+<body>
+    <script>
+        var age = 22;
+        /*
+            幼年 0~3
+            童年 3~12
+            青少年 12~16
+            青年 16~30 
+            中年 30~45
+            中老年 45~60
+        */
+        // 1.只有 if搭配else必有一个执行
+        // if (age <= 3 && age >= 0) {
+        //     alert("幼年时期");
+        // }
+        // else (age <= 12) {
+        //     alert("童年时期");
+        // }
+        //2. 多个if搭配使用时 每个if都是一个独立的分支
+        // 有可能都执行 也有可能都不执行
+
+        // 3.if搭配else if 有可能执行一折也有可能都不执行
+        if (age <= 3 && age > 0) {
+            alert("幼年时期");
+        }
+        else if (age <= 12) {
+            alert("童年时期");
+        }
+        else if (age <= 16) {
+            alert("青少年时期");
+        }
+        else if (age <= 30) {
+            alert("青年时期");
+        }
+        else if (age <= 45) {
+            alert("中年时期");
+        }
+        else {
+            alert("中老年时期");
+        }
+
+        // 嵌套if
+        // if () {
+
+        // }
+    </script>
+</body>
+
+</html>

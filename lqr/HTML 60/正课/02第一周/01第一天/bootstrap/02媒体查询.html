@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>媒体查询</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            display: flex;
+        }
+        section{
+            /* 项在主轴上的尺寸 */
+            flex-basis: 50%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        section:nth-child(1){
+            background-image: url(images/startup750.png);
+        }
+        section:nth-child(2){
+            background-image: url(images/2.jpg);
+        }
+        /* 
+            1.选择设备
+            2.填充查询条件
+            3.当屏幕宽度小于等于400时显示背景颜色
+         */
+        @media screen and (max-width: 400px),(max-height: 400px){
+            body{
+                background-color: red;
+            }
+        }
+        /* 宽高最大比例 */
+        @media (max-aspect-ratio:1/1){
+            body{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section></section>
+    <section></section>
+</body>
+</html>

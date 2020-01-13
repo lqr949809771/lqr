@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>空间分配</title>
+    <style>
+        section{
+            display: flex;
+            border: solid 2px black;
+            height: 400px;
+        }
+        div{
+            border: solid 2px red;
+            /* 项目在主轴的尺寸 */
+            flex-basis: 200px;
+        }
+        div:nth-of-type(3){
+            flex-grow: 1;
+        }
+        div:nth-of-type(2){
+
+            flex-grow: 1;
+
+            flex-shrink: 2;
+        }
+        div:nth-of-type(1){
+            flex-grow: 1;
+        }
+        div:nth-of-type(4){
+            flex-shrink: 2;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <section id="">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </section>
+</body>
+</html>

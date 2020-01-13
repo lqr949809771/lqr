@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>平均数</title>
+</head>
+
+<body>
+    <script>
+        var number = Math.random() * 30 + 20;
+        number = Math.ceil(number);
+        var sum = 0;
+        var average;
+        for (var i = 0; i < 20; i++) {
+            sum += number;
+        }
+        average = sum / 20;
+        document.write("随机数的和为：" + sum + "<br>");
+        document.write("随机数的平均数为：" + average);
+    </script>
+</body>
+
+</html>

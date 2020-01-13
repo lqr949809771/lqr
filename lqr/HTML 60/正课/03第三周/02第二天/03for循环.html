@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环</title>
+</head>
+
+<body>
+    <script>
+        // for循环 循环指定的次数
+        // var i = 0;表明i记录循环次数 从0开始
+        // 
+        // for (var i = 0; i < 10; i++) {
+        //     window.alert(i);
+        // }
+        // for (var i = 0; i < 10; i++) {
+        //     for (var j = 0; j < 10; j++) {
+        //         document.write(i + " " + j);
+        //         // console.log(i + " " + j);
+
+        //     }
+        // }
+        var sum = 0;
+        for (var i = 0; i < 10; i++) {
+            acrNumber = Math.random() * 50 + 49;
+            // alert(acrNumber);
+            acrNumber = Math.ceil(acrNumber);
+            console.log(acrNumber);
+            sum += acrNumber;
+        }
+        alert(sum);
+    </script>
+</body>
+
+</html>

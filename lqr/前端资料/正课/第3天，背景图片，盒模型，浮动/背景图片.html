@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>背景图片</title>
+    <style>
+        body {
+            background-image: url(bg.jpg);
+            background-attachment: fixed;
+            /* margin: 0; */
+        }
+
+        #box1 {
+            width: 500px;
+            height: 300px;
+            background-color: red;
+            background-image: url(timg.jpg);
+            background-repeat: no-repeat;
+            /* 纵向铺满 横向等比例缩放 */
+            /* background-size: contain; */
+            /* 横向铺满 纵向等比例缩放 */
+            /* background-size: cover; */
+            background-size: 50% 100%;
+            /* background-size: 100px; */
+            /* background-position: 50% 50%; */
+
+            /* background-position: 100px 20px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>

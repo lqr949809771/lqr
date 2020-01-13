@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品筛选</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: blue;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            padding-top: 40px;
+        }
+
+        #container {
+            margin: 0 auto;
+            width: 1000px;
+            height: 650px;
+            border: solid 1px lightgray;
+            box-shadow: 0 0 5px lightgray;
+            padding-top: 15px;
+        }
+
+        .row {
+            margin: 0 auto;
+            display: flex;
+            padding: 15px 15px 15px 0;
+            border-bottom: 1px dashed lightgray;
+        }
+
+        #rowOne {
+            width: 95%;
+            height: 150px;
+        }
+
+        #rowTwo {
+            width: 95%;
+            height: 80px;
+        }
+
+        #rowThree {
+            width: 95%;
+            height: 80px;
+        }
+
+        #rowFour {
+            width: 95%;
+            height: 80px;
+        }
+
+        #rowFive {
+            width: 95%;
+            height: 80px;
+        }
+
+        #rowSix {
+            width: 95%;
+            height: 150px;
+            padding-top: 0;
+        }
+
+        #rowSix ul li {
+            border: 1px solid orange;
+            padding: 5px 10px;
+        }
+        /* .hide {
+           display: none;
+        } */
+
+        .hide a {
+            text-decoration: none;
+            color: white;
+            padding: 2px 10px;
+            background-color: orangered;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+            padding-bottom: 40px;
+            cursor: pointer;
+        }
+
+        .title {
+            width: 85px;
+            color: black;
+            padding: 15px 0;
+        }
+
+        .txtContent {
+            width: 85%;
+            font-size: 18px;
+            padding: 15px 10px;
+            word-spacing: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="rowOne" class="row">
+            <h3 class="title">品&emsp;&emsp;牌:</h3>
+            <ul class="txtContent" id="parent-listOne">
+                <li class="link">苹果</li>
+                <li class="link">小米</li>
+                <li class="link">华为</li>
+                <li class="link">联想</li>
+                <li class="link">中兴</li>
+                <li class="link">海信</li>
+                <li class="link">苹果</li>
+                <li class="link">小米</li>
+                <li class="link">华为</li>
+                <li class="link">联想</li>
+                <li class="link">中兴</li>
+                <li class="link">海信</li>
+                <li class="link">苹果</li>
+                <li class="link">小米</li>
+                <li class="link">华为</li>
+                <li class="link">联想</li>
+                <li class="link">中兴</li>
+                <li class="link">海信</li>
+            </ul>
+        </div>
+        <div id="rowTwo" class="row">
+            <h3 class="title">价格范围</h3>
+            <ul class="txtContent" id="parent-listTwo">
+                <li class="link">1-499</li>
+                <li class="link">499-799</li>
+                <li class="link">799-1099</li>
+                <li class="link">1099-1799</li>
+            </ul>
+        </div>
+        <div id="rowThree" class="row">
+            <h3 class="title">操作系统</h3>
+            <ul class="txtContent" id="parent-listThree">
+                <li class="link">IOS</li>
+                <li class="link">安卓</li>
+                <li class="link">塞班</li>
+            </ul>
+        </div>
+        <div id="rowFour" class="row">
+            <h3 class="title">优惠活动</h3>
+            <ul class="txtContent" id="parent-listFour">
+                <li class="link">存话费送手机</li>
+                <li class="link">买手机送话费</li>
+                <li class="link">老用户优惠购机&#x2000;(支持合约到期提前续约)</li>
+                <li class="link">只买手机</li>
+            </ul>
+        </div>
+        <div id="rowFive" class="row">
+            <h3 class="title">特&emsp;&emsp;点:</h3>
+            <ul class="txtContent" id="parent-listFive">
+                <li class="link">双卡双待</li>
+                <li class="link">千元智能机</li>
+                <li class="link">大屏&#x2000;(4.0寸以上)</li>
+            </ul>
+        </div>
+        <div id="rowSix" class="row">
+            <h3 class="title">您已选择:</h3>
+            <ul class="txtContent" id="parent-listSix">
+                <li class="link hide">苹果&emsp;<a href="#">X</a></li>
+                <li class="link hide">小米&emsp;<a href="#">X</a></li>
+                <li class="link hide">华为&emsp;<a href="#">X</a></li>
+                <li class="link hide">联想&emsp;<a href="#">X</a></li>
+                <li class="link hide">中兴&emsp;<a href="#">X</a></li>
+                <li class="link hide">海信&emsp;<a href="#">X</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var parentListSix = document.getElementById('parent-listSix');
+        var parentList = document.getElementsByClassName('txtContent');
+        // function parentNodeList
+        for (var i = 0; i < parentList.length; i++) {
+            parentList[i].index = i;
+            parentList[i].addEventListener('click', function (e) {
+                // false 表示在冒泡阶段触发(默认)
+                if (e.target && e.target.className == 'link') {
+                    console.log('我是ul的单击响应函数');
+                    e.target.style.color = 'red';
+                }
+            }, false);
+        }
+    }
+</script>
+
+</html>

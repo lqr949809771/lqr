@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机点名</title>
+</head>
+
+<body>
+    <script>
+        /*
+        1.点名系统 随机点名 五个人名
+        2.把五个人的年龄按从大到小排列
+         */
+        /* function getSum(a, b) {
+            return a - b;
+        }
+        alert(getSum(2019, 1962)); */
+        var person = {
+            '周星驰': 57,
+            '周润发': 64,
+            '张学友': 58,
+            '刘德华': 58,
+            '黎明': 53,
+        }
+        function getRollCall(person) {
+            var flag = true;
+            if (flag != true) {
+                
+            }
+            confirm("是否要开始点名");
+            var numbers = parseInt(Math.random() * 5);
+            var arrName = [];
+            var arrAge = [];
+            var result = "";
+            for (var key in person) {
+                arrName.push(key);
+                arrAge.push(person[key]);
+            }
+            switch (numbers) {
+                case 0:
+                    result = arrName[0];
+                    break;
+                case 1:
+                    result = arrName[1];
+                    break;
+                case 2:
+                    result = arrName[2];
+                    break;
+                case 3:
+                    result = arrName[3];
+                    break;
+                case 4:
+                    result = arrName[4];
+                    break;
+                default:
+                    result = "没有其他人了"
+                    break;
+            }
+            return result
+            /* console.log(arrName);
+            console.log(arrAge); */
+        }
+        alert(getRollCall(person));
+
+    </script>
+</body>
+
+</html>

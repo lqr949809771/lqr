@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button ondblclick="show()">点击</button>
+</body>
+<script>
+    console.log(this);
+    /* function show() {
+        console.log(this);
+    }
+ */
+    // 事件绑定 
+    // 事件监听函数 this指的是调用事件的标签对象本身
+    document.querySelector('button').onclick = function() {
+        console.log(this);
+    }
+
+    // 
+    function People() {
+        this.name = name;
+        this.color = color;
+        this.car = function () {
+            console.log(this.name + '染着一头' + this.color + '头发');
+        }
+    }
+    var p1 = new People('lll','red')
+</script>
+</html>

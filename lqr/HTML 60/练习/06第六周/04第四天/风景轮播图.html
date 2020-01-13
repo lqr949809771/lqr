@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>风景轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0 auto;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+
+        .imgBox {
+            /* width: 500px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imgBox li {
+            float: left;
+            /* margin-right: 50px; */
+            box-shadow: 8px 0 8px lightgray;
+        }
+
+        .small {
+            width: 100px;
+            height: 120px;
+            z-index: 1;
+        }
+
+        .medium {
+            width: 150px;
+            height: 170px;
+            z-index: 2;
+        }
+
+        .big {
+            width: 200px;
+            height: 220px;
+        }
+
+        .preImg {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: orange;
+            color: white;
+            margin-right: 20px;
+        }
+
+        .nextImg {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: orange;
+            color: white;
+            margin-left: 20px;
+        }
+
+        section {
+            float: left;
+        }
+        .active {
+            z-index: 3;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <span class="preImg">上一张</span>
+        <section>
+            <ul class="imgBox">
+                <li><img src="images/1.jpg" alt="" class="small"></li>
+                <li><img src="images/2.jpg" alt="" class="medium"></li>
+                <li><img src="images/3.jpg" alt="" class="big" class="active"></li>
+                <li><img src="images/4.jpg" alt="" class="medium"></li>
+                <li><img src="images/5.jpg" alt="" class="small"></li>
+            </ul>
+        </section>
+        <span class="nextImg">下一张</span>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    var showIndex = 2;
+    function show() {
+        $('.big').eq(showIndex)
+    }
+    $('.preImg').click(function (e) { 
+        showIndex--;
+        if (showIndex <=0) {
+            showIndex=4;
+        }
+    });
+</script>
+
+</html>

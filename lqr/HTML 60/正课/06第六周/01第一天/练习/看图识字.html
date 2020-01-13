@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>看图识字</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #leftBox {
+            border: solid 1px black;
+            flex-basis: 30%;
+            height: 730px;
+        }
+
+        #rightBox {
+            flex-basis: 460px;
+            height: 730px;
+            background-image: url(images/看图识字.png);
+            background-repeat: no-repeat;
+        }
+
+        table {
+            width: 420px;
+            height: 620px;
+            border: solid 1px black;
+            margin-left: 21px;
+            margin-top: 80px;
+            border-collapse: collapse;
+        }
+
+        tr {
+            height: 25%;
+        }
+
+        td {
+            width: 25%;
+            border: solid 2px black;
+            text-align: center;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="leftBox">
+        <!-- data-index 自定义属性 数据的索引 -->
+        <img src="images/1.png" alt="" data-index="1">
+        <img src="images/2.png" alt="" data-index="2">
+        <img src="images/3.png" alt="" data-index="3">
+        <img src="images/4.png" alt="" data-index="4">
+        <img src="images/5.png" alt="" data-index="5">
+        <img src="images/6.png" alt="" data-index="6">
+        <img src="images/7.png" alt="" data-index="7">
+        <img src="images/8.png" alt="" data-index="8">
+        <img src="images/9.png" alt="" data-index="9">
+        <img src="images/10.png" alt="" data-index="10">
+        <img src="images/11.png" alt="" data-index="11">
+        <img src="images/12.png" alt="" data-index="12">
+        <img src="images/13.png" alt="" data-index="13">
+        <img src="images/14.png" alt="" data-index="14">
+        <img src="images/15.png" alt="" data-index="15">
+        <img src="images/16.png" alt="" data-index="16">
+    </div>
+    <div id="rightBox">
+        <table>
+            <tr>
+                <td data-index="1"></td>
+                <td data-index="2"></td>
+                <td data-index="3"></td>
+                <td data-index="4"></td>
+            </tr>
+            <tr>
+                <td data-index="5"></td>
+                <td data-index="6"></td>
+                <td data-index="7"></td>
+                <td data-index="8"></td>
+            </tr>
+            <tr>
+                <td data-index="9"></td>
+                <td data-index="10"></td>
+                <td data-index="11"></td>
+                <td data-index="12"></td>
+            </tr>
+            <tr>
+                <td data-index="13"></td>
+                <td data-index="14"></td>
+                <td data-index="15"></td>
+                <td data-index="16"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    // 浏览器可以在产生拖拽的时候单独打开窗口的默认行为
+    document.documentElement.ondragover = function (e) {
+        e.preventDefault();
+    }
+    // 当拖拽放下的时候阻止默认行为以及单独打开img
+    document.documentElement.addEventListener('drop', function (e) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+    })
+    // 获取所有的水果
+    var leftBox = document.getElementById('leftBox');
+    // 拿到所有的td
+    var tds = document.getElementsByTagName('td');
+    // 装到数组中
+    var tdArray = [];
+    for (var i = 0; i < tds.length; i++) {
+        tdArray.push(tds[i]);
+    }
+    console.log(tdArray);
+    // 拿到所有的img并且绑定事件
+    var imgList = document.getElementsByTagName('img');
+    var imgArray = [];
+    for (var i = 0; i < imgArray.length; i++) {
+        imgArray.push(imgList[i]);
+    }
+    // 左侧图可以拖拽 右侧单元格可以进行监听
+    // 当放下的时候进行对应的 data-index匹配
+    // 成功从左侧把图删掉 右侧放上去 失败则返回左侧
+    // 然后刷新
+    // forEach 快速遍历数组中的对象
+    var dragImg = null;
+    imgArray.forEach(function (img) {
+        img.ondragstart = function (e) {
+            // e 代表当前的事件 e.currentTarget 代表事件对象
+            // 记录当前拖拽的对象
+            dragImg = e.currentTarget;
+        }
+    });
+    // td添加监听
+    tdArray.forEach(function (td) {
+        td.ondrop = function (e) {
+            // 当前落下的td
+            console.log(e.currentTarget);
+            // dataswt 数据集
+            if (e.currentTarget.dataset.index == dragImg.dataset.index) {
+                console.log('111');
+                leftBox.removeChild(dragImg);
+                // 添加
+                e.currentTarget.appendChild(dragImg);
+            }
+        }
+    });
+
+    // 打乱书序
+    // 1.先清空数组 删除元素 但是数组空间还在
+    imgArray.forEach(function (img) {
+        leftBox.removeChild(img);
+    });
+    var controlArray = [];
+    for (var i = 0; i < 16; i++) {
+        controlArray[i] = i;
+    }
+    console.log(controlArray.length);
+    for (var i = 0; i < imgArray.length;i++) {
+        var ind = Math.floor(Math.random() * controlArray.length);
+        var img = imgArray[controlArray[ind]];
+        // 添加
+        leftBox.appendChild(img);
+        // 删除数组的索引
+        controlArray.splice(ind,1)
+    }
+</script>
+
+</html>

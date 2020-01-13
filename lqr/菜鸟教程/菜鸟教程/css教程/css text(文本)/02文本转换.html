@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文本转换</title>
+    <style>
+        p.uppercase{
+            /* 转换成大写 */
+            text-transform: uppercase;
+        }
+        p.lowercase{
+            /* 转换成小写 */
+            text-transform: lowercase;
+        }
+        p.capitalize{
+            /* 将每个英文字母的首字母转换成大写 其余无转换发生 */
+            text-transform: capitalize;
+        }
+        #para{
+            /* 可以调整汉字和字母之间的间距 */
+            letter-spacing: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="uppercase">This is some text.</p>
+    <p class="lowercase">This is some text.</p>
+    <p class="capitalize">This is some text.</p>
+    <p id="para">这是一个段落</p>
+</body>
+
+</html>

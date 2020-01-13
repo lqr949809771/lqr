@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>万年历</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div table td {
+            border: solid 1px black;
+        }
+
+        #calendar {
+            width: 500px;
+            height: 600px;
+            background-color: chocolate;
+        }
+
+        #clock {
+            width: 60%;
+            height: 20%;
+            font-size: 60px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        #dateLabel {
+            width: 60%;
+            height: 8%;
+            font-size: 24px;
+            padding: 0 20px;
+            color: yellowgreen;
+        }
+
+        table {
+            margin: 20px;
+            width: calc(100% - 40px);
+            height: calc(70% - 40px);
+            color: white;
+            text-align: center;
+        }
+
+        tr {
+            height: 10%;
+        }
+
+        td {
+            height: 14%;
+        }
+
+        #yearDate {
+            text-align: left;
+        }
+
+        .cb {
+            cursor: pointer;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calendar">
+        <div id="clock">9:22:22</div>
+        <div id="dateLabel">2020年1月2日,星期四</div>
+        <table>
+            <tr>
+                <td colspan="5" id="yearDate"></td>
+                <td class="cb" onclick="preMonthClick()">^</td>
+                <td class="cb" onclick="nextMonthClick()">v</td>
+            </tr>
+            <!-- 星期 -->
+            <tr>
+                <td>一</td>
+                <td>二</td>
+                <td>三</td>
+                <td>四</td>
+                <td>五</td>
+                <td>六</td>
+                <td>日</td>
+            </tr>
+            <!-- 内容不固定 -->
+            <tr class="dateTR">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr class="dateTR">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr class="dateTR">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr class="dateTR">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr class="dateTR">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr class="dateTR">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    var clock = document.getElementById('clock');
+    readTime();
+    setInterval(readTime, 1000);
+    function readTime() {
+        var now = new Date();
+        var h = now.getHours();
+        h = h < 10 ? '0' + h : h;
+        var m = now.getMinutes();
+        m = m < 10 ? '0' + m : m;
+        var s = now.getSeconds();
+        s = s < 10 ? '0' + s : s;
+        clock.innerHTML = h + ':' + m + ':' + s;
+    }
+
+    // 年月日
+    var today = new Date();
+    var dateLabel = document.getElementById('dateLabel');
+    var year = today.getFullYear();
+    var month = today.getMonth();
+    var date = today.getDate();
+    // 星期
+    var day = null;
+    switch (today.getDay()) {
+        case 0:
+            day = '星期日';
+            break;
+        case 1:
+            day = '星期一';
+            break;
+        case 2:
+            day = '星期二';
+            break;
+        case 3:
+            day = '星期三';
+            break;
+        case 4:
+            day = '星期四';
+            break;
+        case 5:
+            day = '星期五';
+            break;
+        case 6:
+            day = '星期六';
+            break;
+        default:
+            break;
+    }
+    dateLabel.innerHTML = year + '年' + (month + 1) + '月' + date + '日,' + day;
+    var dateString = year + '年' + (month + 1) + '月';
+    var dateTd = document.getElementById('yearDate');
+    dateTd.innerHTML = dateString;
+    // 日历
+    //拿到所有的td
+    var tdCollection = document.querySelectorAll('.dateTR td');
+    // 刷新的时候是所有的td一起刷新
+    var tds = [];
+    for (var i = 0; i < tdCollection.length; i++) {
+        tds.push(tdCollection[i]);
+    }
+    // 只做日历
+    function makeCalendar(newDate) {
+        // alert(newDate);
+        // 确定本月的一号是星期几
+        var firstDayOfTheMonth = new Date(newDate.getTime());
+        // alert(newDate.getTime());
+        //把传入的时间初始化(完整的时间戳)
+        // alert(firstDayOfTheMonth);
+        // 让时间回到本月的一号
+        firstDayOfTheMonth.setDate(1);
+
+        var weekOfFisrtDay = firstDayOfTheMonth.getDay();
+        // alert(weekOfFisrtDay);
+        var startIndex = 6 + weekOfFisrtDay;
+        if (startIndex > 7) {
+            startIndex -= 7;
+        }
+        // 拿到当前月份的总天数
+        var number = daysOfMonth(newDate)
+        console.log('number:' + number);
+        var index = 1;
+        //添加本月的日期
+        for (i = startIndex; i < startIndex + number; i++) {
+            tds[i].innerHTML = index;
+            console.log('tds[i].innerHTML:' + tds[i].innerHTML);
+            tds[i].style.color = 'white';
+            // 区分本月和其他月份
+            if (index == newDate.getDate()) {
+                tds[i].style.backgroundColor = 'red';
+            }
+            else {
+                tds[i].style.backgrouddColor = 'inherit';
+            }
+            index++;
+        }
+        // 确定上一个月的日期
+        var preMonth = new Date(newDate.getTime());
+        preMonth.setMonth(newDate.getMonth() - 1);
+        // console.log(newDate.getMonth());
+        // console.log('preMonth.setMonth(newDate.getMonth() - 1):' + preMonth.setMonth(newDate.getMonth() - 1));
+        // 
+        var numberOfPreMonth = daysOfMonth(preMonth);
+        console.log(numberOfPreMonth);
+        for (var i = startIndex - 1; i > 0; i--) {
+            tds[i].innerHTML = numberOfPreMonth;
+            tds[i].style.color = 'grey';
+            tds[i].style.backgrouddColor = 'inherit';
+            numberOfPreMonth--;
+        }
+    }
+    //确定每个月有多少天
+    function daysOfMonth(someDay) {
+        // 判断年份
+        function isRunYear(y) {
+            if (y % 400 == 0 || y % 4 == 0 && y % 100 != 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        var mon = someDay.getMonth();
+        mon++;
+        switch (mon) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return 30;
+                break;
+            case 2:
+                if (isRunYear(someDay.getFullYear())) {
+                    return 29
+                }
+                else {
+                    return 28;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    makeCalendar(today);
+</script>
+
+</html>

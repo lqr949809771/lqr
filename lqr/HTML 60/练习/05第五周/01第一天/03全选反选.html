@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全选反选</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #boxOne {
+            margin-top: 50px;
+        }
+
+        .checkTwo {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="boxOne">
+        <input type="checkbox" id="checkOne"> 全选
+        <a href="#" id="checkLink">反选</a>
+    </div>
+    <div id="boxTwo">
+        <input type="checkbox" class="checkTwo"> 选项一<br>
+        <input type="checkbox" class="checkTwo"> 选项二<br>
+        <input type="checkbox" class="checkTwo"> 选项三<br>
+        <input type="checkbox" class="checkTwo"> 选项四<br>
+        <input type="checkbox" class="checkTwo"> 选项五<br>
+        <input type="checkbox" class="checkTwo"> 选项六<br>
+        <input type="checkbox" class="checkTwo"> 选项七<br>
+        <input type="checkbox" class="checkTwo"> 选项八<br>
+        <input type="checkbox" class="checkTwo"> 选项九<br>
+        <input type="checkbox" class="checkTwo"> 选项十
+    </div>
+</body>
+<script>
+    var checkAll = document.getElementById('checkOne');
+    var checkReverse = document.getElementById('checkLink');
+    var checkAllList = document.getElementsByClassName('checkTwo');
+    function selectAll() {
+        var flag = true;
+        if (flag == !true) {
+            checkItems();
+        }
+    }
+    selectAll();
+    function checkItems() {
+        for (var i = 0; i < checkAllList.length; i++) {
+            checkAllList[i].onclick = function (e) {
+                var checked = e.target.checked;
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #navbar {
+            background-image: url(images/nav-bg.png);
+            border-top: 3px solid blue;
+            margin-bottom: 0;
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        #Search {
+            border-radius: 30px;
+        }
+
+        #images {
+            padding: 0;
+        }
+
+        #bc-image1 {
+            background-image: url(images/s-bg1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #bc-image1 td {
+            font-size: 20px;
+            color: white;
+        }
+
+        #bc-image1 td:last-child {
+            text-align: right;
+        }
+
+        #column1rowTwo {
+            background-image: url(images/s-bg2.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #column1rowThree {
+            background-image: url(images/s-bg1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="images/logo.png" alt="logo"></div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand active">首页</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li></li><a href="#" class="navbar-brand">媒体中心</a></li>
+                    <li></li><a href="#" class="navbar-brand">关于我们</a></li>
+                    <li></li><a href="#" class="navbar-brand">业务板块</a></li>
+                    <li></li><a href="#" class="navbar-brand">产品服务</a></li>
+                </ul>
+                <form action="#" class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search here..." id="Search">
+                        <!-- <button type="submit" class="btn btn-default"> -->
+                        <span class="badge badge-primary">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </span>
+                        <!-- </button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- 背景图片 -->
+    <div class="container-fluid" id="images">
+        <img src="images/banner.png" alt="banner" class="img-responsive">
+    </div>
+
+
+    <!-- <div class="container"> -->
+
+        <div class="row">
+
+            <!-- 第一列 -->
+            <section class="col-lg-4" id="column1">
+                <div class="container">
+
+                    <!-- 1 第一行 -->
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <!-- <div class="panel-heading">
+                                    <h3 class="panel-title">面板标题</h3>
+                                </div>
+                                <div class="panel-body">
+                                    这是一个基本的面板
+                                </div> -->
+                                <table class="table">
+                                    <tr id="bc-image1">
+                                        <td>公司动态</td>
+                                        <td>+MORE</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/news.png" alt="news">
+                                        </td>
+                                        <td>
+                                            <h3>政府部门参观研究中心</h3>
+                                            <p style="text-indent:2em;">
+                                                5月16日，打发斯蒂芬hi看是否健康发生的空间发货款附近的开发辅导费。和规范化话费干活干活大股东非官方。</p>
+                                        </td>
+                                    </tr>
+
+                                    <tr style="border-bottom: 1px dotted #000;">
+                                        <td></td>
+                                        <td style="text-align: right;">
+                                            <a href="#">READ MORE&gt;&gt;</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="">兰新高铁新疆路段供应供应钢材超过70多吨</a></td>
+                                        <td style="text-align: right ;">2012-12-20</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href=""></a>兰新高铁新疆路段供应供应钢材超过70多吨</a></td>
+                                        <td style="text-align: right;">2012-12-19</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="">兰新高铁新疆路段供应供应钢材超过70多吨</a></td>
+                                        <td style="text-align: right ;">2012-12-18</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- <div class="container">
+                                <div class="row" id="column1rowOne">
+                                    <div class="col-lg-2">
+                                        <a href="#" class="navbar-brand">公司动态</a>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <a href="#" class="navbar-brand">+MORE</a>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 第二列 -->
+            <section class="col-lg-4">
+                <!-- 2 第一行 -->
+                <div class="row">
+                    <div class="col-lg-4">
+
+                        <!-- <div class="container">
+                            <div class="row" id="column1rowTwo">
+                                <div class="col-lg-2">
+                                    <a href="#" class="navbar-brand">研究与观点</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="#" class="navbar-brand">+MORE</a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第三列 -->
+            <section class="col-lg-4">
+                <!-- 3 第一行 -->
+                <div class="row">
+                    <div class="col-lg-4">
+
+                        <!-- <div class="container">
+                            <div class="row" id="column1rowThree">
+                                <div class="col-lg-2">
+                                    <a href="#" class="navbar-brand">产品与服务</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="#" class="navbar-brand">+MORE</a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+    <!-- </div> -->
+
+</body>
+
+</html>

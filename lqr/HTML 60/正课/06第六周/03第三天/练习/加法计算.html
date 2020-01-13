@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="firstNumber"  class="field"> +
+    <input type="text" id="secondNumber"  class="field"> =
+    <span></span>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // function showResult() {
+    //     $("span").html($("#firstNumber").val() * 1 + $("#secondNumber").val() * 1);
+    // }
+    // $("#firstNumber").on('input', showResult);
+    // $("#secondNumber").on('input', showResult);
+
+    $('.field').on('input', function () {
+        var sum = $("#firstNumber").val() * 1 + $("#secondNumber").val() * 1;
+        $("span").html(sum);
+    });
+</script>
+
+</html>

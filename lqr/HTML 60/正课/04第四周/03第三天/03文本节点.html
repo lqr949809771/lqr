@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>javaScript</li>
+        <li>DOM</li>
+    </ul>
+</body>
+<script>
+    var ul = document.getElementsByTagName("ul")[0];
+    var list = ul.childNodes;
+    for (var i = 0; i < list.length; i++) {
+        //nod 单一节点
+        var nod = list[i];
+        // console.log(nod);
+        // console.log(nod.nodeType);
+        // if(nod.nodeType == 1) {
+        //     // alert(nod.childNodes.length);
+        // }
+    }
+    var li = ul.childNodes[1];
+    var txt = li.childNodes[0];
+    console.log(txt);
+    txt.appendData(":html的第五个版本");
+    txt.insertData(4,'5')
+    
+</script>
+
+</html>

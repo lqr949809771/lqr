@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>17 线性渐变多个颜色节点</title>
+    <style>
+
+        #grad1{
+
+            height: 200px;
+            background-color: red;
+            background-image: linear-gradient(red,green,blue);
+
+        }
+
+        #grad2{
+
+            height: 200px;
+            background-color: red;
+            background-image: linear-gradient(red,orange,yellow,green,blue,purple,violet);
+
+        }
+
+        #grad3{
+
+            height: 100px;
+            background-color: red;
+            background-image: linear-gradient(red 10%,green 85%,blue 90%);
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <h3>3个颜色节点（均匀分布）</h3>
+    <div id="grad1"></div>
+
+    <h3>7个颜色节点（均匀分布）</h3>
+    <div id="grad2"></div>
+
+    <h3>3个颜色节点（不均匀分布）</h3>
+    <div id="grad3"></div>
+
+    <p><strong>注意：</strong>当指定百分比时，颜色是不均匀分布。</p>
+
+    <p><strong>注意：</strong>IE 8及之前的版本不支持渐变。</p>
+
+</body>
+</html>

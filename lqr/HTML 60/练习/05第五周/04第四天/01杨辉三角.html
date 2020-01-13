@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>杨辉三角</title>
+    <style>
+        html,body {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    var length = prompt('请输入杨辉三角的行数');
+    // C(m,n) = C(m-1,n-1) + C(m-1,n)
+    function triangleYang(row, column) {
+        if (column == 0) {
+            return 1;
+        }
+        else if (row == column) {
+            return 1;
+        }
+        else {
+            return triangleYang(row - 1, column - 1) + triangleYang(row - 1, column);
+        }
+    }
+    function printTriangleYang(length) {
+        document.write('<pre>');
+        for (var i = 0; i < length; i++) {
+            for (var j = 0; j <= i; j++) {
+                document.write(triangleYang(i, j) + '\t');
+            }
+            document.write('<br>');
+        }
+        document.write('</pre>');
+    }
+    printTriangleYang(length);
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    var div = document.getElementById('box');
+    div.addEventListener('threeClick', function () {
+        alert('点赞成功');
+    });
+    var timeOut;
+    var count = 0;
+    div.addEventListener('mousedown', function () {
+        clearTimeout(timeOut);
+        count++;
+        console.log(count);
+        timeOut = setTimeout(function () {
+            // 超过一秒就是0
+            count = 0;
+        }, 1000);
+
+        if (count == 8) {
+            // 派发事件
+            var threeClick = new CustomEvent('threeClick', {});
+            div.dispatchEvent(threeClick);
+        }
+    });
+</script>
+
+</html>

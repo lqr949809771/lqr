@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义事件</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    // 自定义事件 除了系统提供的事件之外 用户自己起的事件名称
+     box.addEventListener('来自105教室的事件',function(e){
+        // e.detail 是事件传递的数据 
+        alert('自定义事件触发:' + e.detail)
+    });
+    // 自定义事件需要自己创建并且派发出去才会生效
+    // 创建自定义事件
+    // 第一种 
+    // createEvent 创建一个事件 函数可以填写系统的 也可以填写自定义的
+    var myEvent = document.createEvent('CustomEvent');
+    // '信号发射' init 初始化
+    /* 
+        1.代表事件的名称('电台名')
+        2.设置事件是否可以冒泡
+        3.设置事件是否可以阻止默认行为 是否可以用preventDefault()
+        4.事件的数据('广播的内容')
+     */
+    myEvent.initCustomEvent('来自105教室的事件',true,true,'这个讲完就下课!!!');
+    // 派发 相当于div会接收到这个事件
+    box.dispatchEvent(myEvent); 
+
+    // 第二中创建方式
+    var data = {};
+    data.detail = '开始上课';
+    data.bubbles = true;
+    data.cancelable = true;
+    var myEvent2 = new CustomEvent('来自105教室的事件',data);
+    box.dispatchEvent(myEvent2);
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>attr 获取属性</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        attr 和 prop 的区别介绍：
+对于 HTML 元素本身就带有的固有属性，在处理时，使用 prop 方法。
+对于 HTML 元素我们自己自定义的 DOM 属性，在处理时，使用 attr 方法。
+     -->
+    <!-- 
+         prop()函数的结果:
+         1.如果有相应的属性，返回指定属性值。
+         2.如果没有相应的属性，返回值是空字符串。
+         attr()函数的结果:
+         1.如果有相应的属性，返回指定属性值。
+         2.如果没有相应的属性，返回值是 undefined。
+      -->
+    <p><a href="http://www.qqmusic.com" id="qqMusic" target="_blank">qq音乐</a></p>
+    <button>显示 href 属性的值</button>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                // e.preventDefault();
+                alert("属性为：" + $("#qqMusic").attr("href"));
+            });
+        });
+    </script>
+</body>
+
+</html>

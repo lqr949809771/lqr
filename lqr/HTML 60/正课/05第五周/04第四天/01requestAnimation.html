@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* animation :keyframes
+            transition 过渡的一些基础样式 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1.基础动画>>优先使用（关键帧...）
+        2.关键帧动画（js提供的动画函数 比基础动画功能强大）
+        3.js动画 扩展性最高 但是不方便（可以自己写动画逻辑）
+     -->
+    <div id="box"></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var aniCode = null;
+    // 旋转
+    var angle = 0;
+    function upDate() {
+        angle += 45;
+        box.style.transform = 'rotate(' + angle + 'deg)';
+        aniCode = requestAnimationFrame(upDate);
+    }
+    // setInterval(upDate,100)
+    // 请求 动画 帧
+    // 一阵一次 （常规的展示1s = 60 好一点的 1s = 90 特好 1s = 120）
+    // 关闭的方式 从h5以后引入新的动画api 原理就是利用浏览器的每一帧刷新
+    aniCode = requestAnimationFrame(upDate);
+
+    setTimeout(function() {
+        cancelAnimationFrame(aniCode);
+    },3000);
+</script>
+
+</html>

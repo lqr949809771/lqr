@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>密码</title>
+</head>
+
+<body>
+    <script>
+        var passWord = [];
+        for (var i = 0; i < 4; i++) {
+            var isExists = false;
+            var numbers = Math.floor(Math.random() * 10);
+            for (var i = 0; i < passWord.length; i++) {
+                if (numbers === passWord[i]) {
+                    isExists = true;
+                    break;
+                }
+            }
+            if (!isExists) {
+                passWord.push(numbers);
+            }
+            if (passWord.length === 10) {
+                break;
+            }
+        }
+        console.log(typeof passWord);
+        console.log("密码为: " + passWord);
+
+    </script>
+</body>
+
+</html>

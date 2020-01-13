@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>宝钢</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin-top: 8px;
+        }
+
+        #navbar {
+            background-image: url(images/nav-bg.png);
+            border-top: 3px solid blue;
+            margin-bottom: 0;
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        #Search {
+            border-radius: 30px;
+        }
+
+        /* 
+        #rowOne>div:nth-of-type(1) {
+            border: 2px solid blue;
+
+        }
+
+        #rowOne>div:nth-of-type(2) {
+            border: 2px solid blue;
+        }
+
+        #rowOne>div:nth-of-type(3) {
+            border: 2px solid blue;
+        } */
+        #navbar1 {
+            background-image: url(images/s-bg1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+
+
+        #navbar-header1 li a,
+        #navbar-header2 li a {
+            color: white;
+        }
+
+        #navbar2 {
+            background-image: url(images/s-bg2.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+
+        #navbar-header3 li a,
+        #navbar-header4 li a {
+            color: white;
+        }
+
+        #navbar3 {
+            background-image: url(images/s-bg1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+
+        #navbar-header5 li a,
+        #navbar-header6 li a {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="images/logo.png" alt="logo"></div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand active">首页</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li></li><a href="#" class="navbar-brand">媒体中心</a></li>
+                    <li></li><a href="#" class="navbar-brand">关于我们</a></li>
+                    <li></li><a href="#" class="navbar-brand">业务板块</a></li>
+                    <li></li><a href="#" class="navbar-brand">产品服务</a></li>
+                </ul>
+                <form action="#" class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search here..." id="Search">
+                        <!-- <button type="submit" class="btn btn-default"> -->
+                        <span class="badge badge-primary">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </span>
+                        <!-- </button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- 背景图片 -->
+    <div class="container-fluid">
+        <img src="images/banner.png" alt="banner" class="img-responsive">
+    </div>
+    <!-- 三列 -->
+    <div class="container">
+        <div class="row" id="rowOne">
+            <div class="col-lg-4">
+                <!-- 1 -->
+                <nav class="navbar navbar-default" role="navigation" id="navbar1">
+                    <div class="container-fluid">
+                        <div class="navbar-header" id="navbar-header1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" class="navbar-brand">公司动态</a></li>
+                            </ul>
+                        </div>
+                        <div id="navbar-header2">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="#" class="navbar-brand">+MORE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container-fluid" id="container-fluid1">
+                    <div class="navbar-header">
+                        <img src="images/news.png" alt="">
+                    </div>
+                    <div id="art">
+                        <h3>政府部门参观研究中心</h3>
+                        <p style="text-indent:2em;">5月16日，打发斯蒂芬hi看是否健康发生的空间发货款附近的开发辅导费。和规范化话费干活干活大股东非官方。</p>
+                    </div>
+                </div>
+                <div id="link">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="" class="navbar-brand">READ MORE&gt;&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- 2 -->
+                <nav class="navbar navbar-default" role="navigation" id="navbar2">
+                    <div class="container-fluid">
+                        <div class="navbar-header" id="navbar-header3">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" class="navbar-brand">研究与观点</a></li>
+                            </ul>
+                        </div>
+                        <div id="navbar-header3">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="#" class="navbar-brand">+MORE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+            <div class="col-lg-4">
+                <!-- 3 -->
+                <nav class="navbar navbar-default" role="navigation" id="navbar3">
+                    <div class="container-fluid">
+                        <div class="navbar-header" id="navbar-header5">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" class="navbar-brand">产品与服务</a></li>
+                            </ul>
+                        </div>
+                        <div id="navbar-header6">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="#" class="navbar-brand">+MORE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

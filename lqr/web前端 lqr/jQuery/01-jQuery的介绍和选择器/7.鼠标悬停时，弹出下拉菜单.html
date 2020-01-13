@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标悬停时，弹出下拉菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .wrap {
+            width: 330px;
+            height: 30px;
+            margin: 100px auto;
+            background-color: pink;
+            padding-left: 10px;
+        }
+
+        .wrap li {
+            background-color: green;
+        }
+
+        .wrap>ul>li {
+            float: left;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .wrap a {
+            text-decoration: none;
+            display: block;
+            height: 30px;
+            width: 100px;
+            color: #cccccc;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .wrap li ul{
+            position: absolute;
+            top: 30px;
+            display: none;
+            /* background-color: red; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="#">一级菜单1</a>
+                <ul>
+                    <li><a href="#">二级菜单1</a></li>
+                    <li><a href="#">二级菜单2</a></li>
+                    <li><a href="#">二级菜单3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">一级菜单1</a>
+                <ul>
+                    <li><a href="#">二级菜单1</a></li>
+                    <li><a href="#">二级菜单2</a></li>
+                    <li><a href="#">二级菜单3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">一级菜单1</a>
+                <ul>
+                    <li><a href="#">二级菜单1</a></li>
+                    <li><a href="#">二级菜单2</a></li>
+                    <li><a href="#">二级菜单3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        var jqLi = $('.wrap ul li')
+        jqLi.mouseenter(function (e) {
+            // 注意：jquery对象绑定的事件中 this指的是js中的dom对象
+            console.log(this);
+            // 注意：jquery对象绑定的事件中 $(this)指的是jquery对象
+            console.log($(this));
+            //注意：jquery对象绑定的事件中 e.originalEvent指的是js中的事件对象 MouseEvent
+            console.log(e.originalEvent);
+            $(this).children('ul').show(800);
+        });
+        jqLi.mouseleave(function () {
+            $(this).children('ul').hide(800);
+        });
+    });
+</script>
+
+</html>

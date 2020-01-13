@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打字游戏</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px dotted orangered;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        #message {
+            padding-top: 25px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #letter {
+            font-size: 200px;
+        }
+
+        span {
+            font-size: 20px;
+        }
+
+        .correct {
+            animation: 1s anima linear infinite;
+        }
+
+        .error {
+            color: red;
+            animation: 1s anima2 linear infinite;
+        }
+
+        @keyframes anima {
+            from {
+                transform: scale(0, 0);
+            }
+
+            to {
+                transform: scale(1, 1);
+            }
+        }
+
+        @keyframes anima2 {
+            from {
+                transform: translateX(-15px);
+            }
+
+            to {
+                transform: translateX(15px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="circle">
+            <p id="letter">M</p>
+        </div>
+        <div id="message">
+            <span>正确,</span>
+            <span>错误,</span>
+            <span>正确率:0.00%</span>
+        </div>
+    </div>
+</body>
+<script>
+    var correctNum = 0;
+    var errorNum = 0;
+    var strLetter;
+    var arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var letter = document.getElementById('letter');
+    var message = document.getElementsByTagName('span');
+    var correct = message[0];
+    var error = message[1];
+    var accuracy = message[2];
+    function wordGame() {
+        for (var i = 0; i < 26; i++) {
+            var numbers = Math.floor(Math.random() * 26);
+            strCap = arr[numbers];
+        }
+        letter.innerText = strCap
+        console.log(letter.innerText);
+        //捕获键盘的输入
+        document.body.onkeydown = function (e) {
+            var str = e.key;
+            var strLetter = str.toUpperCase();
+            console.log(strLetter);
+            if (strCap == strLetter) {
+                letter.classList.add('correct');
+                console.log(correctNum);
+                setTimeout(function () {
+                    letter.classList.remove('correct');
+                }, 500);
+                correctNum++;
+            }
+            else {
+                letter.classList.add('error');
+                errorNum++;
+                setTimeout(function () {
+                    letter.classList.remove('error');
+                }, 500);
+            }
+            accuracy.textContent = '正确率' + ((correctNum / (correctNum + errorNum)) * 100).toFixed(2) + '%';
+        }
+        correct.textContent = '正确' + correctNum + "个,";
+        error.textContent = '错误' + errorNum + "个,";
+
+    }
+    wordGame();
+    setInterval(function () {
+        wordGame();
+    }, 1000);
+
+</script>
+
+</html>

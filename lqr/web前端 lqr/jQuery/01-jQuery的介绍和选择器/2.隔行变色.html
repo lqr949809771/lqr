@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>隔行变色</title>
+    <style>
+        ul {
+            text-align: center;
+            width: 500px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+    </ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        var jqLi = $("li");
+        for (var i = 0; i < jqLi.length; i++) {
+            jqLi[i].style.color = 'orangered';
+            if (i % 2 == 0) {
+                jqLi[i].style.backgroundColor = 'pink';
+            }
+            else {
+                jqLi[i].style.backgroundColor = 'yellow';
+            }
+        }
+    });
+</script>
+
+</html>

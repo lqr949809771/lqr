@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13 绘制圆</title>
+</head>
+<body>
+    <!-- 绘制圆方法 -->
+    <p>在canvas中绘制圆形，用一下办法</p>
+    <p>arc(x,y,r,start,stop);</p>
+    <canvas id="myCanvas" width="200" height="100" style="border: solid 1px red;"></canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        ctx = c.getContext("2d");
+        ctx.arc(100,50,30,0,2*Math.PI);
+        ctx.stroke();
+    </script>
+</body>
+</html>

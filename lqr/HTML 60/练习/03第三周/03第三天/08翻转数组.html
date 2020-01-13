@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻转数组</title>
+</head>
+
+<body>
+    <script>
+        var array = new Array();//原始数组
+        var newarray = [];//翻转后的数组
+        for (var i = 0; i < 10; i++) {
+            var numbers = Math.floor(Math.random() * 50 + 50)
+            array.push(numbers);
+        }
+        console.log('翻转之前的数组：' + array);
+        for (var i = 0; i < array.length; i++) {
+            newarray[i] = array[array.length - 1 -i]
+        }
+        console.log('翻转之后的数组：' + newarray); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标悬停时变色</title>
+</head>
+<body>
+    <ul>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+        <li>如果当时</li>
+    </ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        var jqOdd = $("li:odd");
+        var jqEven = $("li:even");
+        jqOdd.css('background','#cccccc');
+        jqEven.css('background','white');
+        var color = "";
+        $('li').mouseenter(function () { 
+            color = $(this).css('background');
+            console.log(color);
+            console.log(color);
+            $(this).css('background','green');
+        });
+        $('li').mouseleave(function () { 
+            $(this).css('background',color);
+        });
+    });
+</script>
+</html>

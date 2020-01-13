@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var array1 = [];
+    var array2 = [];
+    // 注册函数
+    zhuCe();
+    function zhuCe() {
+        var a = prompt("请输入您的手机号");
+        var b = prompt("请设置密码");
+        var c = prompt("请确认密码");
+        var kong = "";
+
+
+        if (b == c && a != kong && b != kong && c != kong && a != b) {
+            alert("注册成功");
+            array1.push(a);
+            array2.push(b);
+            console.log(array1, array2);
+
+            dengLu();
+        }
+
+        else if (a == b) {
+            alert("账号和密码不能相同,请重新输入");
+            zhuCe();
+        }
+        else if (a != b && b != c) {
+            alert("请重新设置密码");
+            zhuCe();
+        }
+        else {
+            alert("账号或密码不能为空");
+            zhuCe();
+        }
+
+    }
+
+
+    // 登录页面
+    function dengLu() {
+        alert("请登录您的账号")
+        var a = prompt("请输入您的手机号");
+        var b = prompt("请输入密码");
+        var kong = "";
+        if (array2[array1.indexOf(a)] == b) {
+            alert("登录成功");
+            shouYe();
+        }
+
+        else {
+            alert("账号或密码错误,请重新登录");
+            dengLu();
+        }
+
+    }
+
+
+    // 首页页面
+    function shouYe() {
+        alert("正在读取您的好友列表,请稍后......")
+        alert("正在读取您的好友列表,请稍后......")
+        alert("正在读取您的好友列表,请稍后......")
+        alert("正在读取您的好友列表,请稍后......")
+        alert("正在读取您的好友列表,请稍后......")
+        var a = prompt("加载完成，是否要注销用户?(y/n)")
+        if (a == "y") {
+            alert("该去哪去哪")
+            zhuXiao();
+
+        }
+        else {
+            alert("那就看看页面吧");
+            shouYe()
+        }
+    }
+    // 注销
+    function zhuXiao() {
+        array1.splice(0);
+        array2.splice(0);
+        console.log(array1, array2);
+        dengLu()
+    }
+</script>
+
+</html>

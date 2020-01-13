@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态导航栏</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #nav-bar {
+            width: 1200px;
+            margin: 0 auto;
+            background-color: gray;
+        }
+
+        #nav-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            position: relative;
+        }
+
+        #nav-list a {
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .hightLighted {
+            background-color: red;
+        }
+
+        #move-item {
+            height: 41px;
+            width: 44px;
+            background-color: red;
+            /* 一会改变的就是坐标 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.5s;
+        }
+
+        .nav-item {
+            /* 值越大越靠前 */
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="nav-bar">
+            <ul id="nav-list">
+                <li class="nav-item"><a href="" class="hightLighted">首页</a></li>
+                <li class="nav-item"><a href="">国内</a></li>
+                <li class="nav-item"><a href="">国际</a></li>
+                <li class="nav-item"><a href="">军事</a></li>
+                <li class="nav-item"><a href="">财经</a></li>
+                <li class="nav-item"><a href="">互联网</a></li>
+                <li class="nav-item"><a href="">房产</a></li>
+                <li id="move-item"></li>
+            </ul>
+        </div>
+    </nav>
+    <input type="checkbox" name="" id="">
+</body>
+    <script>
+        var moveItem = document.getElementById('move-item');
+        var liList = document.getElementsByClassName('nav-item');
+        for (var i = 0;i < liList.length;i++) {
+            liList[i].onmouseenter = moveIn;
+            liList[i].onmouseleave = moveOut;
+        }
+        function moveIn (e) {
+            moveItem.style.width = e.target.offsetWidth + 'px';
+            moveItem.style.left = e.target.offsetLeft + 'px';
+        }
+        function moveOut (e) {
+            moveItem.style.width = 44 + 'px';
+            moveItem.style.left = 0 + 'px';
+        }
+    </script>
+</html>

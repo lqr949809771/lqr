@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字求和</title>
+</head>
+
+<body>
+    <script>
+        alert("请输入base(基数)和times(次数)");
+        var base = prompt("请输入基数");
+        var sum = 0;
+        base = base * 1;
+        var base1, base2, base3, base4;
+        base1 = base * 1;
+        base2 = (base + String(base)) * 1;
+        base3 = (base2 + String(base)) * 1;
+        base4 = (base3 + String(base)) * 1;
+        document.write(base1 + "<br>" + base2 + "<br>" +base3+ "<br>" +base4);
+        sum +=base1 + base2 +  base3 + base4;
+        document.write("基数的和为：" + sum);
+    </script>
+</body>
+
+</html>

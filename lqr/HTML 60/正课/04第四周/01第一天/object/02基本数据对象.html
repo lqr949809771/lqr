@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    var str = "absafsfafafsf111pppp"
+    var arr = str.split("111");
+    // 包含返回目标索引 不包含返回-1
+    var ind = str.indexOf('abs');
+    // 返回布尔值 包含 true 反之 false
+    // var ind = str.includes('abc');
+    console.log(arr);
+    console.log(ind);
+    //  String() 构造函数 就是构造一个String的对象
+    var strObj = new String("123");
+    console.log(typeof strObj);
+
+    // valueOf是字符串的方法 作用是取出来传递进去的字符串值
+    var str2 = strObj.valueOf();
+    console.log(strObj);
+    // 数字对象
+    var numberObj = new Number(4);
+    console.log(numberObj.valueOf());
+    // 布尔类型也是对应的对象
+    var boolObj = new Boolean(false);
+    console.log(boolObj.valueOf());
+    
+
+</script>
+
+</html>

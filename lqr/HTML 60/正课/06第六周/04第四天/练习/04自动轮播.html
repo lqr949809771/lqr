@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #container {
+            /* width: 1000px; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner {
+            position: relative;
+            width: 684px;
+            height: 394px;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            display: inline-block;
+        }
+
+        .bigImgBox {
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .bigImgBox {
+            width: 684px;
+            height: 394px;
+            box-shadow: 0 5px 5px 5px orange;
+        }
+
+        .smallImgBox {
+            width: 700px;
+            height: 74px;
+            overflow: hidden;
+        }
+
+        .smallImgBox li {
+            margin-left: 18px;
+        }
+
+        #smallBox {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px lightgray;
+            height: 74px;
+            width: 774px;
+        }
+
+        #preImg,
+        #nextImg {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: orange;
+        }
+
+        #preImg {
+            border-right: 1px solid lightgray;
+            padding: 5px 10px;
+        }
+
+        #nextImg {
+            border-left: 1px solid lightgray;
+            padding: 5px 10px;
+        }
+
+        .selected {
+            border: orangered 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="banner">
+            <ul class="bigImgBox">
+                <li><img src="imgs/dsl-1.jpg" alt=""></li>
+                <!-- <li><img src="imgs/dsl-2.jpg" alt="2"></li>
+                <li><img src="imgs/dsl-3.jpg" alt="3"></li>
+                <li><img src="imgs/dsl-4.jpg" alt="4"></li>
+                <li><img src="imgs/dsl-5.jpg" alt="5"></li>
+                <li><img src="imgs/dsl-6.jpg" alt="6"></li>
+                <li><img src="imgs/dsl-1.jpg" alt="7"></li>
+                <li><img src="imgs/dsl-2.jpg" alt="8"></li>
+                <li><img src="imgs/dsl-3.jpg" alt="9"></li> -->
+            </ul>
+        </div>
+        <div id="smallBox">
+            <p id="preImg">
+                <span>上</span>
+                <span>一</span>
+                <span>张</span>
+            </p>
+            <ul class="smallImgBox">
+                <li><img src="imgs/sl-1.jpg" alt="1"></li>
+                <li><img src="imgs/sl-2.jpg" alt="2"></li>
+                <li class="selected"><img src="imgs/sl-3.jpg" alt="3"></li>
+                <li><img src="imgs/sl-4.jpg" alt="4"></li>
+                <li><img src="imgs/sl-5.jpg" alt="5"></li>
+                <li><img src="imgs/sl-6.jpg" alt="6"></li>
+                <li><img src="imgs/sl-1.jpg" alt="7"></li>
+                <li><img src="imgs/sl-2.jpg" alt="8"></li>
+                <li><img src="imgs/sl-3.jpg" alt="9"></li>
+            </ul>
+            <p id="nextImg">
+                <span>下</span>
+                <span>一</span>
+                <span>张</span>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    var showIndex = 3;
+    function show() {
+        // console.log(showIndex);
+        // if (showIndex <= 6) {
+        //     // console.log(666);
+        //     $("img")[0].src = 'imgs/' + 'dsl-' + showIndex + '.jpg'
+        // }
+        // else if (showIndex <= 9){
+        //     var number = showIndex - 6;
+        //     console.log('showIndex:' + number);
+        //     $("img")[0].src = 'imgs/' + 'dsl-' + number + '.jpg'
+        // }
+        // else {
+        //     showIndex = 0;
+        // }
+        $('#preImg').on('click', function () {
+            showIndex--;
+            console.log(showIndex);
+            console.log("???");
+            if (showIndex <= 0) {
+                $(".smallImgBox li").eq(0).addClass('selected')
+                    .siblings().removeClass('selected');
+
+                $(".bigImgBox img")[0].src = 'imgs/' + 'dsl-' + 1 + '.jpg';
+            }
+            else if (showIndex <= 3) {
+                $(".smallImgBox li").eq(showIndex - 1).addClass('selected')
+                    .siblings().removeClass('selected');
+
+                $(".bigImgBox img")[0].src = 'imgs/' + 'dsl-' + showIndex + '.jpg';
+            }
+            else if (showIndex <= 7) {
+                $(".smallImgBox li").eq(3).addClass('selected')
+                    .siblings().removeClass('selected');
+
+                $(".bigImgBox img")[0].src = 'imgs/' + 'dsl-' + showIndex + '.jpg';
+            }
+            else {
+                $(".smallImgBox li").eq((showIndex - 1)).addClass('selected')
+                    .siblings().removeClass('selected');
+
+                $(".bigImgBox img")[0].src = 'imgs/' + 'dsl-' + showIndex + '.jpg';
+            }
+
+
+            // else if () {
+
+            // }
+
+        });
+        $('#nextImg').on('click', function () {
+            console.log("???");
+            showIndex++;
+             if (showIndex >= 3 && showIndex <= 7) {
+                $(".smallImgBox li").eq(showIndex - 1).addClass('selected')
+                    .siblings().removeClass('selected');
+
+                $(".bigImgBox img")[0].src = 'imgs/' + 'dsl-' + showIndex + '.jpg';
+            }
+            else if (showIndex <= 9) {
+                $(".smallImgBox li").eq(3).addClass('selected')
+                    .siblings().removeClass('selected');
+
+                $(".bigImgBox img")[0].src = 'imgs/' + 'dsl-' + showIndex + '.jpg';
+            }
+            else {
+                $(".smallImgBox li").eq((showIndex - 1)).addClass('selected')
+                    .siblings().removeClass('selected');
+
+                $(".bigImgBox img")[0].src = 'imgs/' + 'dsl-' + showIndex + '.jpg';
+            }
+        });
+    }
+    show();
+    // setInterval(function () {
+    //     show();
+    // }, 1000);
+</script>
+
+</html>

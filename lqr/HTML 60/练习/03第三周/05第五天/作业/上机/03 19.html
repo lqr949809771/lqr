@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "yuan yuan yuan jiang jiang yong aaaaaaaaaaaaa aaaaaaaaaaaaa odpsospoaioaoaoaoaoao"
+        var array = str.split(" ");
+        var temp;
+        console.log(array);
+        for (var i = 0; i < array.length - 1; i++) {
+            for (var j = 0; j < array.length - 1 - i; j++) {
+                if (array[j].length < array[j + 1].length) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        console.log(array[0]);
+    </script>
+</body>
+
+</html>

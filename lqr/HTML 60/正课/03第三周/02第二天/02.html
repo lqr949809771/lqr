@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arcNumber = Math.random() * 9;
+        arcNumber = Math.floor(arcNumber);
+        var times = 0;
+        var flag;
+        while (times < 5) {
+            var num = prompt("请输入要猜的数字") * 1;
+            times++;
+            if (times == 1 || times == 2) {
+                if (num == arcNumber) {
+                    console.log("随机出现的的数字为：" + arcNumber);
+                    console.log("正确,当前次数是:" + "第" + times + "次");
+                    alert("你是大神");
+                    break;
+                }
+                else {
+                    console.log("随机出现的的数字为：" + arcNumber);
+                    console.log("错误,当前次数是:" + "第" + times + "次");
+                    alert("不好意思，你答错了");
+                    arcNumber = prompt("请再次输入要猜的数字")
+                }
+            }
+            else if (times >= 3 && times <= 5) {
+                if (num == arcNumber) {
+                    console.log("随机出现的的数字为：" + arcNumber);
+                    console.log("正确,当前次数是:" + "第" + times + "次");
+                    alert("恭喜你答对了");
+                    break;
+                }
+                else {
+                    console.log("随机出现的的数字为：" + arcNumber);
+                    console.log("错误,当前次数是:" + "第" + times + "次");
+                    alert("不好意思，你答错了");
+                    flag = prompt("请输入y 或者 n")
+                }
+            }
+            else {
+                alert("你的次数用完了");
+            }
+        }
+    </script>
+</body>
+
+</html>

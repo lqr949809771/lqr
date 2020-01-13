@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>评分</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        p {
+            margin-top: 100px;
+            height: 50px;
+        }
+
+        .imgBox {
+            margin-left: 10px;
+            margin-top: 100px;
+            width: 25px;
+            height: 25px;
+            background-image: url('images/star.png');
+            background-size: 25px 50px;
+            background-position: 0 0;
+            /* background-position: 0 -30px; */
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .imgStar {
+            margin-left: 10px;
+            margin-top: 100px;
+            width: 25px;
+            height: 25px;
+            background-image: url('images/star.png');
+            background-size: 25px 50px;
+            background-position: 0 -30px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>点击星星评分:</p>
+    <div class="imgBox"></div> 
+    <div class="imgBox"></div>
+    <div class="imgBox"></div>
+    <div class="imgBox"></div>
+    <div class="imgBox"></div>
+</body>
+<script>
+    var imgBox = document.getElementsByTagName('div');
+    var arrImgIndex = [];
+    //进
+    for (i = 0; i < imgBox.length; i++) {
+        imgBox[i].index = i;
+        imgBox[i].onmouseenter = function (e) {
+            imgBox[this.index].classList.remove('imgBox');
+            for (var j = 0; j <= this.index; j++) {
+                arrImgIndex.push(j);
+                imgBox[arrImgIndex[j]].classList.add('imgStar');
+            }
+        }
+    }
+    // 出
+    // for (i = 0; i < imgBox.length; i++) {
+    //     imgBox[i].index = i;
+    //     imgBox[i].onmouseleave = function (e) {
+    //         imgBox[this.index].classList.remove('imgStar');
+    //         imgBox[this.index].classList.add('imgBox');
+    //     }
+    // }
+</script>
+
+</html>

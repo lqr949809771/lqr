@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #main-box {
+            position: relative;
+            width: 540px;
+            height: 1000px;
+            /* border: 1px solid red; */
+        }
+
+        /* #iframe {
+            width: 540px;
+            height: 930px;
+        } */
+
+        iframe {
+            width: 540px;
+            height: 1000px;
+            border: none;
+            /* overflow: hidden; */
+
+        }
+
+        #index-containerbox {
+            background-color: #fff;
+            margin: 0 auto;
+            width: 540px;
+            height: 70px;
+            position: absolute;
+            top: 930px;
+            z-index: 10;
+            left: calc(50% - 540px / 2);
+            /* background-color: blue; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-box">
+        <div class="row">
+            <div class="col-xs-4">
+                <iframe src="store.html" frameborder="0" name="bottom" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div class="container" id="index-containerbox">
+            <div class="row" id="index-rowlastOne">
+                <div class="col-xs-3" class="index-column">
+                    <div class="lead text-center">
+                        <img src="image/page-item.png" alt=""><br>
+                        <a href="store.html" class="index-color" target="bottom">商城</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-3" class="index-column">
+                    <div class="lead text-center">
+                        <img src="image/page-item.png" alt=""><br>
+                        <a href="classify.html" class="index-color" target="bottom">分类</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-3" class="index-column">
+                    <div class="lead text-center">
+                        <img src="image/page-item.png" alt=""><br>
+                        <a href="Cart.html" target="_blank">购物车</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-3" class="index-column">
+                    <div class="lead text-center">
+                        <img src="image/page-item.png" alt=""><br>
+                        <a href="service.html" class="index-color" target="bottom">服务</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container" id="iframe">
+          
+        </div> -->
+    </div>
+    <script src="bs/js/jquery.min.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+<html>

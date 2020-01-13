@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js动态导航栏</title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #nav-bar {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: antiquewhite;
+            border: solid 1px rgb(0, 0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            line-height: 80px;
+        }
+
+        #nav-list {
+            display: flex;
+        }
+
+        #logo {
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
+            background-size: 100%;
+            background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4197607922,659235661&fm=26&gp=0.jpg);
+        }
+
+        #nav-list li {
+            font-size: 16px;
+            color: saddlebrown;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        #panel {
+            position: absolute;
+            left: 0;
+            top: 80px;
+            background-color: #fff;
+            border-top: 1px solid #cccccc;
+            width: 100%;
+            height: 0;
+            box-shadow: 0 8px 5px -5px #cccccc;
+            transition: all .3s;
+            transition-delay: .2s;
+            overflow: hidden;
+        }
+
+        #panel-list {
+            display: flex;
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #panel-list li {
+            width: 160px;
+        }
+
+        .new-product {
+            width: 60px;
+            border: solid 1px orange;
+            color: coral;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .pro-icon {
+            width: 100%;
+            border-right: solid 1px orange;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="nav-bar">
+            <div id="loge"></div>
+            <ul id="nav-list">
+                <li class="class-list-item">小米</li>
+                <li class="class-list-item">红米</li>
+                <li class="class-list-item">黑鲨</li>
+            </ul>
+            <div>
+                <input type="text">
+            </div>
+        </nav>
+    </header>
+    <div id="panel">
+        <!-- <ul id="panel-list">
+            <li>
+                <div class="new-product">新品</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品2</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子2</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子3</p>
+                <p class="pro-price">8888起</p>
+            </li>
+        </ul>
+
+        <ul id="panel-list">
+            <li>
+                <div class="new-product">爆品</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">华为</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">爆品2</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子2</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子3</p>
+                <p class="pro-price">8888起</p>
+            </li>
+        </ul>
+
+        <ul id="panel-list">
+            <li>
+                <div class="new-product">黑鲨</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">黑鲨手机</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">黑鲨3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子2</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子3</p>
+                <p class="pro-price">8888起</p>
+            </li>
+        </ul> -->
+
+    </div>
+    <p>一种是静态的数据，例如网页的标题，导航栏标题</p>
+    <p>另一种是动态来源于服务器的数据，例如新闻，导航栏标题</p>
+</body>
+<script>
+    var data = [
+        // 字面量字符串
+
+        `
+        <ul id="panel-list">
+            <li>
+                <div class="new-product">新品</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品2</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子2</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子3</p>
+                <p class="pro-price">8888起</p>
+            </li>
+        </ul>
+        `
+        ,
+        `
+        <ul id="panel-list">
+            <li>
+                <div class="new-product">爆品</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">华为</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">爆品2</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子2</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子3</p>
+                <p class="pro-price">8888起</p>
+            </li>
+        </ul>
+        `
+        ,
+        `
+       <ul id="panel-list">
+            <li>
+                <div class="new-product">黑鲨</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">黑鲨手机</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">黑鲨3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子2</p>
+                <p class="pro-price">8888起</p>
+            </li>
+
+            <li>
+                <div class="new-product">新品3</div>
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2596658818,1328041789&fm=26&gp=0.jpg"
+                    class="pro-icon">
+                <p class="pro-name">锤子3</p>
+                <p class="pro-price">8888起</p>
+            </li>
+        </ul>
+       `
+
+    ];
+    // data是一个数组里面有三个对象 
+    var items = document.getElementsByClassName('class-list-item');
+    var panel = document.getElementById('panel');
+
+    // 进入 离开
+    panel.onmouseleave = liLeave;
+    function liLeave(e) {
+        panel.style.height = '0px';
+    }
+    panel.onmouseenter = liEnter;
+    function liEnter(e) {
+        panel.style.height = '230px';
+        if (e.target.index != undefined) {
+            panel.innerHTML = data[e.target.index];
+        }
+    }
+    for (var i = 0; i < items.length; i++) {
+        var li = items[i];
+        li.onmouseleave = liLeave;
+        panel.onmouseenter = liEnter;
+        // 嵌套数据
+        li.index = i;
+
+    }
+</script>
+
+</html>

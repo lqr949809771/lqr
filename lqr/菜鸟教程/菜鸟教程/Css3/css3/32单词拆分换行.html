@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>32 单词拆分换行 word-break</title>
+
+    <style>
+
+        p.test1{
+        width: 9em;
+        border: 1px solid black;
+        /* word-break: keep-all; */
+        word-break: break-all;
+        /* word-break: inherit;继承 */
+        /* word-break: initial;原始 */
+        }
+
+        p.test2{
+        width: 9em;
+        border: 1px solid black;
+        word-break: keep-all;
+        }
+    
+    </style>
+</head>
+<body>
+
+        <p class="test1"> This paragraph contains some text. This line will-break-at-hyphenates.</p>
+        <p class="test2"> This paragraph contains some text: The lines will break at any character.</p>
+    <p id="a1" style="text-align: center;color: red;"><strong>注意：</strong> word-break 属性不兼容 Opea。</p>
+
+    <p id="a2" style="text-align: center; color: rebeccapurple;">h-shadow   v-shadow   blur   spread   color   insect
+
+       水平阴影    垂直阴影   模糊    阴影尺寸  颜色   外阴影转到内阴影 </p>
+    
+</body>
+</html>

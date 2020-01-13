@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算器</title>
+</head>
+
+<body>
+    <script>
+        var name = prompt("请输入姓名");
+        var height = prompt("请输入身高(厘米)") / 100;
+        var weight = prompt("请输入体重(千克)") * 1;
+        function calculator(height, weight) {
+            var str = name;
+            var result = "";
+            var bmi = (weight / (height * height)).toFixed(2);
+            alert(bmi);
+            if (bmi >= 18.4 && bmi <= 18.4) {
+                result = "你的身体状态为：" + "偏瘦"
+                // alert("你的身体状态为：" + "偏瘦");
+            }
+            else if (bmi > 18.4 && bmi <= 23.9) {
+                result = "你的身体状态为：" + "正常"
+                // alert("你的身体状态为：" + "正常");
+            }
+            else if (bmi > 23.9 && bmi <= 27.9) {
+                result = "你的身体状态为：" + "过重"
+                // alert("你的身体状态为：" + "过重");
+            }
+            else if (bmi >= 28.0) {
+                result = "你的身体状态为：" + "肥胖"
+                // alert("你的身体状态为：" + "肥胖");
+            }
+            else {
+                result = "非正常状态!!!!!"
+                // alert("非正常状态!!!!!");
+            }
+            return str,result;
+        }
+        alert(calculator(height, weight));
+    </script>
+</body>
+
+</html>

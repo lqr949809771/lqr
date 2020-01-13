@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 10px;
+        }
+
+        div {
+            height: 50px;
+            width: 800px;
+
+        }
+
+        div span {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            background-color: #cccccc;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-left: 5px;
+            line-height: 30px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .hrLine {
+            border-top: none;
+            border-bottom: 1px solid orange;
+            margin-bottom: 10px;
+        }
+
+        .ope {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            background-color: #cccccc;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-left: 5px;
+            line-height: 30px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #showResult {
+            text-align: left;
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin-left: 5px;
+            padding: 5px 10px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    {
+        var $div = $('<div></div>');
+        $div.appendTo(document.body);
+        var numArray = [];
+        var spanStr1 = '';
+        for (var i = 0; i < 10; i++) {
+            numArray.push(i);
+            spanStr1 += '<span class="number">' + numArray[i] + '</span>'
+        }
+        $(spanStr1).appendTo($('div'));
+        // 添加hr
+        $("body").append("<hr class='hrLine'>");
+        var opeArray = ['+', '-', '*', '/', 'C', '='];
+        var spanStr = '';
+        for (var i = 0; i < 6; i++) {
+            spanStr += '<span class="ope">' + opeArray[i] + '</span>'
+        }
+        $(spanStr).appendTo($('body'));
+        var $div1 = $('<div id="showResult">0</div>');
+        $div1.appendTo(document.body);
+    }
+    var operator;
+    var nowNumber = '';
+    var preNumber = '';
+    var count = 0;
+    $('span').on('click', function (e) {
+        if ($(this).html() == '+') {
+            operator = '+';
+            if (count == 0) {
+                preNumber = nowNumber * 1;
+                nowNumber = "";
+            }
+            else {
+                preNumber = preNumber * 1 + nowNumber * 1;
+                nowNumber = "";
+            }
+            $("#showResult").html(preNumber * 1);
+            count++;
+        }
+        else if ($(this).html() == '-') {
+            operator = '-';
+            if (count == 0) {
+                preNumber = nowNumber * 1;
+                nowNumber = "";
+            }
+            else {
+                preNumber = preNumber * 1 - nowNumber * 1;
+                nowNumber = "";
+            }
+            $("#showResult").html(preNumber * 1);
+            count++;
+        }
+        else if ($(this).html() == '*') {
+            operator = '*';
+            if (count == 0) {
+                preNumber = nowNumber * 1;
+                nowNumber = "";
+            }
+            else {
+                preNumber = preNumber * 1 * nowNumber * 1;
+                nowNumber = "";
+            }
+            $("#showResult").html(preNumber * 1);
+            count++;
+        }
+        else if ($(this).html() == '/') {
+            operator = '/';
+            if (count == 0) {
+                preNumber = nowNumber * 1;
+                nowNumber = "";
+            }
+            else {
+                preNumber = preNumber * 1 / nowNumber * 1;
+                nowNumber = "";
+            }
+            $("#showResult").html(preNumber * 1);
+            count++;
+        }
+        else if ($(this).html() == 'C') {
+            $("#showResult").html('');
+            nowNumber = '';
+            preNumber = '';
+            count = 0;
+        }
+        else if ($(this).html() == '=') {
+            switch (operator) {
+                case '+':
+                    preNumber = preNumber * 1 + nowNumber * 1;
+                    break;
+                case '-':
+                    preNumber = preNumber * 1 - nowNumber * 1;
+                    break;
+                case '*':
+                    preNumber = preNumber * 1 * nowNumber * 1;
+                    break;
+                case '/':
+                    preNumber = preNumber * 1 / nowNumber * 1;
+                    break;
+                default:
+                    break;
+            }
+            $("#showResult").html(preNumber * 1);
+            nowNumber = '';
+            preNumber = '';
+            count = 0;
+        }
+        else {
+            nowNumber += $(this).html();
+            $("#showResult").html(nowNumber * 1);
+        }
+    });
+</script>
+
+</html>

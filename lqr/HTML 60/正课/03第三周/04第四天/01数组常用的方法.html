@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组常用的方法</title>
+</head>
+
+<body>
+    <script>
+        // 增 删 改 查
+        // var arr1 = [1, 2, 3];
+        // 在数组的最后一位追加一个或多个元素  压栈
+        // arr1.push(4);
+        // console.log(arr1);
+        // pop 出栈 删除数组的最后一个元素 并且可以把删除的元素返回
+        // console.log(arr1.pop());
+        // console.log(arr1);
+
+        /*
+        push 和 pop是一对栈操作(stack) 原则 先进后出
+        栈是一个线性数据结构，只有一个入口同时也是出口
+        */
+        // 讲一个元素添加到数组的最前端
+        // arr1.unshift(9);
+        // 删除 从数组的最前端删除元素 返回的依然是删除的元素
+        // shift unshift 也是一对栈操作
+        // push shift 结合是队列操作，也是一种线性数据结构 元素保持先进先出后进后出
+        // console.log(arr1.shift());
+        // console.log(arr1);
+
+        var arr2 = ['a', 'b', 'c', 'd', 'e', 'f']
+        // splice 操作的起始索引
+        // 第二个参数代表的是要删除几个元素
+        arr2.splice(2, 0, 'w', 'g');
+        console.log(arr2);
+
+        var arr3 = [1, 2, 3, 4, 5, 6]
+        // reverse 反序
+        console.log(arr3.reverse());
+        // 截取
+        var arr4 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        // slice方法用于数组截取第一个参数表示要从那个位置截取包含要截取的哪一位 第二个参数 截取到那个位置
+        // 不包括元素当前的位置 把截取内容返回到一个新数组
+        // 原数组不变
+        var arr5 = arr4.slice(0, 8);
+        console.log(arr5);
+        // 获取元素在数组中的索引 如果不包含返回-1
+        arr6 = [4, 5, 9, 5, 4, 5, 1, 7, 8, 5, 2]
+        var ind = arr6.indexOf(1);
+        console.log(ind);
+        // join 方法是将数组中的内容拼接成一个字符串
+        var arr7 = ['h','e','l','l','o',2,0,1,9]
+        var str = arr7.join("");
+        console.log(str);
+        
+    </script>
+</body>
+
+</html>

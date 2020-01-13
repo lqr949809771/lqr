@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>雪花</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        img {
+            width: 100px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="" alt="">
+    <!-- 添加脚本 -->
+    <script>
+        // 定义方法  创建雪花
+        // 循环10次 调用creatSnow()
+        for(var i = 0;i < 10;i++){
+            createSnow();
+        }
+
+        function createSnow() {
+            // var 表示变量的关键字 snow 变量
+            // document 文档 当前网页的对象  
+            // create 创建  element 元素 标签
+            // snow 就是img标签的对象
+            var snow = document.createElement("img");
+            // 设置 图片的位置 宽高  资源文件
+            snow.src = "flake.png";
+            // 宽高是随机的  50 - 200px
+            // math数学   random 随机
+            // [0 1) 小数 [50 200)
+            // [0 150) -> [50 200)
+            var num = Math.random() * 151 + 50;
+            // floor  地板 向下取整   0.1 = 0  1.5 = 1  1.9 = 1
+            // ceil 天花板 向上去整   0.1 = 1  1.5 = 2  1.9= 2
+            num = Math.floor(num);
+            snow.width = num;
+            snow.height = num;
+            // snow.style.width
+            // 设置定位信息
+            // 获取屏幕的宽高
+            // client 客户端 浏览器宽高
+            var h = document.documentElement.clientHeight;
+            var w = document.documentElement.clientWidth;
+
+            snow.style.position = "absolute";
+            // h-num 屏幕的高-元素的高  * [0 1)
+            // l t 记录着雪花当前位置 
+            var t = (h - num) * Math.random();
+            var l = (w - num) * Math.random();
+            // NaN  not a number
+            console.log(t)
+            snow.style.top = t + "px";
+            snow.style.left = l + "px";
+            // console 控制台  log 日志 
+            // 在控制台中打印snow对象的结果
+            console.log(snow);
+            // 把图片添加在文档中
+            // append 追加  添加
+            document.body.append(snow);
+
+            // 每隔0.5s改变一次t l的值
+            // interval 间隔 
+            // 开启计时器 每隔多长时间做一个操作
+            // 500ms 0.5s
+            setInterval(() => {
+                // += 在原有值得基础上+10 再重新赋值
+                // t += 10;
+                // l += 10;
+                l = l + 10;
+                t = t + 10;
+                if (l > w) {
+                    l = 0;
+                }
+                if (t > h) {
+                    t = 0;
+                }
+                // 记得一定要有最后的赋值操作 否则 tl的改变不会影响元素的位置
+                snow.style.top = t + "px";
+                snow.style.left = l + "px";
+            }, 500);
+        }
+
+    </script>
+    <!-- src 资源  引入外部的js文件 -->
+    <script src="12test.js"></script>
+</body>
+
+</html>

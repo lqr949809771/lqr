@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery animate() 队列</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: black 10px dotted;
+            background-clip: content-box;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <p><strong
+            style="color: red;">队列:</strong>队列是一种特殊的线性表，只允许在表的前端（队头）进行删除操作（出队），在表的后端（队尾）进行出入操作（入队），队列的特点是先进先出，最先插入的元素最先被删除。
+    </p>
+    <button>开始动画</button>
+    <br><br>
+    <div></div>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                // e.preventDefault();
+                var div = $("div");
+                div.animate({ height: "400", opacity: .3 }, 1000);
+                div.animate({ width: "400", opacity: ".8" }, 1000);
+                div.animate({ height: "100", opacity: ".3" }, 1000);
+                div.animate({ width: "100", opacity: ".8" }, 1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

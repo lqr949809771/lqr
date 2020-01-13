@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预定义</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        button:hover {
+            color: chocolate;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button>开始动画</button>
+    <br><br>
+    <div
+        style="background-color: yellowgreen; border: chocolate 5px dashed;width: 200px; height: 200px;background-clip: content-box; position: relative;">
+        div</div>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                // e.preventDefault();
+                // $("div").animate({left:"250px", opacity:".5",height:"150px",width:"150px"});
+                // $("div").animate({left:"250px", opacity:".5",height:"+=10px",width:"+=10px"},100);
+                $("div").animate({ height: "toggle" }, 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20 线性渐变重复 repeating-linear-gradient</title>
+
+    <style>
+
+        #grad1{
+
+            height: 200px;
+            background-color: red;
+            background-image: repeating-linear-gradient(red,yellow 10%,green 20%);
+
+        }
+        
+        #grad2{
+
+            
+            height: 200px;
+            background-color: red;
+            background-image: repeating-linear-gradient(45deg,red,yellow 7%,green 10%);
+
+        }
+        
+        #grad3{
+
+            
+            height: 200px;
+            background-color: red;
+            background-image: repeating-linear-gradient(190deg,red,yellow 7%,green 10%);
+
+        }
+        
+        #grad4{
+
+            
+            height: 200px;
+            background-color: red;
+            background-image: repeating-linear-gradient(90deg,red,yellow 7%,green 10%);
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>重复的线性渐变</h1>
+
+    <div id="grad1"></div>
+
+    <p>45deg</p>
+    <div id="grad2"></div>
+
+    <p>190deg</p>
+    <div id="grad3"></div>
+
+    <p>90deg</p>
+    <div id="grad4"></div>
+
+    <p><strong>注意：</strong> IE 9 及以前的版本不支持线性渐变。</p>
+    
+</body>
+</html>

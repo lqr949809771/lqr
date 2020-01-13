@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三级联动</title>
+</head>
+
+<body>
+    <p id="addr">河南-郑州-经开区</p>
+</body>
+<script>
+    var info = [
+        {
+            name: '河南',
+            cites: ['郑州', '洛阳', '南阳'],
+            block: [
+                ['经开区', '郑州一区', '郑州二区'],
+                ['洛阳一区', '洛阳二区', '洛阳三区'],
+                ['南阳一区', '南阳二区', '南阳三区'],
+            ]
+        },
+
+        {
+            name: '湖南',
+            cites: ['武汉', '长沙', '张家界'],
+            block: [
+                ['武汉一区', '武汉二区', '武汉三区'],
+                ['长沙一区', '长沙二区', '长沙三区'],
+                ['张家界一区', '张家界二区', '张家界三区'],
+            ]
+        },
+
+        {
+            name: '河北',
+            cites: ['保定', '衡水', '廊坊'],
+            block: [
+                ['保定一区', '保定二区', '保定三区'],
+                ['衡水一区', '衡水二区', '衡水三区'],
+                ['廊坊一区', '廊坊二区', '廊坊三区'],
+            ]
+        }
+    ];
+    var provinceSel = document.createElement('select');
+    document.body.appendChild(provinceSel);
+    for (var i = 0; i < info.length; i++) {
+        var opt = document.createElement('option');
+        opt.innerHTML = info[i].name;
+        console.log(opt.innerHTML);
+        provinceSel.appendChild(opt);
+    }
+
+    var citySel = document.createElement('select');
+    document.body.appendChild(citySel);
+    for (var i = 0; i < info[0].cites.length; i++) {
+        var optOne = document.createElement('option');
+        optOne.innerHTML = info[0].cites[i];
+        citySel.appendChild(optOne);
+    }
+
+    var blockSel = document.createElement('select');
+    document.body.appendChild(blockSel);
+    console.log('区的长度:' + info[0].block[0].length);
+    for (var i = 0; i < info[0].block[0].length; i++) {
+        var optOne = document.createElement('option');
+        optOne.innerHTML = info[0].block[0][i];
+        blockSel.appendChild(optOne);
+    }
+    // 城市select
+    provinceSel.onchange = function () {
+        // 先把右侧城市的select清空
+        citySel.innerHTML = '';
+        // 先选择省份
+        var pro = info[provinceSel.selectedIndex];
+        // 根据选择的省份拿到对应的城市进行数据替换
+        for (var i = 0; i < pro.cites.length; i++) {
+            var optOne = document.createElement('option');
+            optOne.innerHTML = pro.cites[i];
+            citySel.appendChild(optOne);
+        }
+        refresh();
+    }
+    // console.log(info);
+    // console.log(info[0].block[0][0]);
+
+    console.log(provinceSel.selectedIndex,citySel.selectedIndex);
+    
+    citySel.onchange = function () {
+        blockSel.innerHTML = '';
+        // 省份
+        var pro = info[provinceSel.selectedIndex];
+        // 城市
+        var city = info[citySel.selectedIndex];
+
+        // 根据选择的城市拿到对应的区进行数据替换
+        for (var i = 0; i < city.block[0].length; i++) {
+            var optOne = document.createElement('option');
+            optOne.innerHTML = city.block[i];
+            blockSel.appendChild(optOne);
+        }
+        // refresh();
+    }
+
+    blockSel.onchange = function () {
+        refresh();
+    }
+    function refresh() {
+        // info[provinceSel.selectedIndex] 获取省份
+        var pro = info[provinceSel.selectedIndex];
+        // pro.cites 获取城市
+        var city = pro.cites[citySel.selectedIndex];
+        // var city = info[provinceSel.selectedIndex].cites[citySel.selectedIndex]
+        // var block = city.blockSel.
+        var addr = document.getElementById('addr');
+        addr.innerHTML = pro.name + '-' + city
+    }
+</script>
+
+</html>

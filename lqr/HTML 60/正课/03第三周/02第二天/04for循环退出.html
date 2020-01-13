@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环退出</title>
+</head>
+
+<body>
+    <script>
+        // 循环体
+        // for (var i = 0;i < 10;i++) {
+        //     i--;
+        //     console.log(i);   
+        // }
+        /* 
+         for (var i = 0; i <= 100; i++) {
+            // 逢七过
+            if (i % 7 == 0 || i % 10 == 7 || (i > 69 && i < 80)) {
+                // console.log(i);
+                // 跳出
+                // 满足这个条件时结束此次循环
+                continue;
+            }
+            console.log(i);
+        }
+        */
+
+        // 公约数：两个数之间的都可以出尽得数
+        // 求最大公约数
+        var n1 = 18;
+        var n2 = 24;
+        if (n2 > n1) {
+            var c = n1;
+            n1 = n2;
+            n2 = c;
+        }
+        for (var i = n2; i > 1; i--) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                console.log(i);
+                // break 用于退出当前的循环
+                // break;
+                continue;
+            }
+        }
+        // for (var i = 0; i < 10; i++) {
+        //     for (var j = 0; j < 10; j++) { 
+        //         if (j > 4) {
+        //             break;
+        //         }
+        //     }
+        //     console.log(i);
+            
+        // }
+        // 
+    </script>
+</body>
+
+</html>

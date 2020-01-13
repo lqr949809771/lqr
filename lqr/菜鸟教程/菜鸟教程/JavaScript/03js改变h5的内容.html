@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03 改变Html内容</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <h2>我的第一段 JavaScript</h2>
+        <p id="demo">
+            JavaScript 能改变 HTML 的内容
+        </p>
+        <script>
+        function myFunction() {
+            x = document.getElementById("demo");
+            x.innerHTML = "Hello JavaScript!";
+            }
+        </script>
+        <button type="button" onclick="myFunction()">点击这里</button>
+</body>
+</html>

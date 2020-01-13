@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var str1 = 'abc';
+
+    var str2 = str1;
+
+    var arr1 = [];
+    var arr2 = [];
+    arr1.push(1);
+    var arr2 = arr1;
+    console.log(arr2);
+
+    var arr1 = [1, true, 'ch', 15];
+    var arr2 = [];
+    for (var i = 0; i < arr1.length; i++) {
+        // arr2 = arr1[i];
+        arr2.push(arr1[i]);
+        // console.log(arr2);
+    }
+    console.log(arr2);
+    console.log(arr1);
+
+    // object
+
+    var obj1 = {
+        name: 'lqr',
+        age: 22,
+        isMale: true
+    };
+    var obj2 = {};
+    for (var key in obj1) {
+        obj2[key] = obj1[key];
+    }
+    console.log(obj1);
+    obj2.name = 111
+    console.log(obj2);
+
+    var arr3 = [];
+    for (var ins in arr1) {
+        arr3[ins] = arr1[ins]
+    }
+    console.log(typeof arr1); //object
+    console.log(typeof obj1); //object
+
+    // instanceof
+    console.log(arr1 instanceof Array); //true
+    console.log(obj1 instanceof Array); //false
+
+    // 不知道数据类型 但知道是个对象
+
+    arr4 = [1, 2, 3, [15, 20, 22]];
+    // 浅复制
+    function copy(oldObj) {
+        var newObj = (oldObj instanceof Array) ? [] : {};
+        for (var ins in oldObj) {
+            newObj[ins] = oldObj[ins];
+        }
+        return newObj;
+    }
+    var arr5 = copy(arr4);
+    console.log(arr5 instanceof Array);
+    if (arr5 instanceof Array) {
+        console.log('数组');
+    }
+    else {
+        console.log('对象');
+    }
+    console.log(arr5);
+    arr4[3].push(('hello'));
+    console.log(arr5);
+</script>
+
+</html>

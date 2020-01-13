@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+        section{
+            font-size: 30px;
+            /* display: flex; */
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            /* border: solid 2px black; */
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            /* transition: transform 5s linear;
+            border-left: aqua 10px dotted;
+            transform-origin: 0 0; */
+            /* 过渡 描述 */
+            /* 设置要为哪一个属性进行过渡：设置的属性
+                值如果发生变化那么过渡
+             */
+            /* transition-property: transform; */
+            /* 过度时间 以s为范围 */
+            /* transition-duration: 3s; */
+            /*  */
+            /* transition-timing-function: linear; */
+            /* transition-timing-function: ease; */
+            /* 过渡属性可以用一个属性概括 */
+            /* 多个 */
+            /* transition: transform,background-color,border-radius,border,5s linear ; */
+
+        }
+        #d1{
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+            transition: transform 5s linear;
+            /* border-left: aqua 10px dotted; */
+            transform-origin: 0 100%;
+        }
+        #d1:hover{
+            /* transform: rotate(45deg) scale(1.5,1.5); */
+            /* background-color: red;
+            border-radius: 50%;
+            border: double 2px greenyellow; */
+            transform: rotateY(-60deg);
+        }
+        /* section:hover{
+            box-shadow: 0 0 40px 5px red;
+        } */
+    </style>
+</head>
+<body>
+    <section>
+        <div id="d1">1</div>
+    </section>
+</body>
+</html>

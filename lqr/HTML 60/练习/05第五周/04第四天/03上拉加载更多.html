@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上拉加载更多</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #container {
+            width: 800px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        p {
+            width: 100%;
+            height: 15%;
+            text-align: center;
+            font-size: 50px;
+            font-family: '楷体';
+            font-weight: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body p:nth-of-type(2n + 1) {
+            background-color: aqua;
+        }
+
+        body p:nth-of-type(2n) {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+        <p>10</p>
+    </div>
+
+</body>
+<script>
+    var arrFirst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var arrSecond = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'g', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // alert(arrSecond.length);
+    var conBox = document.getElementById('container');
+    var timer;
+    var pTxt = document.getElementsByTagName('p');
+    conBox.onscroll = function (e) {
+        // var elementHeight = e.target.clientHeight;
+        // var contentHeight = e.target.scrollHeight;
+        // var pHeight = e.target.scrollTop;
+        // if (pHeight == contentHeight - elementHeight) {
+        //     console.log('到底了');
+        // }
+        if (e.target.scrollTop ==
+            e.target.scrollHeight - e.target.clientHeight) {
+            console.log("拖到了底部");
+        }
+    }
+</script>
+
+</html>

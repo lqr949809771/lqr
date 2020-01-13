@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时钟</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background-image: url(images/clock.jpg);
+            background-size: 850px 850px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-color: black;
+        }
+
+        #dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            top: calc(50% - 30px / 2);
+            left: calc(50% - 30px / 2);
+            z-index: 15;
+        }
+
+        /* 秒针 */
+        #second {
+            width: 600px;
+            height: 10px;
+            border-radius: calc(10px / 2);
+            position: absolute;
+            top: calc(50% - 10px / 2);
+            left: calc(50% - 600px / 2);
+            animation: rotate 60s linear infinite;
+            z-index: 11;
+
+        }
+
+        #second span {
+            width: 360px;
+            height: 6px;
+            background-color: red;
+            display: block;
+            margin-top: 2px;
+            border-radius: 6px;
+        }
+
+        /* 分针 */
+        #minute {
+            width: 500px;
+            height: 16px;
+            border-radius: calc(16px / 2);
+            position: absolute;
+            top: calc(50% - 16px / 2);
+            left: calc(50% - 500px / 2);
+            animation: rotate 3600s linear infinite;
+
+        }
+
+        #minute span {
+            width: 300px;
+            height: 8px;
+            background-color: green;
+            display: block;
+            margin-top: 4px;
+            border-radius: 8px;
+            z-index: 12;
+        }
+
+        /* 时针 */
+        #hour {
+            width: 400px;
+            height: 20px;
+            border-radius: calc(20px / 2);
+            position: absolute;
+            top: calc(50% - 20px / 2);
+            left: calc(50% - 400px / 2);
+            animation: rotate 43200s linear infinite;
+
+        }
+
+        #hour span {
+            width: 235px;
+            height: 10px;
+            background-color: blue;
+            display: block;
+            margin-top: 5px;
+            border-radius: 10px;
+            z-index: 13;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="dot"></div>
+        <div id="second">
+            <span></span>
+        </div>
+        <div id="minute">
+            <span></span>
+        </div>
+        <div id="hour">
+            <span></span>
+        </div>
+    </main>
+
+    <script>
+        var num = 360;
+        alert();
+    </script>
+</body>
+
+</html>

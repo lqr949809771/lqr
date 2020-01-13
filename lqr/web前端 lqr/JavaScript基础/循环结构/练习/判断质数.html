@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断质数</title>
+</head>
+
+<body>
+    <p style="text-align: center;">在页面中接收一个用户输入的数字，并判断该数是否是质数。</p>
+</body>
+<script>
+    var num = prompt("请输入一个大于1的整数:") * 1;
+    if (num <= 1) {
+        alert("该值不合法");
+    }
+    else {
+        var flag = true;
+        for (var i = 2; i < num; i++) {
+            if (num % i == 0) {
+                flag = false;
+            }
+        }
+    }
+    if (flag) {
+        alert("这个数是质数:" + num);
+    }
+    else {
+        alert("这个数不是质数");
+    }
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13 linear-gradient 左右</title>
+    <style>
+        #grad1{
+            height: 200px;
+            background-color: red;
+            background-image: linear-gradient(to bottom right, red,blue);
+        }
+        #demo{
+            font-size: 25px;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h3>线性渐变 - 从左上角到右下角</h3>
+    <p>从左上角开始的线性渐变。起点是红色，慢慢过渡到蓝色。</p>
+    <div id="grad1"></div>
+    <p><strong>注意：</strong> IE 9 及以前的版本不支持渐变。</p>
+    <!-- <b>之一</b> -->
+    <p id="demo"><strong>注意：</strong>to bottom right和red以及blue 三者之间需要逗号。</p>
+</body>
+</html>

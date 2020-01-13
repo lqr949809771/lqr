@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时钟</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: #000000;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        #time {
+            font-size: 90px;
+            font-family: 'Digital Dismay';
+            color: #ffff00;
+            margin-bottom: 0;
+        }
+
+        #date {
+            font-size: 25px;
+            color: #007000;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p id="time">18:xx:xx</p>
+        <p id="date">xxxx年xx月xx日xxx</p>
+    </main>
+</body>
+<script>
+    function clock() {
+        var now = new Date();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+        var day = now.getDay();
+        var time = document.getElementById("time");
+        var nyr = document.getElementById("date");
+
+        //数组
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        var week = arr[day];
+        //星期几
+        var week = "";
+        switch (day) {
+            case 0:
+                week = '星期日';
+                break;
+            case 1:
+                week = '星期一';
+                break;
+            case 2:
+                week = '星期二';
+                break;
+            case 3:
+                week = '星期三';
+                break;
+            case 4:
+                week = '星期四';
+                break;
+            case 5:
+                week = '星期五';
+                break;
+            case 6:
+                week = '星期六';
+                break;
+            default:
+                week = '一周不可能超过七天';
+                break;
+        }
+        time.textContent = (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + ":" + (second < 10 ? "0" + second : second);
+        nyr.textContent = year + '年' + month + '月' + date + '日' + week;
+    }
+    clock();
+    setInterval(function () {
+        clock();
+    }, 100);
+</script>
+
+</html>

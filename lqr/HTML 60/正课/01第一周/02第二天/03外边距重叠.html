@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>外边距重叠</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #out {
+            height: 200px;
+            background-color: red;
+            margin: 20px;
+        }
+
+        #in {
+            height: 50px;
+            background-color: green;
+            margin: 10px;
+            /* 块元素与块元素的上下外间距没有边框的情况下会产生塌陷 */
+            /* border-top: solid 10px red; */
+        }
+        .box{
+            height: 50px;
+            /* border-color: pink; */
+            background-color: pink;
+            border: solid 2px red;
+        }
+        .c1{
+            margin: 30px 0; 
+        }
+        .c2{
+            margin: 10px 0; 
+            border: solid 10px transparent;
+        
+
+        }
+        .box1{
+            margin-bottom: 20px;
+        }
+        .box2{
+            margin-bottom: 20px;
+        }
+        .c3{
+            margin: 50px 0; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="out">
+        <div id="in"></div>
+    </div>
+
+    <div class="box c1"></div>
+    <div class="box c2"></div>
+    <div class="box c3"></div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap 实例 - 列排序</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- 我们在用bootstrap做前端开发的时候，经常会用到列移动、列排列，特别是在调试大屏幕显示器上显示效果时，经常用到。
+
+        首先看这3个英文单词的中文含义解释：
+        
+        offset 补偿（课本上或相关教程上一般都把这个叫做“偏移”），其实就是在左侧补列（1~11列）
+        
+        push 推
+        
+        pull 拉
+        
+        偏移、推、拉，都有一个参照物，即相对的位置，那就是左侧， 相对于左侧偏移、推、拉 
+        
+        写法比如：
+        
+        col-md-offset-3（在左侧补充3列）
+        col-md-push-8（从左侧往右侧推8列）
+        col-md-pull-2（往左侧拉2列）
+        
+        从效果上看offset和push效果一样，其实采取的方法是不同的，offset是直接在左侧补列达到偏移的效果，push是通过位置移动达到移动的效果 -->
+    <div class="container">
+
+        <h1>Hello, world!</h1>
+
+        <div class="row">
+            <p>排序前</p>
+            <div class="col-md-4" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                我在左边
+            </div>
+            <div class="col-md-8" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                我在右边
+            </div>
+        </div><br>
+        <div class="row">
+            <p>排序后</p>
+            <div class="col-md-4 col-md-push-8" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, 
+         inset -1px 1px 1px #444;">
+                我在左边
+            </div>
+            <div class="col-md-8 col-md-pull-4" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, 
+         inset -1px 1px 1px #444;">
+                我在右边
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

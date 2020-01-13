@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #container {
+            width: 590px;
+            height: 470px;
+            margin: 0 auto;
+        }
+
+        #boxOne {
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 15px;
+        }
+
+
+        #boxTwo {
+            position: relative;
+        }
+
+        .circleBox {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        #circle {
+            position: absolute;
+            bottom: 50px;
+            left: calc(50% - 132px / 2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" style="border: 1px solid lightgray;">
+        <div id="boxOne">
+            <div><span id="back">上一张</span></div>
+            <div><span id="next">下一张</span></div>
+        </div>
+        <div id="boxTwo">
+            <img src="images/photo1.jpg" alt="">
+            <div id="circle">
+                <span class="circleBox"></span>&nbsp;&nbsp;
+                <span class="circleBox"></span>&nbsp;&nbsp;
+                <span class="circleBox"></span>&nbsp;&nbsp;
+                <span class="circleBox"></span>&nbsp;&nbsp;
+                <span class="circleBox"></span>&nbsp;&nbsp;
+                <span class="circleBox"></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var container = document.getElementById('container');
+    var images = document.querySelector('img');
+    var back = document.getElementById('back');
+    var next = document.getElementById('next');
+    var arrCircle = document.querySelectorAll('.circleBox');
+    var numbers = 1;
+    arrCircle[0].style.backgroundColor = 'red';
+    // arrCircle[0].style.backgroundColor = 'white';
+    var timer = setInterval(startLoop, 2000);
+    function startLoop() {
+        numbers++;
+        console.log(numbers);
+        changeImg();
+    }
+    function changeImg() {
+        if (numbers == 0) {
+            numbers = 6;
+        }
+        if (numbers == 7) {
+            numbers = 1;
+        }
+        console.log('img-numbers:' + numbers);
+        images.src = 'images/' + 'photo' + numbers + '.jpg';
+        for (var i = 0; i < arrCircle.length; i++) {
+            arrCircle[i].style.backgroundColor = 'white';
+        }
+        arrCircle[numbers - 1].style.backgroundColor = 'red';
+    }
+    next.addEventListener('click', startLoop, false);
+    back.addEventListener('click', function () {
+        numbers--;
+        changeImg();
+    }, false);
+    for (var i = 0; i < 6; i++) {
+        arrCircle[i].index = i + 1;
+        arrCircle[i].addEventListener('mouseenter', function () {
+            arrCircle[0].style.backgroundColor = 'white';
+            numbers = this.index;
+            changeImg();
+        }, false);
+    }
+</script>
+
+</html>

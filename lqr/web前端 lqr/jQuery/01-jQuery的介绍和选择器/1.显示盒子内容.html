@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+            display: none;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示五个div盒子的内容</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        var jqbtn = $('button');
+        var jqdiv = $('div');
+        jqbtn.click(function () { 
+            console.log(111);
+            // jqdiv.show(1000);
+            // jqdiv.html('Hello jQuery!');
+            // 上面的两行可以写成链式编程
+            jqdiv.show(1000).html('Hello jQuery!');
+        });
+    });
+</script>
+
+</html>

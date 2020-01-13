@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <style>
+        #containerbox {
+            /* width: 540px; */
+            height: 1000px;
+            /* margin: 0 auto; */
+            /* background-color: #f5f5f5; */
+            background-color: white;
+            /* border: solid 1px orange; */
+        }
+
+        #rowOne {
+            /* width: 540px; */
+            height: 64px;
+            background-color: #f5f5f5;
+        }
+
+        #rowOne-col1 img {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            top: 20px;
+
+        }
+
+        #rowOne-col2 span {
+            position: relative;
+            top: 16px;
+            font-size: 24px;
+        }
+
+        .glyphicon-search {
+            font-size: 24px;
+            position: relative;
+            top: 20px;
+            color: gray;
+        }
+
+        #rowTwo {
+            height: 173px;
+        }
+
+        #rowTwo-col1 {
+            padding-top: 35px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #rowTwo-col2 {
+            /* padding: 10px; */
+            padding-top: 10px;
+            padding-left: 0;
+            /* padding-right: 0; */
+        }
+
+        #thumbnail-one {
+            border: none;
+        }
+
+        .lead {
+            color: lightgray;
+            font-size: 20px;
+        }
+
+        #form-one {
+            padding-top: 10px;
+        }
+
+        #input-group {
+            height: 50px;
+        }
+
+
+
+        #input-list {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+        }
+
+        .input-group-addon {
+            width: 50px;
+            height: 50px;
+            font-size: 35px;
+            padding: 0;
+        }
+
+        .glyphicon-trash {
+            font-size: 30px;
+            color: gray;
+            position: absolute;
+            right: 20px;
+            top: 120px;
+        }
+
+        #rowThree-col1 {
+            /* width: 510px; */
+            height: 60px;
+            background-color: #f5f5f5;
+            border-left: 15px solid white;
+            border-right: 15px solid white;
+            margin-bottom: 16px;
+        }
+
+        #servers-a {
+            color: red;
+            text-decoration: none;
+
+        }
+
+        #rowFour {
+            border-top: 16px solid #f5f5f5;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            padding: 15px 0 15px 10px;
+            margin-bottom: 16px;
+        }
+
+        /* .column-border {
+            border-bottom: 1px solid lightgray;
+        } */
+
+        #rowFour span {
+            font-size: 16px;
+            color: gray;
+        }
+
+        .column-next {
+            height: 60px;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .row-Column {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 60px;
+            border-right: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        #row-color {
+            height: 16px;
+            background-color: #f5f5f5;
+        }
+
+        .glyphicon-chevron-right {
+            color: gray;
+        }
+
+        #lsatline {
+            height: 90px;
+        }
+
+        .flex-Box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 5px lightgray;
+        }
+
+        main {
+            position: relative;
+        }
+        #lastline {
+            /* width: 540px; */
+            height: 90px;
+            position: absolute;
+            bottom: 0;;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container" id="containerbox">
+            <!-- 第一行 -->
+            <div class="row" id="rowOne">
+                <div class="col-xs-4" id="rowOne-col1">
+                    <a href="#">
+                        <img src="image/icon-back.png" alt="back" id="pic">
+                    </a>
+                </div>
+                <div class="col-xs-4" id="rowOne-col2">
+                    <div id="c1" class="text-center">
+                        <span class="lead">个人中心</span>
+                    </div>
+                </div>
+                <div class="col-xs-4" id="rowOne-col3">
+                    <span class="glyphicon glyphicon-search pull-right lead "></span>
+                </div>
+            </div>
+            <!-- 第二行 -->
+            <div class="row" id="rowTwo">
+                <div class="col-xs-4" id="rowTwo-col1">
+                    <div class="media">
+                        <a href="#" class="thumbnail" id="thumbnail-one">
+                            <img src="image/xiaomishouji4c.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xs-8" id="rowTwo-col2">
+                    <div class="media-body" id="media-Content">
+                        <h2><small>小米手机4c&nbsp;全网通版&nbsp;白色&nbsp;16GB</small></h2>
+                        <span class="lead">售价：&nbsp;1099元</span>
+                        <span class="lead">合计：&nbsp;1099元</span>
+                        <div>
+                            <form action="" class="bs-example bs-example-form" id="form-one">
+                                <div class="input-group" id="input-group">
+                                    <span class="input-group-addon ">-</span>
+                                    <input type="text" class="form-control text-center" id="input-list" placeholder="1">
+                                    <span class="input-group-addon">+</span>
+                                </div>
+                            </form>
+                            <div>
+                                <span class="glyphicon glyphicon-trash pull-right"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 第三行 -->
+            <div class="row" id="rowThree">
+                <div class="col-xs-12" id="rowThree-col1">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <img src="image/insurance.png" class="media-object"
+                                style="width:50px;position: relative; top: 5px;">
+                        </div>
+                        <div class="media-body">
+                            <span class="lead"
+                                style="color: black; font-size: 20px; margin-bottom: 0; position: absolute;top: 16px;">意外保障服务&emsp;小米4c&emsp;95元/年</span>
+                            <span class="pull-right" style="font-size: 20px; position: relative; top: 16px;"><a href="#"
+                                    id="servers-a">购买服务</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四行 -->
+            <div class="row" id="rowFour">
+                <div class="col-xs-12">
+                    <span>温馨提示&nbsp;:&nbsp;产品是否购买成功,以最终下单为准,请尽快结算</span>
+                </div>
+            </div>
+
+            <!-- huise -->
+
+            <div class="row" id="row-color">
+                <div class="col-xs-12">
+                </div>
+            </div>
+
+            <!-- 第五行 -->
+            <div class="row column-border" id="rowFive">
+                <div class="col-xs-10 row-Column">
+                    <div>
+                        <input type="checkbox" value="">&emsp;<span class="lead" style="color: black;">+1元得小米礼品袋</span>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 column-next">
+                    <div style="position: absolute; top: 20px;right: 40px;">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 第六行 -->
+            <div class="row" id="rowSix">
+                <div class="col-xs-10 row-Column">
+                    <div>
+                        <input type="checkbox" value="">&emsp;<span class="lead" style="color: black;">+1元得小米礼品袋</span>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 column-next">
+                    <div style="position: absolute; top: 20px;right: 40px;">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 七行 -->
+            <div class="row" id="rowSeven">
+                <div class="col-xs-10 row-Column">
+                    <div>
+                        <input type="checkbox" value="">&emsp;<span class="lead" style="color: black;">+1元得小米礼品袋</span>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 column-next">
+                    <div style="position: absolute; top: 20px;right: 40px;">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 第八行 -->
+            <div class="row" id="rowEight">
+                <div class="col-xs-10 row-Column">
+                    <div>
+                        <input type="checkbox" value="">&emsp;<span class="lead" style="color: black;">+1元得小米礼品袋</span>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 column-next">
+                    <div style="position: absolute; top: 20px;right: 40px;">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 第九行 -->
+            <div class="row" id="rowNine">
+                <div class="col-xs-10 row-Column">
+                    <div>
+                        <input type="checkbox" value="">&emsp;<span class="lead" style="color: black;">+1元得小米礼品袋</span>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 column-next">
+                    <div style="position: absolute; top: 20px;right: 40px;">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 第十行 -->
+            <div class="row" id="rowTen">
+                <div class="col-xs-10 row-Column">
+                    <div>
+                        <input type="checkbox" value="">&emsp;<span class="lead" style="color: black;">+1元得小米礼品袋</span>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 column-next">
+                    <div style="position: absolute; top: 20px;right: 40px;">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 最后一行 -->
+            <div class="row" id="lastline" >
+                <div class="col-xs-4  flex-Box" style="height: 90px;">
+                    <div>
+                        <span class="lead" style="color: gray;">共一件&nbsp;:</span>
+                        <h2 style="color: red; margin-top: 0;">1099&nbsp;<small>元</small>
+                        </h2>
+                    </div>
+
+                </div>
+                <div class="col-xs-4  flex-Box" style="color: black; background-color: gray; height: 90px;">
+                    <div>
+                        <h2>继续购物</h2>
+                    </div>
+                </div>
+                <div class="col-xs-4  flex-Box"
+                    style="color: white;background-color: orangered; height: 90px;">
+                    <div>
+                        <h2>去结算</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="bs/js/jquery.min.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+<html>

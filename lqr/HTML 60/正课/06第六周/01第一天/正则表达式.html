@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        正则表达式(regular expression)有规律的表达式
+        作用用来检索字符创中是否包含有表达式实现条件的内容
+     */
+    //  方法一 /检索条件/
+    var patten = /abc/i;
+    // 方法二
+    patter = new RegExp('abc', 'i');
+    var str = 'aabbcc';
+    var str1 = 'Abcaabbcc';
+    // 提供teest方法检测
+    console.log('str' + patten.test(str));
+    console.log('str1' + patten.test(str1));
+
+    // 检索字符串是否以字母a开头 如果以a开头 返回 true 否则 false
+    patten = /^a/;
+    patten = /^abc/; //以abc开头 ^代表以xx开头
+    patten = /^[abc]/ //表示以a/b/c开头均可 []代表字符集合
+    console.log(patten.test('bac'));
+
+    // 检测字符串中是否包含有某个字母
+    patten = /a/;//是否包含a
+    patten = /[a-z]/; //是否包含小写字母
+    patten = /[A-Z]/; //是否包含大写字母
+    patten = /[0-9]/; //是否包含数字
+    console.log(patten.test('ABC123aaa'));
+
+    /* 
+        [字符] 字符集合 包含内部的范围之内的内容
+        [a-zA-Z0-9] 包含大小写字母自己数字
+     */
+    // 检测字符串是否以字母开头
+    var myReg = /^[a-zA-Z]/i;
+    // 检测字符串是否以字母结尾
+    myReg = /[a-zA-Z]$/
+    console.log('是否以字母开头:' + myReg.test('123aaabcv'));
+
+
+    // 检测字符串出现的次数 
+    patten = /aaaa/;
+    // 等价 {n} 检索字符串出现的次数   绝对次数
+    patten = /a{4}/;
+    console.log(patten.test('aaa125425kkla'));
+    // 检测字符串是否包含aaaa
+    patten = /^a{4}$/;
+    console.log(patten.test('aaaa'));
+    // 检测字符创中a的次数出现在3-6之间
+    // {n,m} n 最小 m 最大
+    patten = /^a{3,6}$/
+    console.log('3-6:' + patten.test('aaaa'));
+
+    // var tellNumber = prompt("请输入十一位手机号");
+    var myStr = '15537511516';
+    var myReg = /^1[34578][0-9]{9}$/;
+    console.log('myStr:' + myReg.test(myStr));
+
+    // 以字母开头 第二三位是bb 之后最少出现四次d
+    var myStr1 = 'abbdddd';
+    var myReg1 = /^[a-zA-z]bbd{4}/;
+    console.log('myStr1:' + myReg1.test('abbddddd'));
+
+    // 以小写字母来头 确定出现五次数字
+    var myReg2 = /^[a-z][0-9]{5}$/;
+    console.log(myReg2.test('a12561'));
+
+    //检测用户名 以字母开头，内容：数字 字母 - * # ' '组成,
+
+    var myReg3 = /^[A-z][A-z0-9_ \-\*\#]{5,15}/;
+    console.log(myReg3.test('a1234567'));
+
+    var myReg4 = /[\u4e00-\u9fa5]/;
+    console.log('中文:' + myReg4.test('123中文'));
+
+    var myReg5 = /(abc)?/ //要么有abc 要么没有
+    console.log(myReg5.test('abcd'));
+
+    var myReg6 = /abc?/ //要么有ab 要么abc
+    console.log('myReg6:' + myReg6.test('abcd'));
+    console.log('myReg6一个：' + myReg6.test('a'));
+
+    var myReg7 = /[abc]?/ //a?||b?||c?
+    console.log('myReg7:' + myReg7.test('abcd')); 3
+
+    // 邮箱 开头是字母数字@邮箱地址.com
+    // 身份证号 十八位 最后一位可以是X
+    var emailAccountsReg = /^[0-9A-z][0-9A-z]*(@163.com)$/;
+    console.log('emailAccountsReg:' + emailAccountsReg.test('ab@163.com'));
+
+    var idNumberReg = /[0-9]{17}[0-9X]$/;
+    console.log('idNumberReg:' + idNumberReg.test('410423199705199034'));
+</script>
+
+</html>

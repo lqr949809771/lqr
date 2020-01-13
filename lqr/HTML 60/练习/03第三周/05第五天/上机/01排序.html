@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>排序</title>
+</head>
+
+<body>
+    <script>
+        var randoms = [];
+        while (true) {
+            var isExists = false;
+            // 获取一个10–100范围的数
+            var random = Math.floor(Math.random() * 100);
+            // 判断当前随机数是否已经存在
+            for (var i = 0; i < randoms.length; i++) {
+                if (random === randoms[i]) {
+                    isExists = true;
+                    break;
+                }
+            }
+            // 如果不存在，则添加进去
+            if (!isExists) {
+                randoms.push(random);
+            }
+            // 如果有10位随机数了，就跳出
+            if (randoms.length === 10) {
+                break;
+            }
+        }
+        console.log("排序之前: " + randoms);
+        var length = randoms.length;
+        for (var i = 0; i < length - 1; i++) {
+            for (var j = 0; j < length - 1 - i; j++) {
+                if (randoms[j] > randoms[j + 1]) {
+                    var temp;
+                    temp = randoms[j];
+                    randoms[j] = randoms[j + 1];
+                    randoms[j + 1] = temp;
+                }
+            }
+        }
+        console.log("排序之后: " + randoms);
+    </script>
+</body>
+
+</html>

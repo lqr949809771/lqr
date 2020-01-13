@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var obj = new Object();
+    obj.sayName = function () {
+        console.log('smyhvae');
+    };
+
+    console.log(obj.sayName);  //没加括号，获取的是对象
+    console.log('-----------');
+    console.log(obj.sayName());  //加了括号，执行函数内容，并执行函数体的内容
+    // 获取对象的属性
+    // 对象.属性名
+    var obj = new Object();
+
+    //向obj中添加一个name属性
+    obj.name = "孙悟空";
+
+    //向obj中添加一个gender属性
+    obj.gender = "男";
+
+    //向obj中添加一个age属性
+    obj.age = 18;
+
+    // 获取对象中的属性，并打印出来
+    console.log(obj.gender); // 打印结果：男
+    console.log(obj.color);  // 打印结果：undefined
+
+
+    // 修改对象的属性值
+    // 对象.属性名 = 新值
+    // obj.name = "tom";
+
+
+    // 删除对象的属性
+    // delete obj.name
+
+    // in运算符 通过该运算符可以检查一个对象中是否含有指定的属性。如果有则返回true，没有则返回false。
+    //检查obj中是否含有name属性
+    console.log("name" in obj);
+
+    // 遍历对象中的属性：for in
+    for (var 变量 in 对象) {
+
+    }
+</script>
+
+</html>

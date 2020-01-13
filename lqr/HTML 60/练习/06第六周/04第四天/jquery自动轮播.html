@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery自动轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #cccccc;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .banner {
+            width: 350px;
+            height: 450px;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .imgBox {
+            overflow: hidden;
+            width: 3000px;
+            position: absolute;
+        }
+
+        .imgBox li {
+            float: left;
+            /* display: inline-block; 
+                有边距
+             */
+            /* display: inline-block; */
+            width: 350px;
+            height: 450px;
+        }
+
+        .imgBox img {
+            width: 350px;
+            height: 450px;
+        }
+
+        .iconBox {
+            position: absolute;
+            background-color: rgba(0, 0, 0, .8);
+            border-radius: 20px;
+            padding: 5px;
+            bottom: 30px;
+            left: calc(50% - 130px);
+        }
+
+        .iconBox li {
+            width: 20px;
+            height: 20px;
+            border: solid 1px #cccccc;
+            border-radius: 50%;
+            float: left;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        /* .iconBox li:nth-of-type(7){
+            margin-right: 0;
+        } */
+        /* 
+            last-child 不到括号
+         */
+        .iconBox li:last-child {
+            margin-right: 0;
+        }
+
+        .iconBox li.active {
+            background-color: #fff;
+        }
+
+        .slider {
+            position: absolute;
+            width: 100%;
+            border-top: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+            bottom: 0;
+        }
+
+        .slider span {
+            display: block;
+            height: 6px;
+            width: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul class="imgBox">
+            <li><img src="img/z1.jpg" alt=""></li>
+            <li><img src="img/z2.jpg" alt=""></li>
+            <li><img src="img/z3.jpg" alt=""></li>
+            <li><img src="img/z4.jpg" alt=""></li>
+            <li><img src="img/z5.jpg" alt=""></li>
+            <li><img src="img/z6.jpg" alt=""></li>
+            <li><img src="img/z7.jpg" alt=""></li>
+        </ul>
+        <ul class="iconBox">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="slider">
+            <span></span>
+        </div>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // 获取li的宽度
+    var liwidth = $(".imgBox li").width();
+    // 获取$(".imgBox li")对象的长度
+    var length = $(".imgBox li").length;
+    // 重设ul的宽度
+    $('.imgBox').css({
+        width:liwidth*length
+    });
+    var showIndex = 0;
+    function show() {
+        // $('.iconBox li').eq(showIndex).addClass('active').siblings().removeClass('active');
+        // 这两句代码等价
+        $('.iconBox li').removeClass('active');
+        $('.iconBox li').eq(showIndex).addClass('active');
+        var ani = {
+            left: -liwidth * showIndex
+        };
+        $('.imgBox').animate(ani, 500);
+        $('.iconBox span').css('width', 0).animate({
+            width: '100%'
+        }, 500)
+
+    }
+    show();
+    var timer = setInterval(function () {
+        showIndex++;
+        if (showIndex >= length)
+        {
+            showIndex = 0;
+        }
+        show();
+    },1000);
+</script>
+
+</html>

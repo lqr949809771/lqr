@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型转换</title>
+</head>
+
+<body>
+    <script>
+        // typeof 检测当前变量的类型
+        // 显式类型转换：通过为变量重新赋值来改变变量两个的数据类型
+        var str = "字符串"
+        alert(typeof str);
+
+        str = 15;
+        alert(typeof str);
+
+        str = true;
+        alert(typeof str);
+        
+        // 隐式类型转换：当运算时变量为了适应某种规则自定进行的转换
+        alert(1 + "2");
+        alert(typeof (true + "a"));// string
+        //null 代表了声明了变量但没有给变量赋值
+        // 其他类型与字符串相加时，会被饮食的转换为字符串类型在相加
+        alert(typeof (null + "a"));// string
+
+        // 当数字和布尔类型进行减法运算时 false为0 true为1 null为0  
+        alert(10 -false);//10 num
+
+
+    </script>
+</body>
+
+</html>

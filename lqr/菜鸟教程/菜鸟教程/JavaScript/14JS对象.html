@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14 JS 对象</title>
+</head>
+<body>
+    <p>创建 JS 对象</p>
+    <p id="demo"></p>
+    <script>
+
+        var person={firstname:"John", lastname:"Doe", id:5566,age:50};
+        // console.log(111);
+        document.write(person.lastname + "<br>");
+        document.write(person["lastname"] + "<br>");
+        document.getElementById("demo").innerHTML = person.firstname + "现在" + person.age + "岁。";
+    </script>
+</body>
+</html>

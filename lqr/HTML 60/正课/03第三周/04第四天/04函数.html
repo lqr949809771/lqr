@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+</head>
+
+<body>
+    <script>
+        /*
+        函数：预先封装好的可以完成某种功能的代码块
+        好处：代码重复利用，性能优化
+        */
+        /*
+            固定写法：function 代表声明函数
+            work 代表函数的名称 随便写 驼峰明法
+
+        */
+        function work() {
+
+            console.log("我的工作是让大家都能找到工作");
+            // alert("我的工作是让大家都能找到工作");
+        }
+        // 函数：用的时候需要用哪个函数就调用哪个函数就好了
+        work();
+        // setInterval(() => {
+        //     work();
+        // }, 2000);
+        // 当函数名()内变量的时候代表该函数是一个需要传参数的函数
+        function setAge(age) {
+            console.log("这个老师的年龄为：" + age);
+        }
+        setAge(30);
+        // ,分割
+        function people(name, age, sex) {
+            var flag = true;
+            if (flag) {
+                sex = "男";
+            }
+            else {
+                sex = "女";
+            }
+            console.log("姓名为:" + name + "\n" + "年龄为：" + age + "岁" + "\n" + "性别为：" + sex);
+        }
+        people("刘权锐", 22)
+
+        // 利用函数求和
+        // function sum(a, b) {
+        //     var number1 = parseInt(prompt("请输入数字：a"))
+        //     var number2 = parseInt(prompt("请输入数字：b"))
+        //     a = number1;
+        //     b = number2;
+        //     alert(a + b);
+        // }
+        // sum();
+        // 带返回类型的方法：当调用该函数的时候函数会返回出来数据
+        function getName() {
+            return "刘权锐"
+        }
+        var result = getName();
+        console.log(result);
+        // console.log(getName());
+        function sum2(a, b) {
+            return a + b;
+        }
+        // var result1 = sum2(10,30);
+        // console.log(result1);
+        sum2(10, 10);
+
+        /*
+            三种
+            1.没有参数也没有返回类型的方法 例如work();
+            2.有参数没有返回类型的方法
+            3.有参数又返回类型的方法记的传参及调用之后的接收
+        */
+        function test(a) {
+            // 变量在函数内的执行后面的赋值会覆盖掉前面的
+            a = 10;
+            return a;
+        }
+        console.log(test(5));
+        function test2() {
+            // 在方法中调用了其他的方法(方法可以相互之间进行调用)
+            var a = test();
+            return a;
+        }
+        console.log(test2());
+        function sum3(a, b) {
+            return a + b;
+        }
+        function allSum(a, b, c) {
+            return sum3(sum3(a, b), c)
+        }
+        console.log(allSum(1, 2, 3));
+    </script>
+</body>
+
+</html>

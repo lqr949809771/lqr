@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+</head>
+
+<body>
+    <script>
+        var user = prompt("请设置账号");
+        var pwd = prompt("请设置密码");
+        var confirmPwd = prompt("请确认密码");
+        var str = "";
+        var result = "";
+        var userarray = [];
+        var pwdarray = [];
+        alert(register(user, pwd));
+        function register(userName, passWord) {
+
+            if (userName != passWord && passWord == confirmPwd && userName != str && passWord != str && confirmPwd != str) {
+                result = "注册成功";
+                userarray.push(userName);
+                pwdarray.push(passWord);
+                return result;
+                // login(userName, passWord)
+                login(user, pwd)
+            }
+            else if (userName == passWord) {
+                result = "账号密码不能相同,请重新注册！";
+                return result;
+                // register(userName, passWord)
+                register(user, pwd);
+            }
+            else if (userName != passWord && passWord != confirmPwd) {
+                result = "确认密码输入错误,请重新注册！";
+                return result;
+                // register(userName, passWord)
+                register(user, pwd);
+            }
+            else {
+                result = "账号或密码为空,请重新注册！";
+                return result;
+                // register(userName, passWord)
+                register(user, pwd);
+            }
+        }
+        function login(userName, passWord) {
+            var user = prompt("请输入账号");
+            var pwd = prompt("请输入密码");
+            var str = "";
+            var result = "";
+            if (pwdarray[userarray.indexOf(user)] == pwd) {
+                result = "登录成功";
+                return result;
+                index();
+            }
+            else {
+                result = "登录失败，账号或密码错误,请重新登录！";
+                return result;
+                login(user, pwd);
+            }
+        }
+        function index() {
+
+        }
+    </script>
+</body>
+
+</html>

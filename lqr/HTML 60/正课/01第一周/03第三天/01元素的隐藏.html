@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素的隐藏</title>
+    <style>
+        body{
+            background-color: greenyellow;
+        }
+        .hide{
+            /* 三基色 255  alpha 透明度 默认1 0透明 0.0~1.0 */
+            /* 1.设置颜色rgba(111, 222 ,222,0) */
+            /* color: rgba(0, 255, 255, 0); 未脱离文档流*/
+            /* 2.隐藏且脱离文档流 */
+            /* display: none; */
+            /* 3.隐藏  未脱离文档流*/
+            /* visibility: hidden; */
+            /* 4. opacity 隐藏  未脱离文档流*/
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <p>第一行</p>
+    <div class="hide">第二行</div>
+    <p>第三行</p>
+</body>
+</html>

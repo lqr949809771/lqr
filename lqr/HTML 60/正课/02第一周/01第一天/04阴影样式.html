@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 水平 垂直 模糊程度 阴影大小 阴影颜色 内阴影或外阴影 */
+            /* 默认外阴影 */
+            box-shadow: 10px 10px 20px 0 grey inset;
+            margin: 100px auto; 
+        }
+        .dt{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 10px 10px 20px 0 red;
+        }
+        #txt{
+            text-shadow: 2px 3px 5px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div class="dt"></div>
+    <p id="txt">文本阴影</p>
+</body>
+</html>

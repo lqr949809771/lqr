@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航栏</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #container {
+            /* position: absolute;
+           left: 50%;
+           top: 50%;
+           transform: translate(-50%,-50%); */
+            margin: 0 auto;
+
+        }
+
+        #navbar {
+            background-color: #cc99ff;
+        }
+
+        #container-fluid {
+            margin: 0 auto;
+        }
+
+        #oneRow {
+            color: #eeeeff;
+        }
+
+        .column div {
+            text-align: left;
+
+        }
+
+        .column div:nth-of-type(2n + 1) {
+            background-color: #ff0000;
+        }
+
+        .column div:nth-of-type(2n) {
+            background-color: #0000ff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default " id="navbar">
+
+        <div class="container" id="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                    <span class="glyphicon glyphicon-arrow-down" style="color: white;"></span>
+                </button>
+                <a href="#" class="navbar-brand">艾米尼儿童摄影</a>
+            </div>
+            <!--  -->
+            <div class="collapse navbar-collapse" id="example-navbar-collapse" style="border-top: none;">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">首页</a></li>
+                    <li class="active"><a href="#" style="background-color: #bb78ff;">客户</a></li>
+                    <li><a href="#">宝贝</a></li>
+                    <li><a href="#">孕妈咪</a></li>
+                    <li><a href="#">会员卡</a></li>
+                    <li><a href="#">订单</a></li>
+                    <li><a href="#">预约</a></li>
+                    <li><a href="#">数据</a></li>
+                    <li><a href="#">产品</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">刘权锐<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" style="background-color: #fcf8e3;">第一项</a></li>
+                            <li><a href="#" style="background-color: #dff0d8;">第二项</a></li>
+                            <li><a href="#" style="background-color: #f2dede;">第三项</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">退出</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="container">
+        <div class="row" id="oneRow">
+            <div class="col-lg-6 row column">
+                <div class="col-lg-1">1</div>
+                <div class="col-lg-1">2</div>
+                <div class="col-lg-1">3</div>
+                <div class="col-lg-1">4</div>
+                <div class="col-lg-1">5</div>
+                <div class="col-lg-1">6</div>
+                <div class="col-lg-1">7</div>
+                <div class="col-lg-1">8</div>
+                <div class="col-lg-1">9</div>
+                <div class="col-lg-1">10</div>
+                <div class="col-lg-1">11</div>
+                <div class="col-lg-1">12</div>
+            </div>
+            <div class="col-lg-6 row column">
+                <div class="col-lg-1">13</div>
+                <div class="col-lg-1">14</div>
+                <div class="col-lg-1">15</div>
+                <div class="col-lg-1">16</div>
+                <div class="col-lg-1">17</div>
+                <div class="col-lg-1">18</div>
+                <div class="col-lg-1">19</div>
+                <div class="col-lg-1">20</div>
+                <div class="col-lg-1">21</div>
+                <div class="col-lg-1">22</div>
+                <div class="col-lg-1">23</div>
+                <div class="col-lg-1">24</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="bs/js/jquery.min.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+</html>

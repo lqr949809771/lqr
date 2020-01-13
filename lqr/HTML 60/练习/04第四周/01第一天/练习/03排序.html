@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>排序</title>
+</head>
+
+<body>
+    <script>
+        var obj1 = {
+            name: '周星驰',
+            age: 57
+        }
+        var obj2 = {
+            name: '周润发',
+            age: 63,
+        }
+        var obj3 = {
+            name: '张学友',
+            age: 55,
+        }
+        var obj4 = {
+            name: '刘德华',
+            age: 53,
+        }
+        var obj5 = {
+            name: '黎明',
+            age: 60,
+        }
+        var personAll = [obj1, obj2, obj3, obj4, obj5];
+        var temp;
+        for (var i = 0; i < personAll.length -1; i++) {
+            for (j = 0; j < personAll.length - 1 - i; j++) {
+                if (personAll[j].age < personAll[j + 1].age) {
+                    temp = personAll[j];
+                    personAll[j] = personAll[j + 1];
+                    personAll[j + 1] = temp;
+                }
+            }
+        }
+        console.log(personAll);
+
+        for (var i = 0; i < personAll.length; i++) {
+            var obj = personAll[i]
+            console.log("按照成绩排列:" + obj.name + "年龄:" + obj.age);
+        }
+    </script>
+</body>
+
+</html>

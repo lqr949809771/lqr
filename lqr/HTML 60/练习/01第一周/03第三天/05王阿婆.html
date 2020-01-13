@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            width: 80%;
+            height: 60%;
+            background-color: #f1eee5;
+            box-shadow: 0 0 10px gray;
+        }
+
+        #cell {
+            height: 95%;
+            border-bottom: 5px solid #eff101;
+            display: flex;
+        }
+
+        #cell-left {
+            flex-basis: 50%;
+            border: orange solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cell-right {
+            flex-basis: 50%;
+            border: blue solid 1px;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            align-content: space-around;
+
+        }
+
+        /* #logo-img{
+            width: 100%;
+            height: 100%;
+        } */
+        #logo{
+           width: 100%;
+           height: 100%;
+        }
+
+        #picture1{
+            width: 30vw;
+            height: 20vw;
+        }
+
+        #picture2{
+            width: 30vw;
+            height: 20vw;
+        }
+
+        footer {
+            height: 5%;
+            display: flex;
+            background-color: #cb0909;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            display: inline-block;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        #copyright{
+
+            color: white;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <main id="container">
+        <section id="cell">
+            <div id="cell-left">
+                <div id="logo-img">
+                    <img src="images/3.jpg" alt="" id="logo">
+                </div>
+            </div>
+
+            <div id="cell-right">
+                <div id="picture-up">
+                    <img src="images/2.jpg" alt="" id="picture1">
+                </div>
+                <div id="picture-down">
+                    <img src="images/4.jpg" alt="" id="picture2">
+                </div>
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="">关于王阿婆 |</a></li>
+                <li><a href="">集团新闻 |</a></li>
+                <li><a href="">员工风采 |</a></li>
+                <li><a href="">员工风采 |</a></li>
+                <li><a href="">联系我们</a></li>
+            </ul>
+            <div>
+                <span id="copyright">copyright&nbsp;&copy;&nbsp;2014&nbsp;王阿婆食品&nbsp;版权所有</span>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

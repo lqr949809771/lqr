@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>好友列表</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#tt" data-toggle="tab"  class="navbar-brand">头条</a>
+            </li>
+            <li><a href="#yl" data-toggle="tab"  class="navbar-brand">娱乐</a></li>
+            <li><a href="#ty" data-toggle="tab" class="navbar-brand">体育</a></li>
+            <li><a href="#bd" data-toggle="tab"  class="navbar-brand">本地</a></li>
+        </ul>
+        <!-- tab内容 -->
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="tt">
+                <ul class="lead">
+                    <li><a href="#">李克强同斯里兰卡总理谈中瑞三个"+"</a></li>
+                    <li><a href="#">百益理财中晋资产p2p进入高危季?</a></li>
+                    <li><a href="#">李克强同斯里兰卡总理谈中瑞三个"+"</a></li>
+                    <li><a href="#">百益理财中晋资产p2p进入高危季？</a></li>
+                </ul>
+            </div>
+
+            <div class="tab-pane fade" id="yl">
+                <ul class="lead list-group">
+                    <li class="list-group-item">李克强同斯里兰卡总理谈中瑞三个"+"</li>
+                    <li class="list-group-item">百益理财中晋资产p2p进入高危季?</li>
+                    <li class="list-group-item">李克强同斯里兰卡总理谈中瑞三个"+"/li>
+                    <li class="list-group-item">百益理财中晋资产p2p进入高危季?</li>
+                </ul>
+            </div>
+
+            <div class="tab-pane fade" id="ty">
+                <ul class="lead list-group">
+                    <li class="list-group-item list-group-item-success">李克强同斯里兰卡总理谈中瑞三个"+"</li>
+                    <li class="list-group-item list-group-item-danger">百益理财中晋资产p2p进入高危季?</li>
+                    <li class="list-group-item list-group-item-success">李克强同斯里兰卡总理谈中瑞三个"+"/li>
+                    <li class="list-group-item list-group-item-danger">百益理财中晋资产p2p进入高危季?</li>
+                </ul>
+            </div>
+
+            <div class="tab-pane fade" id="bd">
+                <ul class="lead list-group">
+                    <li class="list-group-item list-group-item-success">李克强同斯里兰卡总理谈中瑞三个"+"</li>
+                    <li class="list-group-item list-group-item-danger">百益理财中晋资产p2p进入高危季?</li>
+                    <li class="list-group-item list-group-item-success">李克强同斯里兰卡总理谈中瑞三个"+"/li>
+                    <li class="list-group-item list-group-item-danger">百益理财中晋资产p2p进入高危季?</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 好友表 -->
+        <div class="panel-group col-lg-4" id="accordion" role="tablist">
+            <div class="panel panel-default">
+                <button class="panel-heading  btn-block btn" role="tab" data-toggle="collapse" data-parent="#accordion"
+                    data-target="#collapseOne" id="btn1">
+                    <h4 class="panel-title">
+                        <span>我的好友</span>
+                    </h4>
+                </button>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="glyphicon glyphicon-user"></span>&emsp;<a href="">胡歌</a>
+                            <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="glyphicon glyphicon-user"></span>&emsp;<a href="">张译</a>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="glyphicon glyphicon-user"></span>&emsp;<a href="">周想吃</a>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="glyphicon glyphicon-user"></span>&emsp;<a href="">刘德华</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 我的女友 -->
+            <div class="panel panel-default">
+                <button class="panel-heading  btn-block btn" role="tab" data-toggle="collapse" data-parent="#accordion"
+                    data-target="#collapseTwo" id="btn1">
+                    <h4 class="panel-title">
+                        <span>我的女友</span>
+                    </h4>
+                </button>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+
+                <ul class="list-group">
+                    <li class="list-group-item">免费域名注册</li>
+                    <li class="list-group-item">免费 Window 空间托管</li>
+                    <li class="list-group-item">图像的数量</li>
+                    <li class="list-group-item">24*7 支持</li>
+                    <li class="list-group-item">每年更新成本</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="bs/js/jquery.min.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+</html>

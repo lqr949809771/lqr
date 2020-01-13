@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>联动下拉菜单</title>
+</head>
+
+<body>
+    <p id="addr">河南-郑州</p>
+    <!-- <select name="" id="">
+        <option value=""></option>
+    </select> -->
+</body>
+<script>
+    // // 下拉菜单
+    // var provinceArr = ['河南', '湖南', '河北']
+    // var cityArr = [
+    //     ['郑州', '洛阳', '南阳'],
+    //     ['武汉', '长沙', '张家界'],
+    //     ['保定', '衡水', '廊坊']
+    // ];
+
+    // 创建对象
+    // 
+    var info = [
+        {
+            name: '河南',
+            cites: ['郑州', '洛阳', '南阳']
+        },
+
+        {
+            name: '湖南',
+            cites: ['武汉', '长沙', '张家界']
+        },
+
+        {
+            name: '河北',
+            cites: ['保定', '衡水', '廊坊']
+        }
+    ];
+    var provinceSel = document.createElement('select');
+    document.body.appendChild(provinceSel);
+    for (var i = 0; i < info.length; i++) {
+        var opt = document.createElement('option');
+        opt.innerHTML = info[i].name;
+        console.log(opt.innerHTML);
+        provinceSel.appendChild(opt);
+    }
+    var citySel = document.createElement('select');
+    document.body.appendChild(citySel);
+    for (var i = 0; i < info[0].cites.length; i++) {
+        var optOne = document.createElement('option');
+        optOne.innerHTML = info[0].cites[i];
+        citySel.appendChild(optOne);
+    }
+    console.log(this.selectedIndex);
+    // 城市select
+    provinceSel.onchange = function () {
+        // 先把右侧城市的select清空
+        citySel.innerHTML = '';
+        // 先选择省份
+        var pro = info[provinceSel.selectedIndex];
+        // 根据选择的省份拿到对应的城市进行数据替换
+        for (var i = 0; i < pro.cites.length; i++) {
+            var optOne = document.createElement('option');
+            optOne.innerHTML = pro.cites[i];
+            citySel.appendChild(optOne);
+        }
+        refresh();
+    }
+    citySel.onchange = function () {
+        refresh();
+    }
+    function refresh() {
+        // info[provinceSel.selectedIndex] 获取省份
+        var pro = info[provinceSel.selectedIndex];
+        // pro.cites 获取城市
+        var city = pro.cites[citySel.selectedIndex];
+        // var city = info[provinceSel.selectedIndex].cites[citySel.selectedIndex]
+        var addr = document.getElementById('addr');
+        addr.innerHTML = pro.name + '-' + city
+    }
+</script>
+
+</html>

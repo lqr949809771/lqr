@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th,td {
+            width: 150px;
+            height: 90px;
+            border: 1px solid green;
+        }
+        tbody,tfoot{
+            text-align: center;
+        }
+        table thead tr{
+            background-color: green;
+            color: white;
+        }
+        #td1{
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption><h1>HTML5课程表</h1></caption>
+        <thead>
+            <tr>
+                <th>周一</th>
+                <th>周二</th>
+                <th>周三</th>
+                <th>周四</th>
+                <th>周五</th>
+                <th>周六</th>
+                <th>周日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>html5</td>
+                <td>html5</td>
+                <td>html5</td>
+                <td>html5</td>
+                <td>html5</td>
+                <td rowspan="2">休息</td>
+                <td rowspan="3">休息</td>
+            </tr>
+            <tr>
+                    <td>html5</td>
+                    <td>html5</td>
+                    <td>html5</td>
+                    <td>html5</td>
+                    <td>html5</td>
+            </tr>
+            <tr>
+                    <td>html5</td>
+                    <td>html5</td>
+                    <td>html5</td>
+                    <td>html5</td>
+                    <td>html5</td>
+                    <td>html5</td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td>表格测试</td>
+                    <td>课程表练习</td>
+                    <td id="td1" colspan="5"></td>
+                </tr>
+            </tfoot>
+        </tbody>
+    </table>
+</body>
+
+</html>

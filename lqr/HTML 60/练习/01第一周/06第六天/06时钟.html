@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时钟</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        main{
+            width: 600px;
+            height: 600px;
+        }
+        body {
+            margin: 0;
+            background-image: url(images/clock.jpg);
+            background-size: 425px 425px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-color: black;
+        }
+
+        #dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            top: calc(50% - 30px / 2);
+            left: calc(50% - 30px / 2);
+            z-index: 15;
+        }
+
+        /* 秒针 */
+        #second {
+            width: 300px;
+            height: 10px;
+            border-radius: calc(10px / 2);
+            position: absolute;
+            top: calc(50% - 10px / 2);
+            left: calc(50% - 300px / 2);
+            animation: rotate 60s linear infinite;
+            z-index: 11;
+
+        }
+
+        #second span {
+            width: 180px;
+            height: 6px;
+            background-color: red;
+            display: block;
+            margin-top: 2px;
+            border-radius: 6px;
+        }
+
+        /* 分针 */
+        #minute {
+            width: 250px;
+            height: 16px;
+            border-radius: calc(16px / 2);
+            position: absolute;
+            top: calc(50% - 16px / 2);
+            left: calc(50% - 250px / 2);
+            animation: rotate 3600s linear infinite;
+
+        }
+
+        #minute span {
+            width: 150px;
+            height: 8px;
+            background-color: green;
+            display: block;
+            margin-top: 4px;
+            border-radius: 8px;
+            z-index: 12;
+        }
+
+        /* 时针 */
+        #hour {
+            width: 200px;
+            height: 20px;
+            border-radius: calc(20px / 2);
+            position: absolute;
+            top: calc(50% - 20px / 2);
+            left: calc(50% - 200px / 2);
+            animation: rotate 43200s linear infinite;
+
+        }
+
+        #hour span {
+            width: 118px;
+            height: 10px;
+            background-color: blue;
+            display: block;
+            margin-top: 5px;
+            border-radius: 10px;
+            z-index: 13;
+        }
+
+        #time {
+            width: 500px;
+            height: 200px;
+            font-size: 80px;
+            font-weight: 400;
+            color: orange;
+            position: absolute;
+            left: calc(50% - 500px / 2);
+            top: 100px;
+            text-align: center;
+        }
+
+        #date {
+            width: 250px;
+            height: 100px;
+            font-size: 30px;
+            font-weight: 300;
+            color: orangered;
+            position: absolute;
+            left: calc(50% - 250px / 2);
+            bottom: 100px;
+            text-align: center;
+
+        }
+/* 
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="time">xx时xx分xx秒</div>
+        <main>
+            <div id="dot"></div>
+            <div id="second">
+                <span id="second-hand"></span>
+            </div>
+            <div id="minute">
+                <span id="minute-hand"></span>
+            </div>
+            <div id="hour">
+                <span id="hour-hand"></span>
+            </div>
+        </main>
+        <div id="date">xxxx年xx月xx日</div>
+    </div>
+
+    <!-- <script>
+            function myClock() {
+                // 创建Date()对象
+                var time = new Date();
+                // getFullYear() 从Date对象中以四位数字返回年份
+                var years = time.getFullYear();
+                // getMonth() 从Date对象返回月份(0~11),因此加一
+                var months = time.getMonth() + 1;
+                // getDate()  从Date对象返回日期(1~31)
+                var date = time.getDate();
+                // getHours 从Date对象返回小时(0~23)
+                var hours = time.getHours();
+                // getMinutes 从Date对象中返回分钟(0~59)
+                var minutes = time.getMinutes();
+                // .getSeconds 从Date对象中返回秒数(0~59)
+                var seconds = time.getSeconds();
+                // getDay() 从Date对象中返回一周中的秒一天(0~6) 0代表周日,(1~6)代表(周一~周六)
+                var week = time.getDay();
+    
+                switch (week) {
+                    case 0: week = "周日";
+                        break;
+                    case 1: week = "周一";
+                        break;
+                    case 2: week = "周二";
+                        break;
+                    case 3: week = "周三";
+                        break;
+                    case 4: week = "周四";
+                        break;
+                    case 5: week = "周五";
+                        break;
+                    case 6: week = "周六";
+                        break;
+                    default:
+                        break;
+                }
+                // 三目运算符 
+                hours = (hours < 10) ? "0" + hours : hours
+                minutes = (minutes < 10) ? "0" + minutes : minutes
+                seconds = (seconds < 10) ? "0" + seconds : seconds
+                months = (months < 10) ? "0" + months : months
+                date = (date < 10) ? "0" + date : date
+                // 把年 月 日 时 分 秒 赋给标签 
+                document.getElementById("time").textContent = hours + ":" + minutes + ":" + seconds;
+                document.getElementById("date").textContent = years + "-" + months + "-" + date + "-" + week;
+
+
+                if(seconds ){}
+                document.getElementById("hour").style.transform = "rotate(180deg)";
+            }
+            // 调用方法 执行方法体的内容
+            myClock();
+    
+            // interval 间隔 设置每一秒执行一次myClock()方法
+            setInterval(() => {
+                myClock();
+            }, 1000);
+        </script> -->
+        <script>
+            var hour = document.getElementById("hour");
+            var minute = document.getElementById("minute");
+            var second = document.getElementById("second");
+            // 开始定时器
+            var s = 0, m = 0, h = 0, ms = 0;
+            setInterval(function () {
+                // 内容就可以了
+                var date = new Date();  // 得到最新的时间
+                ms = date.getMilliseconds(); // 现在的毫秒数
+                s = date.getSeconds() + ms / 1000;  //  得到秒 1.3 s
+                m = date.getMinutes() + s / 60;  //  得到的是分数  45.6分钟
+                h = date.getHours() % 12 + m / 60;
+                //console.log(h);
+                //旋转角度
+                // 一圈  360 °     一共有 60 秒       每秒  6 °   现在是 s秒
+                second.style.transform = "rotate(" + (s * 6 + 90 )+ "deg)";
+                //  变化            旋转    deg  度
+                minute.style.transform = "rotate(" +( m * 6 + 90) + "deg)";
+                hour.style.transform = "rotate(" + (h * 30 + 90) + "deg)";
+                // second.style.MozTransform = "rotate(" + (s * 6 + 90)+ "deg)";
+                // //  变化            旋转    deg  度
+                // minute.style.MozTransform = "rotate(" +( m * 6 + 90) + "deg)";
+                // hour.style.MozTransform = "rotate(" + (h * 30 + 90) + "deg)";
+            }, 100);
+        </script>
+
+</body>
+
+</html>

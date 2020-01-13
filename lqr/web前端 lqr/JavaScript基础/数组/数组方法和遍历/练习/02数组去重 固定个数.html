@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重 个数固定</title>
+</head>
+
+<body>
+    <!-- 1.取100以内的任意的10个不重复的整数，并排序 -->
+    <script>
+        var arr = new Array();
+        var newarr = [];
+        for (var i = 0; i < 10; i++) {
+            var randoms = parseInt(Math.random() * 100);
+            arr.push(randoms);
+            if (newarr.indexOf(arr[i] == -1)) {
+                newarr.push(arr[i]);
+            }
+            else {
+                i--;
+            }
+        }
+        var sortarr = newarr.sort(function(a,b) {
+            return a - b;
+        });
+        console.log("newarr =" + newarr);
+        console.log("sortarr =" + sortarr);
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 
+    var arr = [1, true, 'str'];
+    var obj = {};
+    // 赋值过程中会面临
+    var arr1 = [1, 2, 3, [4, 5], { name: '张三' }];
+    function lightCopy(copyVal, newVal) {
+        newVal = (copyVal instanceof Array) ? [] : {};
+        for (var ins in copyVal) {
+            newVal[ins] = copyVal[ins];
+        }
+        return newVal;
+    }
+    // var arr2 = lightCopy(arr1)
+    // console.log(arr2);
+    // arr1[3].push(6);
+    // console.log(arr2);
+
+    function deepCopy(copyVal, newVal) {
+        newVal = (copyVal instanceof Array) ? [] : {};
+        for (var ins in copyVal) {
+
+            if (typeof copyVal[ins] != 'object') {
+                newVal[ins] = copyVal[ins];
+            }
+            else {
+                // 直也是引用类型
+                newVal[ins] = deepCopy(copyVal[ins]);
+            }
+        }
+        return newVal;
+    }
+    /*
+
+     */
+    console.log(arr1);
+    var newobj = deepCopy(arr1);
+    console.log(newobj);
+    arr1[3].push(6);
+    console.log(newobj);
+</script>
+
+</html>

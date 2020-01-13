@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东顶部广告栏</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .top-banner {
+            background-color: pink;
+            height: 80px;
+        }
+
+        .w {
+            width: 1210px;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        img {
+            display: block;
+            width: 1210px;
+            height: 80px;
+            background-color: blue;
+        }
+
+        a {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #fff;
+            background-color: #000;
+            text-decoration: none;
+            width: 20px;
+            height: 20px;
+            font: 700 14px/20px "simsum";
+            text-align: center;
+        }
+
+        .hide {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="topBanner" class="top-banner">
+        <div class="w">
+            <img src="images/20180122_1020.png" alt="">
+            <a href="#" id="closeBanner">X</a>
+        </div>
+    </div>
+</body>
+<script>
+    var closeBanner = document.getElementById('closeBanner');
+    var topBanner = document.getElementById('topBanner');
+    closeBanner.onclick = function () {
+        topBanner.className += ' hide';
+        console.log(topBanner.className);
+    }
+    // 追加className()方法
+    function addClass(element, value) {
+        if (!element.className) {
+            element.className = value;
+        } else {
+            newClassName = element.className;
+            newClassName += " "; //这句代码追加的类名分开
+            newClassName += value;
+            element.className = newClassName;
+        }
+    }
+    // console.log(addClass(topBanner, hide));
+</script>
+
+</html>

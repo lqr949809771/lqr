@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var length = prompt('请输入斐波那契数列的第?个数');
+    function fibonacciSequence(n) {
+
+        if (n <= 2) {
+            return 1;
+        }
+        if (n >= 3) {
+            return fibonacciSequence(n - 1) + fibonacciSequence(n - 2);
+        }
+    }
+    function printFibonacciSequence(length) {
+        document.write('<pre>');
+        for (var i = 1; i <= length; i++) {
+            document.write(fibonacciSequence(i) + '\t');
+            if (i % 5 == 0) {
+                document.write('<br>');
+            }
+        }
+        document.write('</pre>');
+    }
+    printFibonacciSequence(length);
+</script>
+
+</html>

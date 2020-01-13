@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery slideToggle() 切换</title>
+    <style>
+        #flip,
+        #panel {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: 1px solid #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jQuery slideToggle() 方法可以在 slideDown() 与 slideUp() 方法之间进行切换。
+    如果元素向下滑动，则 slideToggle() 可向上滑动它们。
+    如果元素向上滑动，则 slideToggle() 可向下滑动它们。 -->
+    <div id="flip">点我，显示或隐藏面板</div>
+    <div id="panel">Hello World!</div>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("#flip").click(function () {
+                // e.preventDefault();
+                $("#panel").slideToggle(500);
+
+            });
+        });
+    </script>
+</body>
+
+</html>

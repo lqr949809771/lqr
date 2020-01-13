@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 邮箱
+    // +代表匹配一位或多位
+    // \w+ 代表数字 字母 下划线 任意一种开头 
+    // 多位的数字后面要跟@符号
+    var email = /^\w+@\w+\.+$/;
+
+    var str = 'abvc45465,hsfh1256jsd1234fhdjfhjf,a'
+    // \d 数字
+    var myReg = /\d{3}/g;
+    var value = '';
+    var arr;
+    // 赋值语句当做表达式 表达式的值是有部分的值
+    // exec 满足正则表达式的str语句会被截取返回
+    // value =myReg.exec(str) 只有返回的有值的时候才是true
+    while(value =myReg.exec(str)){
+        console.log(value);
+        arr.push(value);
+    }
+</script>
+
+</html>

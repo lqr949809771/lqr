@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hide show</title>
+    <style>
+        .paragraph {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            /* dashed 虚线 */
+            /* border: 5px dashed red; */
+            /* dotted 圆点*/
+            /* border: dotted 5px red; */
+            /* double 双实线 */
+            /* border: double 5px red; */
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <p class="paragraph">如果你点击隐藏“按钮”，我将会消失。</p>
+    <button id="hide">隐藏</button>
+    <button id="show">显示</button>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            // 语法 $(selector).hide(speed,callback);
+            // 语法 $(selector).show(speed,callback);
+            // 可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+            $("#hide").click(function () {
+
+                $("p").hide(2000);
+                // $("p").hide("slow");
+                // $("p").hide("fast");
+            });
+            $("#show").click(function () {
+                $("p").show(2000);
+                // $("p").show("slow");
+                // $("p").show("fast");
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // for (var i = 0; i < 3; i++) {
+    //     setTimeout(function()  {
+    //         console.log(i);
+
+    //     }, 0);
+    //     console.log('???' + i);
+
+    // }
+    // 浏览器崩溃 陷入死循环
+    // function f1(){
+    //     console.log('好好学');
+    //     f1();
+    // }
+
+    // 递归 函数自己调用自己 满足条件的时候自己会结束
+
+    var i = 1;
+    function f2() {
+        if (i < 5) {
+            i++;
+            console.log(i);
+            f2();
+            console.log(i);
+        }
+        // console.log(i);
+    }
+    f2();
+    // 阶乘
+    // function jieCheng(number) {
+    //     var result = 1;
+    //     for (var i = 1; i <= number; i++) {
+    //         result *= i;
+    //     }
+    //     return result;
+    // }
+    // console.log(jieCheng(6));
+
+    // 递归相同的功能需要当前正在执行的代码
+    function diGui(n) {
+        if (n <= 1) {
+            return 1;
+        }
+        else {
+            // 6 * 5 * 4 * 3 * 2 * 1
+            return n * diGui(n - 1);
+        }
+    }
+    console.log(diGui(6));  
+</script>
+
+</html>

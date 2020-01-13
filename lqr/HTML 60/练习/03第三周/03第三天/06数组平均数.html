@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组平均数</title>
+</head>
+
+<body>
+    <script>
+        var array = new Array();
+        var allsum = 0;
+        var average;
+        var len = array.length;
+        var len = Math.floor(Math.random() * 50 + 50)
+        var count = 0;
+        var count1 = 0;
+        for (var i = 0; i < len; i++) {
+            var numbers = Math.floor(Math.random() * 50 + 50)
+            array.push(numbers);
+            allsum += array[i];
+        }
+        average = allsum / len;
+        document.write("长度" + len + "<br>");
+        document.write("数组" + array + "<br>");
+        alert("随机数组的平均数为：" + average);
+    </script>
+</body>
+
+</html>

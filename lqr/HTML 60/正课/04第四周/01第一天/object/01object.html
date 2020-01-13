@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        js中数据类型
+        1.基本数据类型
+        2.引用数据类型
+        区别：基本数据类型保存的是值 引用数据类型保存的是内存地址
+        对象：
+        */
+        var obj;//只是常规的变量
+        obj = new Object();
+        //对象.属性（任意）
+        obj.name = '刘权锐';
+        obj.age = 22;
+        obj.sex = '男';
+        // 对象的声明和实现可以写在一起
+        console.log(obj.name);
+
+        var obj2 = new Object();
+        obj2.eat = function () {
+            console.log('今早吃了一个饼');
+        }
+        // 调用：对象名.方法名
+        obj2.eat();
+
+        var obj3 = {
+            // 
+            name: '刘权锐',
+            major: '学生',
+            // 对象里的方法也是可以向单一函数一样高度自定的
+            speak: function () {
+                return '又要吃饭了';
+            }
+        }
+        console.log('一个叫做:' + obj3.name + '的' + obj3.major + '说' + obj3.speak());
+        /* 
+        对象就是一个容器 其中有多条数据 数据在对象中用键值形式出现 比如name 就是键key 刘权锐 就是指value
+         */
+
+        var phone = {
+            brand: 'MI',
+            size: '6.1',
+            RGM: '2.0'
+        }
+        //删除某个属性
+        delete phone.RGM;
+        console.log(phone);
+
+        var man = new Object();
+        man.name = 'lqr';
+        man.age = 1;
+
+        console.log(man['name']);
+
+
+        //对象的属性还可以是一个属性
+        var superman = new Object();
+        superman.name = '刘权锐';
+        // 车有
+        superman.car = new Object();
+        superman.car.brand = '保时捷';
+        superman.car.color = '银白色';
+
+        console.log('一个叫做:' + superman.name + '的人' + '开着一辆' + superman.car.color + '的' + superman.car.brand);
+
+        // 
+
+        // var male = new Object();
+        // male.name = 'lqr';
+        // male.age = 22;
+        // male.sex = '男';
+        // function getMan(man) {
+        //     if (male.age <= 3) {
+        //         return '婴儿';
+        //     }
+        //     else if (male.age <= 12) {
+        //         return '童年';
+        //     }
+        //     else if (male.age <= 22) {
+        //         return '青年';
+        //     }
+        //     else if (male.age <= 35) {
+        //         return '中年';
+        //     }
+        //     else if (male.age <= 55) {
+        //         return '中老年';
+        //     }
+        // }
+        // console.log(getMan(male));
+
+        // var male = new Object();
+        // male.name = 'mingyang';
+        // male.money = 22222222222220000000000000000;
+        // male.age = 75;
+        // male.sex = '男';
+        // function setGirl(aBeautifulGirl) {
+        //     var girl = new Object();
+        //     if (male.money <= 100000) {
+        //         return '不同意';
+        //     }
+        //     else if (male.money > 100000 && male.age < 30) {
+        //         return '欧巴 我爱你';
+        //     }
+        //     else if (male.money > 100000 && male.age < 50) {
+        //         return '大叔 我爱你';
+        //     }
+        //     else if (male.money > 100000 && male.age < 80) {
+        //         girl.age = 20;
+        //         girl.height = 1.8;
+        //         girl.rm = '美女';
+        //         return girl;
+        //     }
+        // }
+        // console.log(setGirl(male));
+
+        /*   var male = new Object();
+          male.name = 'mingyang';
+          male.money = 100000;
+          male.age = 20;
+          male.sex = '男';
+          function setGirl(aBeautifulGirl) {
+              var girl = new Object();
+              if (male.money <= 100000) {
+                  return '不同意';
+              }
+              else if (male.age < 30) {
+                  return '欧巴 我爱你';
+              }
+              else if (male.age < 50) {
+                  return '大叔 我爱你';
+              }
+              else if (male.age < 80) {
+                  girl.age = 20;
+                  girl.height = 1.8;
+                  girl.rm = '美女';
+                  return girl;
+              }
+          }
+          console.log(setGirl(male)); */
+        var male = new Object();
+        male.name = 'mingyang';
+        male.money = 200000;
+        male.age = 80;
+        male.sex = '男';
+        function setGirl(aBeautifulGirl) {
+            var result;
+            var girl = new Object();
+            if (male.money <= 100000) {
+                return '不同意';
+            }
+            else if (male.age < 30) {
+                return '欧巴 我爱你';
+            }
+            else if (male.age < 50) {
+                return '大叔 我爱你';
+            }
+            else if (male.age < 80) {
+                girl.age = 20;
+                girl.height = 1.8;
+                girl.rm = '美女';
+                return girl;
+            }
+        }
+        // console.log(setGirl(male));
+        var j = setGirl(male);
+        if (j.age != undefined) {
+            console.log('这是一个年方：' + j.age + '身高' + j.height + '米的大长腿');
+        }
+        else {
+            console.log(j);
+        }
+    </script>
+</body>
+
+</html>

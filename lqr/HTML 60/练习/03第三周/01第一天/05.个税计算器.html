@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个税</title>
+</head>
+
+<body>
+    <script>
+        var salary = prompt("请输入的工资");
+        if (salary > 0 && salary <= 5000) {
+            alert("当前不需要纳税");
+        }
+        else {
+            var tax = (salary - 5000) * 0.03
+            var afterTax = salary - tax;
+            alert("当前应交个人所得税为：" + tax);
+            alert("税后薪资为：" + afterTax);
+        }
+    </script>
+</body>
+
+</html>

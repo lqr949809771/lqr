@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>39 2D转换 skew</title>
+
+    <style>
+
+        p{
+            text-align: center;
+            font-size: 25px;
+            font: bold;
+            color: purple;
+            text-shadow: 5px 5px 5px #000000;
+        }
+
+        div{
+            margin: 80px auto;
+            width: 100px;
+            height: 75px;
+            background-color: red;
+            border: 1px solid black;
+            box-shadow:10px 10px 5px blue;
+            
+        }
+
+        /* div#div1{
+            
+            transform: translate(100px,200px);
+            
+            } */
+
+        div#div2{
+
+            transform: skew(30deg,20deg);
+
+        }
+    
+    </style>
+</head>
+<body>
+
+    <p> skew()方法包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜。<br>
+        skewX(<angle>);表示只在X轴(水平方向)倾斜。<br>
+        skewY(<angle>);表示只在Y轴(垂直方向)倾斜。</p>
+    <div id="div1">Hello1! This is a DIV element.</div>
+
+    <div id="div2">Hello2! This is a DIV element.</div>
+
+</body>
+</html>

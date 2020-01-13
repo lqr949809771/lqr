@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录界面</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            height: 800px;
+            /* background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575650339695&di=a8a90b3597661b0f68ecc0cfc29eaad5&imgtype=0&src=http%3A%2F%2Ffile2.desktx.com%2Fpc%2Fwallpaper%2Fcomic%2F20120725%2F17_1_koodianCom_674.jpg); */
+            background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576285796&di=b349db961171023f08bf13e7e9e87ed2&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.leawo.cn%2Fattachment%2F201703%2F3%2F3815757_1488530060FXYZ.gif);
+            background-size: 100% 100%;
+            /* background-position: 50% 50%; */
+        }
+
+        #top {
+            height: 10%;
+            /* flex-basis: 100%; */
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 20px;
+            color: white;
+            border: white solid 1px;
+        }
+
+        #head-portrait {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+        }
+
+        #login {
+            height: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button {
+            height: 20%;
+            display: flex;
+            font-display: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bottom {
+            height: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #top span {
+            margin-top: 10px;
+        }
+
+        #top span:nth-child(1) {
+            margin-left: 5px;
+        }
+
+        #top span:nth-child(3) {
+            margin-right: 15px;
+        }
+
+        #User{
+            border: solid white 1px;
+
+            /* border-bottom: 1px solid white; */
+        }
+
+        #User form{
+            margin-bottom: 5px;
+        }
+        #User label:nth-of-type(1){
+            font-size: 20px;
+            color: white;
+        }
+        #User input:nth-of-type(1){
+            font-size: 20px;
+            border: none;
+            color: white;
+            background-color:transparent;
+            padding-left: 20px;
+        }
+        /* 密码 */
+        #pwd{
+            border: solid white 1px;
+            /* border-bottom: 1px solid white; */
+            margin-top: 20px;
+        }
+
+        #pwd form{
+            margin-bottom: 5px;
+        }
+        #pwd label:nth-of-type(1){
+            font-size: 20px;
+            color: white;
+        }
+        #pwd input:nth-of-type(1){
+            font-size: 20px;
+            border: none;
+            color: white;
+            background-color:transparent;
+            padding-left: 20px;
+            background-image: url(images/eye.png);
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: 100% 50%;
+        }
+
+        /* 按钮 */
+        #submit button{
+            background-color: #32aa66;
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 8px 80px;
+            border: none;
+        }
+
+        #alert{
+            margin-top: 10px;
+            text-align: center;
+            
+        }
+        #alert a{
+            text-decoration: none;
+            font-size: 15px;
+            color: white;
+        }
+        #other-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pictures {
+            width: 70%;
+            /* border: solid 1px white; */
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        #pictures img {
+            width: 60px;
+            height: 60px;
+        }
+
+        #head-portrait img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        #bottom{
+            margin-top: 30px;
+        }
+        #other-methods :nth-of-type(1){
+            color: white;
+            font-size: 15px;
+        }
+        .solid {
+            width: 100px;
+            height: 1px;
+            background-color: white;  
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="top">
+            <span>返回</span>
+            <span>登陆</span>
+            <span>注册</span>
+        </div>
+        <div id="head-portrait">
+            <img src="http://pic2.zhimg.com/v2-7f5d3b2baaf62e425641f08596770351_b.jpg" alt="图像">
+        </div>
+        <div id="login">
+
+            <!-- 账号 -->
+            <div id="User">
+                <form action="">
+                    <label for="user">账号</label>
+                    <input type="text" name="user" id="user">
+                </form>
+            </div>
+            <!-- 密码 -->
+            <div id="pwd">
+                <form action="">
+                    <label for="password">密码</label>
+                    <input type="password" name="password" id="password">
+                </form>
+            </div>
+        </div>
+
+        <div id="button">
+            <!-- 登录 -->
+            <div id="log-in">
+                <section id="submit">
+                    <button type="submit">登&#x3000;陆</button>
+                </section>
+                <section id="alert">
+                    <a href="">忘记密码?</a>
+                </section>
+            </div>
+        </div>
+
+        <div id="bottom">
+            <div id="other-methods">
+                <div class="solid"></div>
+                <span style="padding: 0 10px;">其他方式登陆</span>
+                <div class="solid"></div>
+            </div>
+            <div id="pictures">
+                <img src="images/weibo.png" alt="">
+                <img src="images/qq.png" alt="">
+                <img src="images/weixin.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

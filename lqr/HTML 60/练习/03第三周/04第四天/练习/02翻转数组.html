@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻转数组</title>
+</head>
+
+<body>
+    <script>
+        function arrReverse() {
+            var arr1 = ["student", "a", "am", "I"];
+            console.log('翻转之前的数组：' + arr1);
+            var newarray = [];
+            for (var i = 0; i < arr1.length; i++) {
+                newarray[i] = arr1[arr1.length - 1 - i]
+            }
+            console.log('翻转之后的数组：' + newarray);
+        }
+        arrReverse();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>读秒器</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            text-align: center;
+        }
+
+        #timer {
+            color: orange;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p id="timer"></p>
+    </div>
+</body>
+<script>
+    var time = document.getElementById("timer");
+    var numbers = 0;
+    var t2 = setInterval(function () {
+        numbers++;
+        if (numbers >= 1 && numbers <= 9) {
+            time.textContent = "0" + numbers;
+        }
+        else if (numbers <= 60) {
+            time.textContent = numbers;
+        }
+        else {
+            numbers = 0;
+        }
+    }, 1000); 
+    // clearInterval(t2);
+</script>
+
+</html>

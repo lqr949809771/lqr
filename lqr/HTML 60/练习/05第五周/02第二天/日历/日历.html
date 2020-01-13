@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>万年历</title>
+    <style>
+        * {
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #container {
+            width: 700px;
+            height: 1000px;
+            background-color: #73600e;
+        }
+
+        #boxOne {
+            padding: 50px 30px 0 30px;
+        }
+
+        #boxTwo {
+            padding: 50px 30px 20px 30px;
+            position: relative;
+        }
+
+        #boxOne p:nth-of-type(1) {
+            font-size: 80px;
+            font-weight: 200;
+            font-family: '仿宋';
+        }
+
+        #boxOne p:nth-of-type(2) {
+            font-size: 35px;
+            font-weight: bold;
+            font-family: '仿宋';
+            margin-top: 20px;
+            color: #ffe559;
+        }
+
+        #boxTwo>span {
+            font-size: 40px;
+        }
+
+        #boxTwo span:nth-of-type(2) {
+            position: absolute;
+            right: 100px;
+            cursor: pointer;
+        }
+
+        #boxTwo span:nth-of-type(3) {
+            float: right;
+            cursor: pointer;
+        }
+
+        table {
+            height: 700px;
+            text-align: center;
+        }
+
+        th {
+            font-size: 25px;
+        }
+
+        td {
+            height: 100px;
+            width: 100px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="boxOne">
+            <p>17:27:54</p>
+            <p>2019年12月31日,星期五</p>
+        </div>
+        <div id="boxTwo">
+            <span>2019年12月</span>
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+        <div id="boxThree">
+            <table>
+                <thead>
+                    <th>日</th>
+                    <th>一</th>
+                    <th>二</th>
+                    <th>三</th>
+                    <th>四</th>
+                    <th>五</th>
+                    <th>六</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    var timeTxt = document.getElementsByTagName('p')[0];
+    var dateTxt = document.getElementsByTagName('p')[1];
+    var spanDate = document.getElementsByTagName('span')[0];
+    var spanLeft = document.getElementById('left');
+    var spanRight = document.getElementById('right');
+    var tdList = document.getElementsByTagName('td');
+    var week;
+    var arrWeek = ['日', '一', '二', '三', '四', '五', '六']
+    var timer = setInterval(function () {
+        showTime();
+        showClock();
+        dateNum();
+    }, 1000);
+    function showTime() {
+        // 获取日期对象
+        now = new Date();
+        //获取年月日
+        year = now.getFullYear();
+        month = now.getMonth();
+        console.log(month);
+        date = now.getDate();
+        // 获取时分秒
+        hour = now.getHours();
+        minute = now.getMinutes();
+        second = now.getSeconds();
+        // 获取周几
+        day = now.getDay();
+        // console.log(day); 
+        spanDate.innerHTML = year + '年' + (month + 1) + '月';
+    }
+    showClock();
+    function showClock() {
+        showTime();
+        //获取时间
+        var hourTxt = hour < 10 ? '0' + hour : hour;
+        var minuteTxt = minute < 10 ? '0' + minute : minute;
+        var secondTxt = second < 10 ? '0' + second : second;
+        //时间
+        timeTxt.innerHTML = hourTxt + ':' + minuteTxt + ':' + secondTxt;
+        // 获取周几
+
+        var week = arrWeek[day];
+        // console.log(week);
+        // 获取年月日
+        dateTxt.innerHTML = year + '年' + (month + 1) + '月' + date + '日,' + '星期' + week;
+    }
+    dateNum();
+    function dateNum() {
+        // 获取时间戳
+        var future = new Date(year, month, 1);
+        // console.log(future);
+        var weekNumbers;
+        var weekOfTheFirstDay = future.getDay();
+        var weekNumbers = weekOfTheFirstDay;
+        console.log(weekNumbers);
+        var dayNumber;
+        if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
+            dayNumber = 31;
+        }
+        else if (month == 3 || month == 5 || month == 8 || month == 10) {
+            dayNumber = 30;
+        }
+        else {
+            if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+                dayNumber = 29;
+            }
+            else {
+                dayNumber = 28;
+            }
+        }
+        for (var i = weekNumbers; i < dayNumber + weekNumbers; i++) {
+            tdList[i].innerHTML = i - weekNumbers + 1;
+        }
+        // function lastMonth(year, month) {
+        //     console.log(dayNumber);
+        //     for (var i = 0; i < weekNumbers; i++) {
+        //         tdList[i] = i + dayNumber;
+        //     }
+        // }
+        // lastMonth(year, this.month)
+    }
+    // 绑定上一月事件
+    spanLeft.onclick = function () {
+        preMonth();
+    }
+    // 绑定下一月事件
+    spanRight.onclick = function () {
+        nextMonth();
+    }
+    function preMonth() {
+        // showTime();
+        for (var i = 0; i < tdList.length; i++) {
+            tdList[i].innerHTML = '';
+        }
+        clearInterval(timer);
+        if (month > 0) {
+            month--;
+            spanDate.innerHTML = year + '年' + (month + 1) + '月';
+        }
+        else {
+            year--;
+            month = 11;
+            spanDate.innerHTML = year + '年' + (month + 1) + '月';
+        }
+        dateNum();
+    }
+    function nextMonth() {
+        // showTime();
+        for (var i = 0; i < tdList.length; i++) {
+            tdList[i].innerHTML = '';
+        }
+        clearInterval(timer);
+        if (month >= 0 && month < 11) {
+            month++;
+            spanDate.innerHTML = year + '年' + (month + 1) + '月';
+        }
+        else {
+            year++;
+            month = 0;
+            spanDate.innerHTML = year + '年' + (month + 1) + '月';
+        }
+        dateNum();
+    }
+</script>
+
+</html>

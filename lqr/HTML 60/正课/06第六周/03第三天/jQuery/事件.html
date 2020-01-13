@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <button class="num">1</button>
+    <button class="num">2</button>
+    <button class="num">3</button>
+    <button class="num">4</button>
+    <button class="num">5</button>
+    <hr>
+    <button id="btn2">一次性按钮</button>
+    <hr>
+    <button id="btn3">页面中不的按钮</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // 函数的封装不区分原生还是jquery
+    function btnClick() {
+        console.log('按钮的点击');
+    } 
+    // 使用jquery对象绑定对象的时候 
+    $("#btn").on('click',btnClick);
+
+    // 
+    $("#btn").off('click',btnClick);
+
+    $('.num').on('click', function () {
+        console.log($(this).text());
+    });
+    // 一次性按钮
+    $('#btn2').one('click', function (e) {
+        console.log('这个按钮只能点一下');
+    });
+    
+    $('body').delegate('#btn3','click', function (e) {
+        console.log('事件被btn3代理了');
+    });
+    
+</script>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>雪花飘落</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background-color: #000000;
+        }
+
+        #img {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="img/flake.png" alt="" id="img"> -->
+</body>
+<script>
+    for (var i = 0; i < 10; i++) {
+        creatSnow();
+    }
+    function creatSnow() {
+        var snow = document.createElement("img");
+        document.body.appendChild(snow);
+        snow.src = 'img/flake.png';
+        snow.style.position = 'absolute';
+
+        var numbers = Math.floor(Math.random() * 41 + 60);
+        snow.style.width = numbers;
+        snow.style.height = numbers;
+
+        var h = window.outerHeight;
+        var w = window.outerWidth;
+
+        // var h = document.documentElement.clientHeight;
+        // var w = document.documentElement.clientWidth;
+        // console.log(h);
+        // console.log(window.outerHeight);
+
+        var t = (h - numbers) * Math.random();
+        var l = (w - numbers) * Math.random();
+        console.log(t);
+        snow.style.top = t + 'px';
+        snow.style.left = l + 'px';
+
+        console.log(snow);
+
+        setInterval(function () {
+            l = l + 10;
+            t = t + 10;
+            if (l > w) {
+                l = 0;
+            }
+            if (t > h) {
+                t = 0;
+            }
+            snow.style.top = t + 'px';
+            snow.style.left = l + 'px';
+        }, 100);
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帧动画</title>
+    <style>
+        #d1 {
+            width: 100px;
+            height: 100px;
+            border: solid 2px red;
+            /* 复合属性 */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation-name: ani1; */
+            /* animation-duration: 3s; */
+            /* 速率 */
+            /* animation-timing-function: linear; */
+            /* 次数 */
+            /* animation-iteration-count: infinite; */
+            animation: ani1 3s linear 2s infinite;
+        }
+
+        /* 关键帧 */
+        @keyframes ani1 {
+
+            /* 开始帧 */
+            from {
+                border-radius: 0%;
+            }
+
+            to {
+                /* border-radius: 100%; */
+                border-radius: 50%;
+
+            }
+        }
+
+        #d2 {
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            background-color: red;
+            /* both 保持结束动画的状态 animation-fill-Mode */
+            /* animation-fill-Mode  */
+            animation: ani2 2s linear 2s 2 both;
+        }
+
+        @keyframes ani2 {
+
+            /* 开始帧 */
+            from {
+                transform: translate(0px,0px) scale(0,0);
+                /* width: 100px;
+                height: 100px; */
+            }
+
+            to {
+                transform: translate(150px,100px) scale(1.5,1);
+               /* width: 300px;
+               height: 200px; */
+            }
+        }
+        /* 
+            2d，3d
+         */
+    </style>
+</head>
+
+<body>
+    <div id="d1">我是个圆</div>
+    <div id="d2">我可以变成长方形</div>
+</body>
+
+</html>

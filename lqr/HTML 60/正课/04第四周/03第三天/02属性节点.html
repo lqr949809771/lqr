@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .kaiti {
+            font-family: '楷体';
+        }
+        .bgy {
+            background-color: yellow;
+        }
+        a {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com" target="_blank" class="red kaiti">百度</a>
+</body>
+<script>
+    var a = document.getElementsByTagName("a")[0];
+    var attlist = a.attributes;
+    for (var key in attlist) {
+        // console.log(key);
+        console.log(attlist[key]);
+        // console.log(attlist[key].name);
+        // console.log(attlist[key].value);
+    }
+
+    for (var i =0;i < attlist.length; i++) {
+        var att = attlist[i];
+        console.log(att.name + ":" + att.value);
+        
+    }
+
+    a.setAttribute("target","_self");
+    a.setAttribute("title","百度一下 你就知道");
+    a.removeAttribute("href");
+    a.classList.add("bgy");
+    a.classList.remove("kaiti");
+    a.classList.toggle("red");
+    a.style.marginLeft = '100px';
+
+    alert(getComputedStyle(a).backgroundColor);
+</script>
+</html>

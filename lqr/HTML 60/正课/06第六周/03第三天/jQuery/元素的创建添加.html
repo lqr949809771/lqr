@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素的创建添加JQuery</title>
+</head>
+
+<body>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    // 创建
+    var $div = $('<div id="box" class="rect"> hello jQuery</div>');
+    // 添加 appendTo(); 将子元素添加到父元素中
+    $div.appendTo($('body'));
+    $('<ul><li>1</li><li>2</li><li>3</li></ul>').appendTo($("body"));
+    $('<ul><li>一</li><li>二</li><li>三</li></ul>').appendTo(document.body);
+
+    var htmlStr = '';
+    htmlStr = '<ul>';
+    for (var i = 1;i <= 20; i++) {
+        htmlStr+='<li>第' + i + '行</li>'
+    }
+    htmlStr += '</ul>';
+    console.log(htmlStr);
+    $(htmlStr).appendTo($("body"))
+    // $(htmlStr).appendTo(document.body)
+    // 添加子元素 在body中添加子元素
+    $("body").append("<hr>");
+    // 删除子元素
+    $("body").remove(); // 删除body
+
+</script>
+
+</html>

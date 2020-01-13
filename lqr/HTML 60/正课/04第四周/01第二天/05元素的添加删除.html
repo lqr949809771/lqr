@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="firstTitle">啥节都过 家里有矿</h1>
+    <select name="">
+        <option value="">学霸</option>
+        <option value="">学徒</option>
+        <option value="">学渣</option>
+    </select>
+</body>
+<script>
+    var h1 = document.createElement("h1");
+    h1.textContent = "123456789"
+    document.body.appendChild(h1);
+
+    var h2 = document.createElement("h2");
+    h2.textContent = "lqrlqr"
+    var firstTitle = document.getElementById("firsr-line");
+    document.body.insertBefore(h2, firstTitle);
+
+    var ul = document.createElement("ul");
+    document.body.appendChild(ul);
+    for (var i = 1; i <= 5; i++) {
+        var li = document.createElement("li");
+        li.textContent = "第" + i + "行"
+        // li.textContent = "第一行"
+        ul.appendChild(li);
+    }
+
+    var arr = ['河南', '湖南', '福建'];
+    // var options = document.querySelector("option");
+    var opt = document.getElementsByTagName("option");
+    for (var i = 0; i < opt.length; i++) {
+        opt[i].textContent = arr[i]
+    }
+    console.log(firstTitle.parentElement);
+    
+</script>
+
+</html>

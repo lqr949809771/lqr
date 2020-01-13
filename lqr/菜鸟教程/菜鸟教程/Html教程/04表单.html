@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04 表单</title>
+</head>
+
+<body>
+    <div style="text-align: center; margin-top: 10px;">
+        <!-- 创建文本字段 Text Fields-->
+        <form action="">
+            First name: &nbsp;<input type="text" name="firstname" id="in1"><br>
+            Last name: &nbsp;<input type="text" name="lsatname" id="in2"><br>
+        </form>
+        <!-- 创建密码字段 <input type="password"> -->
+        <form action="">
+            Username: &nbsp;<input type="text" name="username" id=""><br>
+            Password: &nbsp;&nbsp;<input type="text" name="password" id=""><br>
+        </form>
+        <!-- 单选按钮 Radio Buttons -->
+        <form action="">
+            <input type="radio" name="sex" id="ra1">男<br>
+            <input type="radio" name="sex" id="ra2">女<br>
+        </form>
+        <!-- 复选框 Checkboxes -->
+        <form action="">
+            <input type="checkbox" name="vehicle" id="che1" value="Bike">我有一辆自行车<br>
+            <input type="checkbox" name="vehicle" id="che2" value="car">我有一辆汽车<br>
+        </form>
+        <!-- 提价按钮 Submit Button reset 重置 submit 提交 -->
+        <form action="demo">
+            Email: <input type="text" name="email"><br>
+            Pin: &nbsp;<input type="text" name="pin" maxlength="4"><br>
+            <input type="reset" value="重置">
+            <input type="submit" value="提交">
+        </form>
+        <!-- 下拉菜单 select 定义下拉菜单选项 option 定义下拉列表中的选项 -->
+        <form action="">
+            <select name="cars" id="sel1">
+                <option value="宝马">宝马</option>
+                <option value="奔驰">奔驰</option>
+                <option value="法拉利">法拉利</option>
+                <option value="凯迪拉克">凯迪拉克</option>
+                <option value="兰博基尼">兰博基尼</option>
+            </select>
+        </form>
+        <!-- 预选下拉菜单 -->
+        <form action="">
+            <select name="cars" id="sel2">
+                <option value="奔驰">奔驰</option>
+                <option value="宝马">宝马</option>
+                <option value="奥迪" selected>奥迪</option>
+                <option value="法拉利">法拉利</option>
+                <option value="兰博基尼">兰博基尼</option>
+            </select>
+        </form>
+        <!-- 文本区域 textarea-->
+        <textarea name="" id="" cols="10" rows="5">
+            我是文本框
+        </textarea>
+        <p><strong>form：</strong> 定义供用户输入的表单</p>
+        <p><strong>input：</strong>定义输入域</p>
+        <p><strong>textarea：</strong>定义文本域(一个多行输入的控件)</p>
+        <p><strong>label：</strong>定义了input元素的标签，一般为输入标题</p>
+        <p><strong>fieldset：</strong>定义了一组相关的表单元素，并使用外框包含起来</p>
+        <p><strong>legend：</strong>定义了fieldset的标题</p>
+        <p><strong>select：</strong>定义了下拉选项列表</p>
+        <p><strong>optgroup：</strong>定义选项组</p>
+        <p><strong>option：</strong>定义下拉表中的选项</p>
+        <p><strong>button：</strong>定义一个按钮</p>
+        <p><strong>datalist：</strong>New	指定一个预先定义的输入控件选项列表</p>
+        <p><strong>keygen：</strong>定义了表单的密钥对生成器字段</p>
+        <p><strong>output：</strong>定义一个计算结果</p>
+
+    </div>
+</body>
+
+</html>

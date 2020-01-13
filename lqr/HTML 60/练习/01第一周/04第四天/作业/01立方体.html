@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>立方体</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            perspective: 1000px;
+            background-color: #888888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            width: 200px;
+            height: 200px;
+            /* border: 2px solid black; */
+            position: relative;
+            transition: all 4s linear;
+            transform-style: preserve-3d;
+        }
+
+        #container:hover {
+            transform: rotateY(360deg);
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #square1 {
+            background-color: orange;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        #square2 {
+            background-color: red;
+            transform: rotateX(90deg)translateZ(-100px);
+        }
+
+        #square3 {
+            background-color: purple;
+            transform: translateZ(100px);
+        }
+
+        #square4 {
+            background-color: green;
+            transform: translateZ(-100px);
+        }
+
+        #square5 {
+            background-color: blue;
+            transform: rotateY(90deg)translateZ(100px);
+        }
+
+        #square6 {
+            background-color: aqua;
+            transform: rotateY(90deg)translateZ(-100px);
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="square1" class="square">
+            <img src=https://goss.veer.com/creative/vcg/veer/800water/veer-149520329.jpg alt="" class="image">
+        </div>
+        <div id="square2" class="square">
+            <img src="https://goss.veer.com/creative/vcg/veer/800water/veer-140799698.jpg" alt="" class="image">
+        </div>
+        <div id="square3" class="square">
+                <img src=https://goss.veer.com/creative/vcg/veer/800water/veer-149520329.jpg alt="" class="image">
+        </div>
+        <div id="square4" class="square">
+                <img src="https://goss.veer.com/creative/vcg/veer/800water/veer-140799698.jpg" alt="" class="image">
+        </div>
+        <div id="square5" class="square">
+                <img src=https://goss.veer.com/creative/vcg/veer/800water/veer-149520329.jpg alt="" class="image">
+        </div>
+        <div id="square6" class="square">
+                <img src="https://goss.veer.com/creative/vcg/veer/800water/veer-140799698.jpg" alt="" class="image">
+        </div>
+    </div>
+</body>
+
+</html>
